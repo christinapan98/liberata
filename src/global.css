@@ -1,0 +1,23 @@
+/* Global styles go here */
+
+:root {
+  /* Variables that dictate the color scheme of the site */
+  --accent-blue: #1384FF;
+  --duke-blue: #050599;
+  --light-blue: #7CACED;
+  --light-peach: #F7E2DA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+  color: rgb(88, 86, 86);
+}

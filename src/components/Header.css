@@ -1,0 +1,31 @@
+.Header-wrapper {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header-accent {
+  background-color: var(--duke-blue);
+  padding: 10px;
+  width: inherit;
+}
+
+.Header-body {
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 86vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Header-logo {
+  font-size: 18px;
+  font-weight: 600;
+}
