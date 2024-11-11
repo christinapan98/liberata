@@ -1,19 +1,35 @@
 @import 'global.css';
 
 .App {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Header-accent {
+  background-color: var(--duke-blue);
+  z-index: 1;
+  padding: 10px;
+  width: 100vw;
 }
 
 .App-body {
-  display: grid;
   width: 86vw;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
 }
 
 .App-section {
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 40px;
+  width: inherit;
+  margin-right: auto;
+  text-align: left;
+}
+
+#section-one {
+  width: 75vw;
+  font-size: 6rem;
+  line-height: 8rem;
+  padding-right: 5rem;
 }
