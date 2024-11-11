@@ -6,11 +6,13 @@
   background-color: white;
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 
 .Header-body {
   padding-top: 25px;
   padding-bottom: 25px;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;

@@ -27,7 +27,7 @@ function Header() {
             </span>
             
             {/* insert whitepaper link here */}
-            <a href="" style={{display: 'flex', alignItems: 'botto'}}> 
+            <a href="" style={{display: 'flex', alignItems: 'bottom'}}> 
               Whitepaper
               <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
             </a>

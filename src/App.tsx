@@ -1,7 +1,25 @@
+import React, {useEffect} from 'react';
 import './App.css';
 import Header from './components/Header';
 
 function App() {
+  useEffect(() => {
+    const sectionItems = document.getElementsByClassName("App-section");
+    const observerCallback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0px)";
+          observer.unobserve(entry.target);
+        }
+        });
+    };
+    const observer = new IntersectionObserver(observerCallback);
+    Array.from(sectionItems).forEach((e) => {
+      observer.observe(e);
+    });
+  }, []);
+
   return (
     <div className="App">
       <div className="Header-accent"></div>

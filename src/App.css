@@ -25,6 +25,9 @@
   width: inherit;
   margin-right: auto;
   text-align: left;
+  opacity: 0;
+	transform: translateY(50px);
+	transition: opacity .8s, transform .8s;
 }
 
 #section-one {
