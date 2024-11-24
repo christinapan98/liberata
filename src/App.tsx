@@ -5,8 +5,9 @@ import SectionOneVideo from './videos/Liberata_Section_One.mp4';
 import ReactPlayer from 'react-player/lazy';
 
 function App() {
-  const sectionOneRef = useRef(null);
-  const [isSectionOnePlaying, setSectionOnePlaying] = useState(false);
+  const [isMeritVideoOn, setMeritVideoOn] = useState(false);
+  const [isEconomicVideoOn, setEconomicVideoOn] = useState(false);
+  const [isTrustVideoOn, setTrustVideoOn] = useState(false);
 
   useEffect(() => {
     const sectionItems = document.getElementsByClassName("App-section");
@@ -38,11 +39,11 @@ function App() {
         <div className="App-section">
           <ReactPlayer
             url={SectionOneVideo}
-            playing={isSectionOnePlaying}
             autoPlay={true}
             controls={true}
             width="1000"
             height="500"
+            id="section-one-video"
           ></ReactPlayer>
         </div>
 
@@ -53,8 +54,13 @@ function App() {
             <div>
               dolor sit amet, consectetur elit, sed do tempor incididunt ut labore.
             </div>
+            <div className="App-problem-button-carousel">
+              <button onClick={() => setMeritVideoOn(true)}>Video</button>
+              <button onClick={() => setMeritVideoOn(false)}>Text Details</button>
+            </div>
             <div>
-
+              <div style={{display: isMeritVideoOn ? 'block' : 'none'}}>Video placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
+              <div style={{display: !isMeritVideoOn ? 'block' : 'none'}}>Text placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
             </div>
           </div>
         </div>
@@ -65,8 +71,13 @@ function App() {
             <div>
               dolor sit amet, consectetur elit, sed do tempor incididunt ut labore.
             </div>
+            <div className="App-problem-button-carousel">
+              <button onClick={() => setEconomicVideoOn(true)}>Video</button>
+              <button onClick={() => setEconomicVideoOn(false)}>Text Details</button>
+            </div>
             <div>
-
+              <div style={{display: isEconomicVideoOn ? 'block' : 'none'}}>Video placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
+              <div style={{display: !isEconomicVideoOn ? 'block' : 'none'}}>Text placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
             </div>
           </div>
         </div>
@@ -77,8 +88,13 @@ function App() {
             <div>
               dolor sit amet, consectetur elit, sed do tempor incididunt ut labore.
             </div>
+            <div className="App-problem-button-carousel">
+              <button onClick={() => setTrustVideoOn(true)}>Video</button>
+              <button onClick={() => setTrustVideoOn(false)}>Text Details</button>
+            </div>
             <div>
-
+              <div style={{display: isTrustVideoOn ? 'block' : 'none'}}>Video placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
+              <div style={{display: !isTrustVideoOn ? 'block' : 'none'}}>Text placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
             </div>
           </div>
         </div>

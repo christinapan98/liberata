@@ -12,17 +12,14 @@ function Header() {
               <a id="Header-logo" href="#section-one">
                 Liberata
               </a>
-              <a href="#section-one">
+              <a href="#section-two">
                 Creating solutions
               </a>
-              <a href="#section-two">
+              <a href="#section-three">
                 Video Playlist
               </a>
-              <a href="#section-three">
-                FAQ
-              </a>
               <a href="#section-four">
-                Get in touch
+                FAQ
               </a>
             </span>
             
