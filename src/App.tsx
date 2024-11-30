@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Header from './components/Header';
 import SectionOneVideo from './videos/Liberata_Section_One.mp4';
@@ -10,6 +10,7 @@ function App() {
   const [isTrustVideoOn, setTrustVideoOn] = useState(false);
 
   useEffect(() => {
+    // Section observer
     const sectionItems = document.getElementsByClassName("App-section");
     const observerCallback = (entries: any[]) => {
       entries.forEach((entry) => {
@@ -39,7 +40,6 @@ function App() {
         <div className="App-section">
           <ReactPlayer
             url={SectionOneVideo}
-            autoPlay={true}
             controls={true}
             width="1000"
             height="500"
@@ -49,14 +49,14 @@ function App() {
 
         {/* Three problems */}
         <div className="App-section App-problem" id="section-two">
-          <div className="App-problem-header sticky">Solving the merit problem - Eliminating corruption and politics within academia</div>
+          <div className="App-problem-header sticky">Solving the merit problem</div>
           <div className="App-problem-body">
             <div>
-              dolor sit amet, consectetur elit, sed do tempor incididunt ut labore.
+              Eliminating corruption and politics within academia
             </div>
             <div className="App-problem-button-carousel">
-              <button onClick={() => setMeritVideoOn(true)}>Video</button>
-              <button onClick={() => setMeritVideoOn(false)}>Text Details</button>
+              <button className={isMeritVideoOn ? 'activeButton' : ''} onClick={() => setMeritVideoOn(true)}>Video</button>
+              <button className={!isMeritVideoOn ? 'activeButton' : ''} onClick={() => setMeritVideoOn(false)}>Text Details</button>
             </div>
             <div>
               <div style={{display: isMeritVideoOn ? 'block' : 'none'}}>Video placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
@@ -66,14 +66,14 @@ function App() {
         </div>
 
         <div className="App-section App-problem">
-          <div className="App-problem-header sticky">Solving the economic problem - Eliminating reward mismatch</div>
+          <div className="App-problem-header sticky">Solving the economic problem</div>
           <div className="App-problem-body">
             <div>
-              dolor sit amet, consectetur elit, sed do tempor incididunt ut labore.
+              Eliminating reward mismatch
             </div>
             <div className="App-problem-button-carousel">
-              <button onClick={() => setEconomicVideoOn(true)}>Video</button>
-              <button onClick={() => setEconomicVideoOn(false)}>Text Details</button>
+              <button className={isEconomicVideoOn ? 'activeButton' : ''} onClick={() => setEconomicVideoOn(true)}>Video</button>
+              <button className={!isEconomicVideoOn ? 'activeButton' : ''} onClick={() => setEconomicVideoOn(false)}>Text Details</button>
             </div>
             <div>
               <div style={{display: isEconomicVideoOn ? 'block' : 'none'}}>Video placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>
@@ -83,14 +83,14 @@ function App() {
         </div>
 
         <div className="App-section App-problem">
-          <div className="App-problem-header sticky">Solving the trust problem - Targeting the replication crisis</div>
+          <div className="App-problem-header sticky">Solving the trust problem</div>
           <div className="App-problem-body">
             <div>
-              dolor sit amet, consectetur elit, sed do tempor incididunt ut labore.
+              Targeting the replication crisis
             </div>
             <div className="App-problem-button-carousel">
-              <button onClick={() => setTrustVideoOn(true)}>Video</button>
-              <button onClick={() => setTrustVideoOn(false)}>Text Details</button>
+              <button className={isTrustVideoOn ? 'activeButton' : ''} onClick={() => setTrustVideoOn(true)}>Video</button>
+              <button className={!isTrustVideoOn ? 'activeButton' : ''} onClick={() => setTrustVideoOn(false)}>Text Details</button>
             </div>
             <div>
               <div style={{display: isTrustVideoOn ? 'block' : 'none'}}>Video placeholder dolor sit amet, consectetur elit, sed do tempor incididunt ut labore. </div>

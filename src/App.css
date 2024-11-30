@@ -33,14 +33,14 @@
 
 .App-problem {
   margin-bottom: 20vh;
-  height: 100vh;
+  height: 60vh;
 }
 
 .App-problem-header {
   display: inline-block;
   line-height: 4.5rem;
   font-size: 3rem;
-  width: 45%;
+  width: 40%;
 }
 
 .sticky {
@@ -57,15 +57,15 @@
 }
 
 .App-problem-body > div:first-child {
-  line-height: 3.5rem;
-  font-size: 2.5rem;
+  line-height: 3rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
   color: gray;
 }
 
 .App-problem-body > div:last-child {
   padding: 2vw;
-  height: 20vh;
+  height: 30vh;
   border-radius: 15px;
   margin-top: 4vh;
   border: 1px solid gray;
@@ -91,16 +91,20 @@
   justify-content: space-between;
 }
 
+.activeButton {
+  background-color: var(--duke-blue);
+  color: white;
+}
 button {
-  background-color: gray;
+  color: gray;
   border: none;
   height: 35px;
   font-size: 15px;
   font-weight: 600;
-  color: white;
   border-radius: 25px;
   padding-left: 12px;
   padding-right: 12px;
+  transition: all 0.2s;
 }
 
 button:hover {
