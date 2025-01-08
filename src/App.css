@@ -20,7 +20,7 @@
 }
 
 .App-section {
-  height: 100vh;
+  height: 70vh;
   padding-top: 40px;
   width: inherit;
   margin-right: auto;
@@ -28,12 +28,17 @@
   opacity: 0;
 	transform: translateY(50px);
 	transition: opacity .8s, transform .8s;
+  margin-bottom: 0vh;
+}
+
+.App-body-section {
+  height: 100vh;
   margin-bottom: 15vh;
 }
 
 .App-problem {
   margin-bottom: 20vh;
-  height: 60vh;
+  /* height: 60vh; */
 }
 
 .App-problem-header {
@@ -65,7 +70,8 @@
 
 .App-problem-body > div:last-child {
   padding: 2vw;
-  height: 30vh;
+  font-size: 18px;
+  line-height: 1.3;
   border-radius: 15px;
   margin-top: 4vh;
   border: 1px solid gray;
@@ -97,6 +103,7 @@
 }
 button {
   color: gray;
+  background-color: white;
   border: none;
   height: 35px;
   font-size: 15px;
@@ -109,4 +116,11 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+.Footer-accent {
+  background-color: black;
+  z-index: 1;
+  padding: 10px;
+  width: 100vw;
 }
