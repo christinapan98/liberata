@@ -1,0 +1,12 @@
+.Hook-header {
+  font-size: 6rem;
+  line-height: 8rem;
+}
+
+.Hook-subheader {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 3.5rem;
+  width: 70%;
+  color: var(--light-blue);
+}

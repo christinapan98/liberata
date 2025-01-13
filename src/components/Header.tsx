@@ -13,13 +13,13 @@ function Header() {
                 Liberata
               </a>
               <a href="#section-two">
-                Creating solutions
+                Addressing problems
               </a>
               <a href="#section-three">
-                Video Playlist
+                How it works
               </a>
               <a href="#section-four">
-                FAQ
+                Video playlist
               </a>
             </span>
             
