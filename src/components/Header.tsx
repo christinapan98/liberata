@@ -21,6 +21,9 @@ function Header() {
               <a href="#section-four">
                 Video playlist
               </a>
+              <a href="#section-five">
+                Contact
+              </a>
             </span>
             
             {/* insert whitepaper link here */}

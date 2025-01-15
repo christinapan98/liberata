@@ -81,21 +81,22 @@ function App() {
         </div>
 
         {/* How it works */}
-        <div className="App-section App-body-section" id="section-three">
+        {/* <div className="App-section App-body-section" id="section-three">
           How it works - Introducing the shareholder model
-        </div>
+        </div> */}
 
         {/* Comprehensive video playlist */}
-        <div className="App-section App-body-section" id="section-four">
-          Video playlist
-        </div>
+        {/* <div className="App-section App-body-section" id="section-four">
+          <VideoPlaylist/>
+        </div> */}
 
-        <div className="App-section" style={{height: '50vh'}}>
+        {/* Contact form */}
+        <div className="App-section" style={{height: '50vh'}} id="section-five">
           <Contact/>
         </div>
       </div>
 
-      <Footer/>
+      {/* <Footer/> */}
       <div className="Footer-accent"></div>
     </div>
   );
