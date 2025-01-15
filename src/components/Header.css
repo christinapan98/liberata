@@ -24,7 +24,7 @@
 
 .Header-nav {
   display: flex;
-  width: 50%;
+  width: 40%;
   align-items: center;
   justify-content: space-between;
 }

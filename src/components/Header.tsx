@@ -18,9 +18,9 @@ function Header() {
               <a href="#section-three">
                 How it works
               </a>
-              <a href="#section-four">
+              {/* <a href="#section-four">
                 Video playlist
-              </a>
+              </a> */}
               <a href="#section-five">
                 Contact
               </a>
