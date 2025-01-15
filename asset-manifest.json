@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/liberata/static/css/main.f816d9ac.css",
+    "main.js": "/liberata/static/js/main.d91ae3da.js",
+    "static/js/453.a614f516.chunk.js": "/liberata/static/js/453.a614f516.chunk.js",
+    "static/media/Liberata_Section_One_White.mp4": "/liberata/static/media/Liberata_Section_One_White.466649f842f1a9d9044e.mp4",
+    "index.html": "/liberata/index.html",
+    "main.f816d9ac.css.map": "/liberata/static/css/main.f816d9ac.css.map",
+    "main.d91ae3da.js.map": "/liberata/static/js/main.d91ae3da.js.map",
+    "453.a614f516.chunk.js.map": "/liberata/static/js/453.a614f516.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f816d9ac.css",
+    "static/js/main.d91ae3da.js"
+  ]
+}
