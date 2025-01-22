@@ -16,27 +16,32 @@ function TrustProblemSection() {
           <button className={!isTrustContextVisible ? 'liberata-active-button' : ''} onClick={() => setTrustContextVisible(false)}>Liberata</button>
         </div>
         <div>
-          <div style={{display: isTrustContextVisible ? 'block' : 'none'}}>
+          {
+            isTrustContextVisible ?
+            <>
               <p>
-              This section concerns how the body of scientific literature can be made more robust and reliable. </p>
-              <p>
-              At present, the vast majority of scientific findings are supported only by a single study, due to a lack of incentive for replication studies. Because of this, for most research fields, it can be difficult for later works to detect errors in preceding works. The ever increasing scale of academic research only exacerbates this issue and has noticeably affected public trust in science.
+                This section concerns how the body of scientific literature can be made more robust and reliable. 
               </p>
               <p>
-              Solving this problem entails having a mechanism for incentivizing replication studies that is robust to collusion.
+                At present, the vast majority of scientific findings are supported only by a single study, due to a lack of incentive for replication studies. Because of this, for most research fields, it can be difficult for later works to detect errors in preceding works. The ever increasing scale of academic research only exacerbates this issue and has noticeably affected public trust in science.
               </p>
-          </div>
-          <div style={{display: !isTrustContextVisible ? 'block' : 'none'}}>
-            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', minHeight: '38vh'}}>
-              <div>
-                Liberata solves these problems by allotting shares to replicators of a study as well as to its authors and reviewers. This way, academics can also gain credit by duplicating an existing study, rather than only through the publication of a new one.
+              <p>
+                Solving this problem entails having a mechanism for incentivizing replication studies that is robust to collusion.
+              </p>
+            </>
+            :
+            <>
+              <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', minHeight: '43vh'}}>
+                <div>
+                  Liberata solves these problems by allotting shares to replicators of a study as well as to its authors and reviewers. This way, academics can also gain credit by duplicating an existing study, rather than only through the publication of a new one.
+                </div>
+                <a href="#section-three" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
+                  <span>Learn more</span>
+                  <ArrowForwardIcon/>
+                </a>
               </div>
-              <a href="#section-three" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
-                <span>Learn more</span>
-                <ArrowForwardIcon/>
-              </a>
-            </div>
-          </div>
+            </>
+          }
         </div>
       </div>
     </>

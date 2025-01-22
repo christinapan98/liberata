@@ -1,12 +1,37 @@
+@media (min-width: 450px) {
+  .Hook-header {
+    font-size: 4.5rem !important;
+    line-height: 7rem !important;
+  }
+  .Hook-subheader {
+    font-size: 1.6rem !important;
+    line-height: 3rem !important;
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .Hook-header {
+    font-size: 6rem !important;
+    line-height: 8rem !important;
+  }
+  .Hook-subheader {
+    font-size: 2rem !important;
+    line-height: 3rem !important;
+    width: 70%;
+  }
+}
+
 .Hook-header {
-  font-size: 6rem;
-  line-height: 8rem;
+  font-size: 3rem;
+  line-height: 4.5rem;
+  max-width: 30vw;
 }
 
 .Hook-subheader {
-  font-size: 2rem;
-  line-height: 3rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   margin-top: 3.5rem;
-  width: 70%;
   color: var(--light-blue);
+  margin-bottom: 2rem;
 }

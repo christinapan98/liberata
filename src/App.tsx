@@ -50,6 +50,63 @@ function App() {
     });
   }, []);
 
+  // Set up another observer for the main body sections
+  // Whenever they are scrolled into, detect the corresponding entry id
+  // Then add active class to the header title that matches the entry id
+  // Also be mindful of when none of the sections should be highlighted
+  // detect when section is scrolled out of as well
+  useEffect(() => {
+    const sectionOne = document.getElementById("section-one");
+    const sectionTwo = document.getElementById("section-two");
+    const sectionThree = document.getElementById("section-three");
+    const sectionFive = document.getElementById("section-five");
+    const sectionTwoHeader = document.getElementById("Header-problems");
+    const sectionThreeHeader = document.getElementById("Header-how-it-works");
+    const sectionFiveHeader = document.getElementById("Header-contact");
+    let prev: any;
+    const observerCallback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if(prev) {
+            prev.classList.remove('section-active');
+          }
+          switch(entry.target.id) {
+            case "section-two":
+              if(sectionTwoHeader) {
+                sectionTwoHeader.classList.add('section-active');
+                prev = sectionTwoHeader;
+              }
+              break;
+            case "section-three":
+              if(sectionThreeHeader) {
+                sectionThreeHeader.classList.add('section-active');
+                prev = sectionThreeHeader;
+              }
+              break;
+            case "section-five":
+              if(sectionFiveHeader) {
+                sectionFiveHeader.classList.add('section-active');
+                prev = sectionFiveHeader;
+              }
+              break;
+            default:
+              if(prev) {
+                prev.classList.remove('section-active');
+              }
+              break;
+          }
+        } else {
+            entry.target.classList.remove('section-active');
+        }
+      });
+    };
+    const observer = new IntersectionObserver(observerCallback);
+    observer.observe(sectionOne);
+    observer.observe(sectionTwo);
+    observer.observe(sectionThree);
+    observer.observe(sectionFive);
+  }, []);
+
   return (
     <div className="App">
       <div className="Header-accent"></div>
@@ -68,22 +125,24 @@ function App() {
         </div>
 
         {/* Three problems */}
-        <div className="App-section App-body-section App-problem" id="section-two">
-         <MeritProblemSection/>
-        </div>
+        <div id="section-two">
+          <div className="App-section App-body-section App-problem">
+            <MeritProblemSection/>
+          </div>
 
-        <div className="App-section App-body-section App-problem">
-          <EconomicProblemSection/>
-        </div>
+          <div className="App-section App-body-section App-problem">
+            <EconomicProblemSection/>
+          </div>
 
-        <div className="App-section App-body-section App-problem">
-          <TrustProblemSection/>
+          <div className="App-section App-body-section App-problem">
+            <TrustProblemSection/>
+          </div>
         </div>
 
         {/* How it works */}
-        {/* <div className="App-section App-body-section" id="section-three">
+        <div className="App-section App-body-section" id="section-three">
           How it works - Introducing the shareholder model
-        </div> */}
+        </div>
 
         {/* Comprehensive video playlist */}
         {/* <div className="App-section App-body-section" id="section-four">
@@ -91,7 +150,7 @@ function App() {
         </div> */}
 
         {/* Contact form */}
-        <div className="App-section" style={{height: '50vh'}} id="section-five">
+        <div className="App-section"  id="section-five">
           <Contact/>
         </div>
       </div>

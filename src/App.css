@@ -36,48 +36,69 @@
   margin-bottom: 15vh;
 }
 
+/* ------------------ 3 problems section styling------------------ */
+
+@media (min-width: 768px) {
+  .sticky {
+    position: sticky;
+    top: 12vh;
+  }
+  .App-problem-header {
+    line-height: 4.5rem;
+    font-size: 3rem;
+    width: 40%;
+  }
+  .App-problem-body {
+    width: 50%;
+    margin-top: 0px;
+  }
+  .App-problem-body > div:first-child {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .App-problem-body > div:last-child {
+    /* min-height: 40vh; */
+    padding: 2vw !important;
+    margin-bottom: 2vh;
+  }
+}
+
 .App-problem {
   margin-bottom: 20vh;
-  /* height: 60vh; */
 }
 
 .App-problem-header {
   display: inline-block;
   line-height: 4.5rem;
   font-size: 3rem;
-  width: 40%;
-}
-
-.sticky {
-  position: sticky;
-  top: 12vh;
 }
 
 .App-problem-body {
-  width: 50%;
-  height: inherit;
+  height: auto;
   display: flex;
   flex-direction: column;
   float: right;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
 }
 
 .App-problem-body > div:first-child {
-  line-height: 3rem;
-  font-size: 2rem;
+  line-height: 2.8rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
   color: gray;
 }
 
 .App-problem-body > div:last-child {
-  padding: 2vw;
+  padding: 2vw 4vw;
   color: rgb(95, 95, 95);
   font-size: 20px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
   border-radius: 15px;
   margin-top: 4vh;
-  min-height: 40vh;
   border: 1px solid gray;
+  height: auto;
 }
 
 #section-one {
@@ -124,6 +145,8 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+/* -------------------------------------------------- */
 
 .Footer-accent {
   background-color: black;

@@ -2,7 +2,6 @@ import React from 'react';
 import {ArrowOutward} from '@mui/icons-material';
 import './Header.css';
 
-
 function Header() {
   return (
     <>
@@ -12,16 +11,16 @@ function Header() {
               <a id="Header-logo" href="#section-one">
                 Liberata
               </a>
-              <a href="#section-two">
+              <a id="Header-problems" href="#section-two">
                 Addressing problems
               </a>
-              <a href="#section-three">
+              <a id="Header-how-it-works" href="#section-three">
                 How it works
               </a>
               {/* <a href="#section-four">
                 Video playlist
               </a> */}
-              <a href="#section-five">
+              <a id="Header-contact" href="#section-five">
                 Contact
               </a>
             </span>

@@ -1,6 +1,7 @@
 {
   "name": "liberata",
   "version": "0.1.0",
+  "homepage": "https://christinapan98.github.io/liberata",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -22,9 +23,12 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "babel-preset-react-app": "@babel/plugin-proposal-private-property-in-object"
+    "babel-preset-react-app": "@babel/plugin-proposal-private-property-in-object",
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

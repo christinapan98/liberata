@@ -66,6 +66,7 @@ function Contact() {
         <TextField 
         id="outlined-email" 
         label="Email" 
+        sx={{maxWidth: '455px'}}
         value={emailInputValue} 
         onChange={(e) => setEmailInputValue(e.target.value)} 
         onFocus={() => setSubmitVisible(true)}

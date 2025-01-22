@@ -1,7 +1,13 @@
-.Contact-body {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+@media screen and (min-width: 1000px) {
+  .Contact-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .Contact-text {
+    width: 40vw;
+    margin-bottom: 0vh;
+  }
 }
 
 .Contact-form {
@@ -16,6 +22,20 @@
   gap: 3px;
 }
 
+.Contact-text {
+  margin-bottom: 5vh;
+}
+
+.Contact-text-headline {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.Contact-text-subline {
+  font-size: 25px;
+  color: var(--accent-blue);
+}
+
 #outlined-fname {
   margin-left: 25px;
 }
@@ -26,6 +46,7 @@
 
 #outlined-email {
   margin-left: 25px;
+  max-width: 300px;
 }
 
 .outlined-submit {
@@ -36,7 +57,7 @@
   color: whitesmoke;
   border-radius: 5px;
   font-size: 15px;
-  width: 8vw;
+  width: 130px;
   transition: all 0.4s;
   transform: translateY(-15px);
   opacity: 0;
@@ -49,17 +70,4 @@
 
 #outlined-submit:hover{
   cursor: pointer;
-}
-
-.Contact-text {
-  width: 40vw;
-}
-.Contact-text-headline {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.Contact-text-subline {
-  font-size: 25px;
-  color: var(--accent-blue);
 }

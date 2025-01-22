@@ -11,7 +11,7 @@
 
 .Header-body {
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 35px;
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -24,13 +24,24 @@
 
 .Header-nav {
   display: flex;
-  width: 40%;
   align-items: center;
   justify-content: space-between;
+  min-width: 40vw;
 }
+
+.Header-nav a {
+  margin-right: 3vw;
+}
+
+
 
 #Header-logo {
   font-size: 18px;
   font-weight: 600;
   color: var(--duke-blue);
+}
+/* figure out how to add this class to whatever header section is currently active*/
+.section-active {
+  text-decoration: solid underline var(--light-peach) 3px;
+  text-underline-offset: 5.5px;
 }

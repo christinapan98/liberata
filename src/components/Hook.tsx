@@ -8,7 +8,7 @@ function Hook() {
         Introducing Liberata.
       </div>
       <div className="Hook-subheader">
-        An open-source academic literature and peer matching platform designed to make science more fair, transparent, and efficient
+      Open source academic publishing with incentivized peer review and replications
       </div>
     </>
   )
