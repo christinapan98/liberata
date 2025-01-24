@@ -37,7 +37,7 @@ function EconomicProblemSection() {
                   <p>
                     Liberata seeks to address these issues with an open-source publishing platform that eliminates fees while also providing quality control by incentivizing academics to review papers within the platform. This incentive comes within the form of shares given out for peer reviews, ensuring that reviewers of a work of research are recognized in addition to its authors.
                   </p>
-                  <a href="#section-three" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
+                  <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
                     <span>Learn more</span>
                     <ArrowForwardIcon/>
                   </a>

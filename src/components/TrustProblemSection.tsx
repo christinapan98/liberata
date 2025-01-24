@@ -39,7 +39,7 @@ function TrustProblemSection() {
                 <div>
                   Liberata solves these problems by allotting shares to replicators of a study as well as to its authors and reviewers. This way, academics can also gain credit by duplicating an existing study, rather than only through the publication of a new one.
                 </div>
-                <a href="#section-three" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
+                <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
                   <span>Learn more</span>
                   <ArrowForwardIcon/>
                 </a>

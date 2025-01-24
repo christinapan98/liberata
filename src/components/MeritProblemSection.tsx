@@ -37,7 +37,7 @@ function MeritProblemSection() {
                 <p>
                   Liberata seeks to address these issues by introducing a shareholder model within its platform where credit is distributed as quantifiable shares of a whole. In contrast to the traditional authorship model, where contributions are hard to determine and subject to politics, Liberata’s shareholder model ensures that contributions of every author are fairly recognized.
                 </p>
-                <a href="#section-three" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
+                <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
                   <span>Learn more</span>
                   <ArrowForwardIcon/>
                 </a>
