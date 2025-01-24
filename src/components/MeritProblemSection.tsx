@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import meritImg from '../images/Merit Problem.png';
 import '../App.css';
 
 function MeritProblemSection() {
@@ -8,7 +9,8 @@ function MeritProblemSection() {
   return (
     <>
       <div className="App-problem-header sticky">
-        Addressing the merit problem
+        <div>Addressing the merit problem</div>
+        <img src={meritImg}/>
       </div>
       <div className="App-problem-body">
         <div>

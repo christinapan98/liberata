@@ -1,3 +1,7 @@
+@media (max-width: 400px) {
+
+}
+
 .Header-wrapper {
   /* width: 100vw; */
   display: flex;
@@ -32,8 +36,6 @@
 .Header-nav a {
   margin-right: 3vw;
 }
-
-
 
 #Header-logo {
   font-size: 18px;

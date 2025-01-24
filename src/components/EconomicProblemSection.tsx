@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import economicImg from '../images/Economic Problem.png';
 import "../App.css";
 
 function EconomicProblemSection() {
@@ -7,7 +8,10 @@ function EconomicProblemSection() {
   const [isEconomicContextVisible, setEconomicContextVisible] = useState(true);
   return (
     <>
-      <div className="App-problem-header sticky">Addressing the economic problem</div>
+      <div className="App-problem-header sticky">
+        <div>Addressing the economic problem</div>
+        <img src={economicImg}/>
+        </div>
       <div className="App-problem-body">
         <div>
         Eliminating reward mismatch among the academic publishing community

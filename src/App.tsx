@@ -8,6 +8,8 @@ import EconomicProblemSection from './components/EconomicProblemSection';
 import TrustProblemSection from './components/TrustProblemSection';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import ShareholderModel from './components/ShareholderModel';
+import FAQ from './components/FAQ';
 
 function App() {
   const videoRef = useRef(null);
@@ -141,13 +143,13 @@ function App() {
 
         {/* How it works */}
         <div className="App-section App-body-section" id="section-three">
-          How it works - Introducing the shareholder model
+          <ShareholderModel/>
         </div>
 
-        {/* Comprehensive video playlist */}
-        {/* <div className="App-section App-body-section" id="section-four">
-          <VideoPlaylist/>
-        </div> */}
+        {/* Frequently asked questions */}
+        <div className="App-section App-body-section" id="section-four">
+          <FAQ/>
+        </div>
 
         {/* Contact form */}
         <div className="App-section"  id="section-five">

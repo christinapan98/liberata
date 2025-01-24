@@ -4,7 +4,7 @@ import "./Hook.css";
 function Hook() {
   return (
     <>
-      <div className="Hook-header">
+      <div className="Hook-header" style={{fontWeight: '550'}}>
         Introducing Liberata.
       </div>
       <div className="Hook-subheader">

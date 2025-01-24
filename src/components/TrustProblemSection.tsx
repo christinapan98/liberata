@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import trustImg from '../images/Trust Problem.png';
 import "../App.css";
 
 function TrustProblemSection() {
   const [isTrustContextVisible, setTrustContextVisible] = useState(true);
   return (
     <>
-      <div className="App-problem-header sticky">Addressing the trust problem</div>
+      <div className="App-problem-header sticky">
+        <div>Addressing the trust problem</div>
+        <img src={trustImg}/>
+      </div>
       <div className="App-problem-body">
         <div>
           Paving the way for more reliable research by incentivizing the replication of scientific studies

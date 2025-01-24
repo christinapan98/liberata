@@ -12,14 +12,14 @@ function Header() {
                 Liberata
               </a>
               <a id="Header-problems" href="#section-two">
-                Addressing problems
+                Current problems
               </a>
               <a id="Header-how-it-works" href="#section-three">
-                How it works
+                The Liberata system
               </a>
-              {/* <a href="#section-four">
-                Video playlist
-              </a> */}
+              <a href="#section-four">
+                FAQ
+              </a>
               <a id="Header-contact" href="#section-five">
                 Contact
               </a>

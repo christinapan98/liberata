@@ -61,6 +61,9 @@
     padding: 2vw !important;
     margin-bottom: 2vh;
   }
+  .App-problem-header img {
+    display: block !important;
+  }
 }
 
 .App-problem {
@@ -71,6 +74,15 @@
   display: inline-block;
   line-height: 4.5rem;
   font-size: 3rem;
+}
+
+.App-problem-header img {
+  display: none;
+  width: 260px;
+  height: auto;
+  opacity: .75;
+  margin-left: 20px;
+  margin-top: 5vh;
 }
 
 .App-problem-body {
