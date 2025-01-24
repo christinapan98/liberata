@@ -1,30 +1,20 @@
 {
   "files": {
-    "main.css": "/liberata/static/css/main.34efa2e6.css",
-    "main.js": "/liberata/static/js/main.35ba3d51.js",
+    "main.css": "/liberata/static/css/main.4402b4bc.css",
+    "main.js": "/liberata/static/js/main.44f80e6f.js",
     "static/js/453.a614f516.chunk.js": "/liberata/static/js/453.a614f516.chunk.js",
     "static/media/Liberata_Section_One_White.mp4": "/liberata/static/media/Liberata_Section_One_White.466649f842f1a9d9044e.mp4",
-    "static/media/inter-latin-ext-400-normal.woff": "/liberata/static/media/inter-latin-ext-400-normal.1c20f7dc20d731a18fcd.woff",
-    "static/media/inter-latin-400-normal.woff": "/liberata/static/media/inter-latin-400-normal.b0c8fe9db56dd415a25a.woff",
-    "static/media/inter-latin-ext-400-normal.woff2": "/liberata/static/media/inter-latin-ext-400-normal.3d10c85fbd16969509a2.woff2",
-    "static/media/inter-latin-400-normal.woff2": "/liberata/static/media/inter-latin-400-normal.9698cc7dbf147ed363b6.woff2",
-    "static/media/inter-cyrillic-ext-400-normal.woff": "/liberata/static/media/inter-cyrillic-ext-400-normal.e89451624c6caf35687f.woff",
-    "static/media/inter-cyrillic-ext-400-normal.woff2": "/liberata/static/media/inter-cyrillic-ext-400-normal.fd1478dcc74de00ee4c0.woff2",
-    "static/media/inter-cyrillic-400-normal.woff": "/liberata/static/media/inter-cyrillic-400-normal.e2841352dd9512ff455b.woff",
-    "static/media/inter-greek-400-normal.woff": "/liberata/static/media/inter-greek-400-normal.a42da273bb968bf2058d.woff",
-    "static/media/inter-greek-400-normal.woff2": "/liberata/static/media/inter-greek-400-normal.a8de720a6f13c66c8a4e.woff2",
-    "static/media/inter-cyrillic-400-normal.woff2": "/liberata/static/media/inter-cyrillic-400-normal.cb04b2ee2f7d192478b8.woff2",
-    "static/media/inter-greek-ext-400-normal.woff": "/liberata/static/media/inter-greek-ext-400-normal.b9e1e89444a313a63b91.woff",
-    "static/media/inter-vietnamese-400-normal.woff": "/liberata/static/media/inter-vietnamese-400-normal.96f8adc74b63e1a3655f.woff",
-    "static/media/inter-greek-ext-400-normal.woff2": "/liberata/static/media/inter-greek-ext-400-normal.f2fa0d9ef98f59d4a75b.woff2",
-    "static/media/inter-vietnamese-400-normal.woff2": "/liberata/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
+    "static/media/OrigamiBird.png": "/liberata/static/media/OrigamiBird.6723406d1e4dfedd8d02.png",
+    "static/media/Economic Problem.png": "/liberata/static/media/Economic Problem.a17d9e03d350b671fb9b.png",
+    "static/media/Trust Problem.png": "/liberata/static/media/Trust Problem.e59c3bfed5e998002f0e.png",
+    "static/media/Merit Problem.png": "/liberata/static/media/Merit Problem.c765de7772e5585eaaab.png",
     "index.html": "/liberata/index.html",
-    "main.34efa2e6.css.map": "/liberata/static/css/main.34efa2e6.css.map",
-    "main.35ba3d51.js.map": "/liberata/static/js/main.35ba3d51.js.map",
+    "main.4402b4bc.css.map": "/liberata/static/css/main.4402b4bc.css.map",
+    "main.44f80e6f.js.map": "/liberata/static/js/main.44f80e6f.js.map",
     "453.a614f516.chunk.js.map": "/liberata/static/js/453.a614f516.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34efa2e6.css",
-    "static/js/main.35ba3d51.js"
+    "static/css/main.4402b4bc.css",
+    "static/js/main.44f80e6f.js"
   ]
 }
