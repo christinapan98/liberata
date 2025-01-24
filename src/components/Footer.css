@@ -10,9 +10,11 @@
   background-color: var(--duke-blue);
   width: 100vw;
   height: 50vh;
+  display: block;
 }
 
 .Footer-text {
+  display: block;
   width: 80vw;
   padding-top: 10vh;
   text-align: center;

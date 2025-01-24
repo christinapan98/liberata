@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import './Contact.css';
 import TextField from '@mui/material/TextField';
+import Footer from './Footer';
+import './Contact.css';
 
 function Contact() {
   const [emailInputValue, setEmailInputValue] = useState("");

@@ -1,5 +1,6 @@
 @import 'global.css';
 
+
 .App {
   display: flex;
   flex-direction: column;
@@ -29,7 +30,6 @@
   opacity: 0;
 	transform: translateY(50px);
 	transition: opacity .8s, transform .8s;
-  margin-bottom: 0vh;
 }
 
 .App-body-section {

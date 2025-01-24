@@ -157,9 +157,9 @@ function App() {
         </div>
       </div>
 
-      <div style={{display: 'block'}}>
-        <Footer/>
-        <div className="Footer-accent"></div>
+      <div className="App-footer" id="App-footer">
+        {/* <Footer/>
+        <div className="Footer-accent"></div> */}
       </div>
       
     </div>
