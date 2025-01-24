@@ -157,8 +157,11 @@ function App() {
         </div>
       </div>
 
-      {/* <Footer/> */}
-      <div className="Footer-accent"></div>
+      <div style={{display: 'block'}}>
+        <Footer/>
+        <div className="Footer-accent"></div>
+      </div>
+      
     </div>
   );
 }

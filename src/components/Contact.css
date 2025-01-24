@@ -49,6 +49,15 @@
   max-width: 300px;
 }
 
+#outlined-institution {
+  margin-left: 25px;
+}
+
+#outlined-message {
+  margin-left: 25px;
+}
+
+
 .outlined-submit {
   margin-top: 27px;
   border: none;
@@ -68,6 +77,6 @@
   opacity: 1;
 }
 
-#outlined-submit:hover{
+.Contact-form input:hover {
   cursor: pointer;
 }

@@ -78,6 +78,7 @@ function Contact() {
           <TextField
           id="outlined-fname" 
           label="First name" 
+          required
           value={fNameInputValue} 
           onChange={(e) => setFNameInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
@@ -85,6 +86,7 @@ function Contact() {
           <TextField 
           id="outlined-lname" 
           label="Last name" 
+          required
           value={lNameInputValue} 
           onChange={(e) => setLNameInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
@@ -95,6 +97,7 @@ function Contact() {
           <TextField 
           id="outlined-email" 
           label="Email" 
+          required
           sx={{maxWidth: '455px'}}
           value={emailInputValue} 
           onChange={(e) => setEmailInputValue(e.target.value)} 
@@ -122,6 +125,7 @@ function Contact() {
         onFocus={() => setSubmitVisible(true)}
         onBlur={() => validateEmail(emailInputValue)}/>
 
+      {/* todo: insert loading spinner here to show loading state while information is being submitted */}
         <input type="submit" value="Submit" className={`outlined-submit ${isSubmitVisible && 'is-visible'}`}/>
       </form>
     </div>

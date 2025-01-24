@@ -1,5 +1,24 @@
+@media (min-width: 400px) {
+
+  .Footer-text {
+    font-size: 2.5rem !important;
+    line-height: 3.7rem !important;
+  }
+}
+
 .Footer-body {
   background-color: var(--duke-blue);
   width: 100vw;
-  height: 80vh;
+  height: 50vh;
+}
+
+.Footer-text {
+  width: 80vw;
+  padding-top: 10vh;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(249, 244, 239);
 }

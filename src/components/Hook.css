@@ -60,4 +60,5 @@
   position: relative;
   top: 150px;
   width: auto;
+  z-index: -1;
 }
