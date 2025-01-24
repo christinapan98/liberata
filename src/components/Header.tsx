@@ -14,20 +14,20 @@ function Header() {
               <a id="Header-problems" href="#section-two">
                 Current problems
               </a>
-              <a id="Header-how-it-works" href="#section-three">
+              {/* <a id="Header-how-it-works" href="#section-three">
                 The Liberata system
-              </a>
-              <a href="#section-four">
+              </a> */}
+              {/* <a href="#section-four">
                 FAQ
-              </a>
+              </a> */}
               <a id="Header-contact" href="#section-five">
                 Contact
               </a>
             </span>
             
             {/* insert whitepaper link here */}
-            <a href="" style={{display: 'flex', alignItems: 'bottom'}}> 
-              Whitepaper
+            <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'bottom'}}> 
+              Technical paper
               <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
             </a>
         </div>

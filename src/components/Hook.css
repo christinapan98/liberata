@@ -6,24 +6,35 @@
   .Hook-subheader {
     font-size: 1.6rem !important;
     line-height: 3rem !important;
-    width: 80%;
+    /* width: 80%; */
   }
 }
 
 @media (min-width: 768px) {
   .Hook-header {
-    font-size: 6rem !important;
-    line-height: 8rem !important;
+    font-size: 7rem !important;
+    line-height: 8.5rem !important;
   }
   .Hook-subheader {
     font-size: 2rem !important;
     line-height: 3rem !important;
-    width: 70%;
+    /* width: 70%; */
+  }
+  .Hook-wrapper img {
+    display: block !important;
   }
 }
 
+@media (min-width: 1000px) {
+  .Hook-wrapper img {
+    top: 100px !important;
+    height: 500px !important;
+  }
+  
+}
+
 .Hook-header {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 4.5rem;
   max-width: 30vw;
 }
@@ -34,4 +45,19 @@
   margin-top: 3.5rem;
   color: var(--light-blue);
   margin-bottom: 2rem;
+  min-width: 50vw;
+}
+
+.Hook-wrapper {
+  display: flex;
+  margin-bottom: 10vh;
+}
+
+.Hook-wrapper img {
+  display: none;
+  opacity: .7;
+  height: 400px;
+  position: relative;
+  top: 150px;
+  width: auto;
 }

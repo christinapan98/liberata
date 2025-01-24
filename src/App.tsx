@@ -60,7 +60,7 @@ function App() {
   useEffect(() => {
     const sectionOne = document.getElementById("section-one");
     const sectionTwo = document.getElementById("section-two");
-    const sectionThree = document.getElementById("section-three");
+    // const sectionThree = document.getElementById("section-three");
     const sectionFive = document.getElementById("section-five");
     const sectionTwoHeader = document.getElementById("Header-problems");
     const sectionThreeHeader = document.getElementById("Header-how-it-works");
@@ -105,7 +105,7 @@ function App() {
     const observer = new IntersectionObserver(observerCallback);
     observer.observe(sectionOne);
     observer.observe(sectionTwo);
-    observer.observe(sectionThree);
+    // observer.observe(sectionThree);
     observer.observe(sectionFive);
   }, []);
 
@@ -142,14 +142,14 @@ function App() {
         </div>
 
         {/* How it works */}
-        <div className="App-section App-body-section" id="section-three">
+        {/* <div className="App-section App-body-section" id="section-three">
           <ShareholderModel/>
-        </div>
+        </div> */}
 
         {/* Frequently asked questions */}
-        <div className="App-section App-body-section" id="section-four">
+        {/* <div className="App-section App-body-section" id="section-four">
           <FAQ/>
-        </div>
+        </div> */}
 
         {/* Contact form */}
         <div className="App-section"  id="section-five">
