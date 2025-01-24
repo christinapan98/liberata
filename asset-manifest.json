@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/liberata/static/css/main.323404af.css",
-    "main.js": "/liberata/static/js/main.6604ed73.js",
+    "main.js": "/liberata/static/js/main.b2a185a7.js",
     "static/js/453.a614f516.chunk.js": "/liberata/static/js/453.a614f516.chunk.js",
     "static/media/Liberata_Section_One_White.mp4": "/liberata/static/media/Liberata_Section_One_White.466649f842f1a9d9044e.mp4",
     "static/media/OrigamiBird.png": "/liberata/static/media/OrigamiBird.6723406d1e4dfedd8d02.png",
@@ -10,11 +10,11 @@
     "static/media/Merit Problem.png": "/liberata/static/media/Merit Problem.c765de7772e5585eaaab.png",
     "index.html": "/liberata/index.html",
     "main.323404af.css.map": "/liberata/static/css/main.323404af.css.map",
-    "main.6604ed73.js.map": "/liberata/static/js/main.6604ed73.js.map",
+    "main.b2a185a7.js.map": "/liberata/static/js/main.b2a185a7.js.map",
     "453.a614f516.chunk.js.map": "/liberata/static/js/453.a614f516.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.323404af.css",
-    "static/js/main.6604ed73.js"
+    "static/js/main.b2a185a7.js"
   ]
 }
