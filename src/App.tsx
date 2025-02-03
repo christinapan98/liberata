@@ -13,6 +13,8 @@ import FAQ from './components/FAQ';
 
 function App() {
   const videoRef = useRef(null);
+  const problemRef = useRef(null);
+  const contactRef = useRef(null);
   let shouldAutoplay = true;
 
   // Overview video observer
@@ -109,10 +111,28 @@ function App() {
     observer.observe(sectionFive);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    console.log("calling scrollToSection");
+    switch(sectionId) {
+      case "section-two":
+        if(problemRef.current) {
+          problemRef.current.scrollIntoView({behavior: 'smooth'});
+        }
+        break;
+      case "section-five":
+        if(contactRef.current) {
+          contactRef.current.scrollIntoView({behavior: 'smooth'});
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="App">
       <div className="Header-accent"></div>
-      <Header/>
+      <Header scrollToSection={scrollToSection} />
 
       <div className="App-body">
         {/* Hook and overview */}
@@ -127,7 +147,7 @@ function App() {
         </div>
 
         {/* Three problems */}
-        <div id="section-two">
+        <div id="section-two" ref={problemRef}>
           <div className="App-section App-body-section App-problem">
             <MeritProblemSection/>
           </div>
@@ -152,12 +172,12 @@ function App() {
         </div> */}
 
         {/* Contact form */}
-        <div className="App-section"  id="section-five">
+        <div className="App-section" ref={contactRef} id="section-five">
           <Contact/>
         </div>
       </div>
 
-      <div className="App-footer" id="App-footer">
+      <div className="App-footer" id="App-footer" style={{height: '13vh'}}>
         {/* <Footer/>
         <div className="Footer-accent"></div> */}
       </div>

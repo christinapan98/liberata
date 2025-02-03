@@ -1,6 +1,4 @@
-@media (max-width: 400px) {
 
-}
 
 .Header-wrapper {
   width: 100vw;
@@ -10,7 +8,7 @@
   background-color: white;
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 9;
 }
 
 .Header-body {
@@ -21,9 +19,21 @@
   justify-content: space-between;
   margin-bottom: 10px;
   align-items: center;
-  width: 86vw;
+  width: 78vw !important;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 700px) {
+  .Header-body {
+    width: 86vw !important;
+  }
+  .Header-navbar {
+    visibility: visible !important;
+  }
+  .Header-hamburger {
+    display: none !important;
+  }
 }
 
 .Header-nav {
@@ -33,8 +43,20 @@
   min-width: 30vw;
 }
 
+.Header-navbar {
+  visibility: hidden;
+}
+
 .Header-nav a {
   margin-right: 3vw;
+}
+
+.Header-hamburger {
+  display: block;
+}
+
+.Header-hamburger:hover {
+  cursor: pointer;
 }
 
 #Header-logo {

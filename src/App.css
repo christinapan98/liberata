@@ -15,7 +15,7 @@
 }
 
 .App-body {
-  width: 86vw;
+  width: 78vw;
   display: block;
   margin-left: auto;
   margin-right: auto;  
@@ -38,15 +38,19 @@
 }
 
 /* ------------------ 3 problems section styling------------------ */
-
+@media (min-width: 700px) {
+  .App-body {
+    width: 86vw;
+  }
+}
 @media (min-width: 1050px) {
   .sticky {
     position: sticky;
     top: 12vh;
   }
   .App-problem-header {
-    line-height: 4.5rem;
-    font-size: 3rem;
+    line-height: 4.5rem !important;
+    font-size: 3rem !important;
     width: 40%;
   }
   .App-problem-body {
@@ -54,11 +58,12 @@
     margin-top: 0px;
   }
   .App-problem-body > div:first-child {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 2rem !important;
+    line-height: 3rem !important;
   }
   .App-problem-body > div:last-child {
     /* min-height: 40vh; */
+    font-size: 20px !important;
     padding: 2vw !important;
     margin-bottom: 2vh;
   }
@@ -73,8 +78,9 @@
 
 .App-problem-header {
   display: inline-block;
-  line-height: 4.5rem;
-  font-size: 3rem;
+  line-height: 3.8rem;
+  font-size: 2.6rem;
+  margin-bottom: .8rem;
 }
 
 .App-problem-header img {
@@ -94,8 +100,8 @@
 }
 
 .App-problem-body > div:first-child {
-  line-height: 2.8rem;
-  font-size: 1.8rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
   color: gray;
 }
@@ -103,7 +109,7 @@
 .App-problem-body > div:last-child {
   padding: 2vw 4vw;
   color: rgb(95, 95, 95);
-  font-size: 20px;
+  font-size: 16px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
   border-radius: 15px;
