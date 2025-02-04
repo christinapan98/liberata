@@ -112,7 +112,6 @@ function App() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    console.log("calling scrollToSection");
     switch(sectionId) {
       case "section-two":
         if(problemRef.current) {

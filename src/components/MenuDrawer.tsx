@@ -26,17 +26,17 @@ function MenuDrawer({scrollToSection}) {
           </ListItem>
         ))}
       </List>
-      <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
+      <Divider/>
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton>
             <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{fontSize: '15px', display: 'flex', alignItems: 'bottom'}}> 
               Technical paper
               <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
             </a>
-            </ListItemButton>
-          </ListItem>
-       </List>
+          </ListItemButton>
+        </ListItem>
+      </List>
     </Box>
   );
 
