@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/liberata/build/static/css/main.10e90bb6.css",
-    "main.js": "/liberata/build/static/js/main.7a05e6ca.js",
+    "main.css": "/static/css/main.10e90bb6.css",
+    "main.js": "/static/js/main.7a05e6ca.js",
     "static/js/453.a614f516.chunk.js": "/static/js/453.a614f516.chunk.js",
     "static/media/Liberata_Section_One_White.mp4": "/static/media/Liberata_Section_One_White.466649f842f1a9d9044e.mp4",
     "static/media/OrigamiBird.png": "/static/media/OrigamiBird.6723406d1e4dfedd8d02.png",
     "static/media/Economic Problem.png": "/static/media/Economic Problem.a17d9e03d350b671fb9b.png",
     "static/media/Trust Problem.png": "/static/media/Trust Problem.e59c3bfed5e998002f0e.png",
     "static/media/Merit Problem.png": "/static/media/Merit Problem.c765de7772e5585eaaab.png",
-    "index.html": "/liberata/build/index.html",
-    "main.10e90bb6.css.map": "/liberata/build/static/css/main.10e90bb6.css.map",
-    "main.7a05e6ca.js.map": "/liberata/build/static/js/main.7a05e6ca.js.map",
-    "453.a614f516.chunk.js.map": "/liberata/build/static/js/453.a614f516.chunk.js.map"
+    "index.html": "/index.html",
+    "main.10e90bb6.css.map": "/static/css/main.10e90bb6.css.map",
+    "main.7a05e6ca.js.map": "/static/js/main.7a05e6ca.js.map",
+    "453.a614f516.chunk.js.map": "/static/js/453.a614f516.chunk.js.map"
   },
   "entrypoints": [
     "build/static/css/main.10e90bb6.css",
