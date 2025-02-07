@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.10e90bb6.css",
-    "main.js": "/static/js/main.c706ff20.js",
+    "main.css": "/static/css/main.4833261e.css",
+    "main.js": "/static/js/main.593c9703.js",
     "static/js/453.a614f516.chunk.js": "/static/js/453.a614f516.chunk.js",
     "static/media/Liberata_Section_One_White.mp4": "/static/media/Liberata_Section_One_White.466649f842f1a9d9044e.mp4",
     "static/media/OrigamiBird.png": "/static/media/OrigamiBird.6723406d1e4dfedd8d02.png",
@@ -9,12 +9,12 @@
     "static/media/Trust Problem.png": "/static/media/Trust Problem.e59c3bfed5e998002f0e.png",
     "static/media/Merit Problem.png": "/static/media/Merit Problem.c765de7772e5585eaaab.png",
     "index.html": "/index.html",
-    "main.10e90bb6.css.map": "/static/css/main.10e90bb6.css.map",
-    "main.c706ff20.js.map": "/static/js/main.c706ff20.js.map",
+    "main.4833261e.css.map": "/static/css/main.4833261e.css.map",
+    "main.593c9703.js.map": "/static/js/main.593c9703.js.map",
     "453.a614f516.chunk.js.map": "/static/js/453.a614f516.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.10e90bb6.css",
-    "static/js/main.c706ff20.js"
+    "static/css/main.4833261e.css",
+    "static/js/main.593c9703.js"
   ]
 }
