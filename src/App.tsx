@@ -1,7 +1,8 @@
 import React, {useEffect, useRef} from 'react';
 import './App.css';
 import Header from './components/Header';
-import OverviewVideo from './videos/Liberata_Overview.mp4'
+// import OverviewVideo from './videos/Liberata_Overview.mp4';
+import SectionOneVideo from './videos/Liberata_Section_One_White.mp4';
 import Hook from './components/Hook';
 import MeritProblemSection from './components/MeritProblemSection';
 import EconomicProblemSection from './components/EconomicProblemSection';
@@ -140,7 +141,7 @@ function App() {
         </div>
 
         <div className="App-section App-body-section">
-          <video ref={videoRef} src={OverviewVideo} width="100%" 
+          <video ref={videoRef} src={SectionOneVideo} width="100%" 
           id="section-one-video"
           controls muted/>
         </div>
