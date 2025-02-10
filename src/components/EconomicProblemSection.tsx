@@ -25,10 +25,10 @@ function EconomicProblemSection() {
             isEconomicContextVisible ?
               <>
                 <p>
-                  The economic problem concerns how the proceeds from a work of research is split up among the parties involved in the publishing process. After funding is secured, a key mismatch arises: while researchers do most of the work, private publishing companies collect most of the revenue through subscription and publishing fees.
+                  The economic problem concerns how the proceeds from a work of research are split up among the involved parties. After funding is secured, typically via government grants, a key mismatch arises: while researchers do most of the work, private publishing companies collect most of the revenue from publications through subscription and publishing fees.
                 </p>
                 <p>
-                  Though publishers’ fees are justified by their content curation, this service is still done by a volunteer-based peer review effort from academics that costs publishers very little. This system could be made more effective if fees could be eliminated while preserving quality. Current open-source publishing platforms have removed fees but haven't yet developed strong quality control mechanisms.
+                  Though publishers’ fees are justified by their content curation, this service is still done by a volunteer-based peer review effort from academics. This system could be made more effective if fees were removed while preserving quality. Current open-source publishing platforms have removed fees but haven't developed strong quality control mechanisms yet.
                 </p>
               </>
             :

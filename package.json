@@ -1,7 +1,7 @@
 {
   "name": "liberata",
   "version": "0.1.0",
-  "homepage": "https://christinapan98.github.io/liberata",
+  "homepage": "https://christinapan98.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -25,16 +25,16 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
     "babel-preset-react-app": "@babel/plugin-proposal-private-property-in-object",
     "gh-pages": "^6.3.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "cp CNAME build/ && gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject", 
+    "deploy": "cp CNAME build/ && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

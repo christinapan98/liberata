@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
 import Footer from './Footer';
+import { CircularProgress } from '@mui/material';
 import './Contact.css';
 
 function Contact() {
@@ -10,6 +11,9 @@ function Contact() {
   const [institutionInputValue, setInstitutionInputValue] = useState("");
   const [messageInputValue, setMessageInputValue] = useState("");
   const [isSubmitVisible, setSubmitVisible] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [isSuccessVisible, setSuccessVisible] = useState(false);
+  const [isErrorVisible, setErrorVisible] = useState(false);
 
   const handleContactFormSubmit = (e: any) => {
     e.preventDefault();
@@ -17,6 +21,7 @@ function Contact() {
     if(!validateFirstName(fNameInputValue) || !validateLastName(lNameInputValue) || !validateEmail(emailInputValue)) {
       return;
     }
+    setLoading(true);
     const formData = new FormData();
     formData.append('Email', emailInputValue);
     formData.append('First name', fNameInputValue);
@@ -36,16 +41,20 @@ function Contact() {
       return response.json();
     })
     .then(data => {
-      alert("Success!");
       console.log(data);
+      setSuccessVisible(true);
+      setLoading(false);
     })
     .catch(error => {
       console.error('There has been a problem with your fetch operation:', error);
+      setErrorVisible(true);
+      setLoading(false);
     });
-
     setEmailInputValue("");
     setFNameInputValue("");
     setLNameInputValue("");
+    setInstitutionInputValue("");
+    setMessageInputValue("");
   }
 
 
@@ -120,14 +129,25 @@ function Contact() {
         <TextField 
         id="outlined-message" 
         label="Message" 
-        sx={{maxWidth: '455px'}}
+        sx={{maxWidth: '455px', marginBottom: '27px'}}
         value={messageInputValue} 
         onChange={(e) => setMessageInputValue(e.target.value)} 
         onFocus={() => setSubmitVisible(true)}
         onBlur={() => validateEmail(emailInputValue)}/>
 
-      {/* todo: insert loading spinner here to show loading state while information is being submitted */}
-        <input type="submit" value="Submit" className={`outlined-submit ${isSubmitVisible && 'is-visible'}`}/>
+
+        {isLoading && <CircularProgress/>}
+        {!isLoading && !isSuccessVisible &&
+          <input type="submit" value="Submit" className={`outlined-submit ${isSubmitVisible && 'is-visible'}`}/>
+        }
+
+        {isSuccessVisible &&
+          <div>Thank you! We'll be in touch regarding future updates.</div>
+        }
+
+        {isErrorVisible &&
+          <div>There was an error submitting your information, please try again.</div>
+        }
       </form>
     </div>
   );

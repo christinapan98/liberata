@@ -58,12 +58,12 @@
     margin-top: 0px;
   }
   .App-problem-body > div:first-child {
-    font-size: 2rem !important;
-    line-height: 3rem !important;
+    font-size: 1.8rem !important;
+    line-height: 2.8rem !important;
   }
   .App-problem-body > div:last-child {
     /* min-height: 40vh; */
-    font-size: 20px !important;
+    font-size: 17.5px !important;
     padding: 2vw !important;
     margin-bottom: 2vh;
   }
@@ -109,7 +109,7 @@
 .App-problem-body > div:last-child {
   padding: 2vw 4vw;
   color: rgb(95, 95, 95);
-  font-size: 16px;
+  font-size: 15px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
   border-radius: 15px;

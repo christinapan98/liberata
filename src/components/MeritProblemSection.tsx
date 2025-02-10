@@ -28,7 +28,7 @@ function MeritProblemSection() {
               The merit problem concerns how scientific contributions are recognized within academia.
               </p>
               <p>
-              In the current system, an author’s position on a paper is imprecisely correlated to their contributions on that paper. For example, the first author position is typically considered disproportionally more prestigious than other positions regardless of other authors’ contributions. This system is prone to political maneuvering within labs and institutions as researchers compete for authorship positions. Additionally, there is no recognizable form of credit given to other key roles within the scientific process, such as peer reviewers and study replicators.
+                In the current system, an author’s position on a paper is imprecisely correlated to their contributions on that paper. For example, the first author position is typically considered disproportionally more prestigious than other positions regardless of other authors’ contributions. This system is prone to political maneuvering within labs and institutions as researchers compete for authorship positions. Additionally, there is no recognizable form of credit given to other key roles within the scientific process, like peer reviewers and study replicators.
               </p>
             </>
               :
