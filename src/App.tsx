@@ -141,7 +141,7 @@ function App() {
         </div>
 
         <div className="App-section App-body-section">
-          <video ref={videoRef} src={SectionOneVideo} width="100%" 
+          <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Liberata_Overview.mp4" width="100%" 
           id="section-one-video"
           controls muted/>
         </div>
