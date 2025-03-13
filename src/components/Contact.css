@@ -3,13 +3,17 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
+    clear: both;
   }
   .Contact-text {
-    width: 40vw;
+    width: 40%;
     margin-bottom: 0vh;
   }
   .Contact-text-headline {
     font-size: 50px;
+  }
+  .Contact-form {
+    width: 44.5%;
   }
 }
 .Contact-form {

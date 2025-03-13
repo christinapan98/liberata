@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import ShareholderModel from './components/ShareholderModel';
 import FAQ from './components/FAQ';
+import HookDescription from './components/HookDescription';
 
 function App() {
   const videoRef = useRef(null);
@@ -63,9 +64,11 @@ function App() {
   useEffect(() => {
     const sectionOne = document.getElementById("section-one");
     const sectionTwo = document.getElementById("section-two");
+    const sectionOverview = document.getElementById("section-overview");
     // const sectionThree = document.getElementById("section-three");
     const sectionFive = document.getElementById("section-five");
     const sectionTwoHeader = document.getElementById("Header-problems");
+    const sectionOverviewHeader = document.getElementById("Header-overview");
     const sectionThreeHeader = document.getElementById("Header-how-it-works");
     const sectionFiveHeader = document.getElementById("Header-contact");
     let prev: any;
@@ -76,6 +79,12 @@ function App() {
             prev.classList.remove('section-active');
           }
           switch(entry.target.id) {
+            case "section-overview":
+              if(sectionOverviewHeader) {
+                sectionOverviewHeader.classList.add('section-active');
+                prev = sectionOverviewHeader;
+              }
+              break;
             case "section-two":
               if(sectionTwoHeader) {
                 sectionTwoHeader.classList.add('section-active');
@@ -108,12 +117,18 @@ function App() {
     const observer = new IntersectionObserver(observerCallback);
     observer.observe(sectionOne);
     observer.observe(sectionTwo);
+    observer.observe(sectionOverview);
     // observer.observe(sectionThree);
     observer.observe(sectionFive);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     switch(sectionId) {
+      case "section-overview":
+        if(videoRef.current) {
+          videoRef.current.scrollIntoView({behavior: 'smooth'});
+        }
+        break;
       case "section-two":
         if(problemRef.current) {
           problemRef.current.scrollIntoView({behavior: 'smooth'});
@@ -140,8 +155,12 @@ function App() {
           <Hook/>
         </div>
 
-        <div className="App-section App-body-section">
-          <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Liberata_Overview.mp4" width="100%" 
+        {/* <div className="App-section" style={{marginBottom: '20vh', marginTop: '10vh'}}>
+          <HookDescription/>
+        </div> */}
+
+        <div id="section-overview" className="App-section App-body-section">
+          <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" 
           id="section-one-video"
           controls muted/>
         </div>

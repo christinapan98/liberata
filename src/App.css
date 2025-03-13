@@ -36,11 +36,22 @@
   height: 100vh;
   margin-bottom: 15vh;
 }
+#section-overview {
+  height: auto;
+  margin-bottom: 25vh;
+}
 
 /* ------------------ 3 problems section styling------------------ */
 @media (min-width: 700px) {
   .App-body {
     width: 86vw;
+  }
+  #section-one {
+    margin-bottom: 15vh;
+  }
+  #section-overview {
+    height: 100vh;
+    margin-bottom: 15vh;
   }
 }
 @media (min-width: 1050px) {
@@ -54,15 +65,15 @@
     width: 40%;
   }
   .App-problem-body {
-    width: 50%;
-    margin-top: 0px;
+    width: 44.5%;
+    margin-top: 10px;
   }
   .App-problem-body > div:first-child {
     font-size: 1.8rem !important;
     line-height: 2.8rem !important;
   }
   .App-problem-body > div:last-child {
-    /* min-height: 40vh; */
+    min-height: 40vh;
     font-size: 17.5px !important;
     padding: 2vw !important;
     margin-bottom: 2vh;
@@ -72,6 +83,9 @@
   }
 }
 
+/* The problem with sticky positioning lies here: on smaller screens
+App-problem has a large height compared to its child elements, causing
+App-header to overflow unnecessarily */
 .App-problem {
   margin-bottom: 20vh;
 }
@@ -107,7 +121,7 @@
 }
 
 .App-problem-body > div:last-child {
-  padding: 2vw 4vw;
+  padding: max(2vw, 22px) max(4vw, 25px);
   color: rgb(95, 95, 95);
   font-size: 15px;
   font-family: Helvetica, sans-serif;
@@ -115,13 +129,12 @@
   border-radius: 15px;
   margin-top: 4vh;
   border: 1px solid gray;
-  height: auto;
+  /* height: auto; */
 }
 
 #section-one {
   width: 75vw;
   padding-right: 5rem;
-  margin-bottom: 15vh;
 }
 
 #section-one-video:hover {

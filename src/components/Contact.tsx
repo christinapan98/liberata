@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import TextField from '@mui/material/TextField';
-import Footer from './Footer';
 import { CircularProgress } from '@mui/material';
 import './Contact.css';
 
@@ -14,6 +13,8 @@ function Contact() {
   const [isLoading, setLoading] = useState(false);
   const [isSuccessVisible, setSuccessVisible] = useState(false);
   const [isErrorVisible, setErrorVisible] = useState(false);
+
+  const googleSheetApiLink = 'https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec';
 
   const handleContactFormSubmit = (e: any) => {
     e.preventDefault();
@@ -29,9 +30,9 @@ function Contact() {
     formData.append('Institution', institutionInputValue);
     formData.append('Message', messageInputValue);
 
-    fetch('https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec', {
+    // push the contact form data to a google sheet
+    fetch(googleSheetApiLink, {
       method: 'POST',
-      // figure out this formData section
       body: formData,
     })
     .then(response => {
@@ -89,6 +90,7 @@ function Contact() {
           id="outlined-fname" 
           label="First name" 
           required
+          sx={{width: '45%'}}
           value={fNameInputValue} 
           onChange={(e) => setFNameInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
@@ -97,6 +99,7 @@ function Contact() {
           id="outlined-lname" 
           label="Last name" 
           required
+          sx={{width: '45%'}}
           value={lNameInputValue} 
           onChange={(e) => setLNameInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
@@ -108,7 +111,7 @@ function Contact() {
           id="outlined-email" 
           label="Email" 
           required
-          sx={{maxWidth: '455px'}}
+          sx={{maxWidth: '92%'}}
           value={emailInputValue} 
           onChange={(e) => setEmailInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
@@ -119,7 +122,7 @@ function Contact() {
           <TextField 
           id="outlined-institution" 
           label="Institution" 
-          sx={{maxWidth: '455px'}}
+          sx={{maxWidth: '92%'}}
           value={institutionInputValue} 
           onChange={(e) => setInstitutionInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
@@ -129,7 +132,7 @@ function Contact() {
         <TextField 
         id="outlined-message" 
         label="Message" 
-        sx={{maxWidth: '455px', marginBottom: '27px'}}
+        sx={{ maxWidth: '92%', marginBottom: '30px'}}
         value={messageInputValue} 
         onChange={(e) => setMessageInputValue(e.target.value)} 
         onFocus={() => setSubmitVisible(true)}

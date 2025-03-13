@@ -12,12 +12,12 @@ function Header({scrollToSection}) {
                 <a id="Header-logo" href="#section-one">
                   Liberata
                 </a>
-                <a id="Header-problems" className="Header-navbar" href="#section-two">
-                  Current problems
+                <a id="Header-overview" className="Header-navbar" href="#section-overview">
+                  Overview
                 </a>
-                {/* <a id="Header-how-it-works" href="#section-three">
-                  The Liberata system
-                </a> */}
+                <a id="Header-problems" className="Header-navbar" href="#section-two">
+                  Current publishing problems
+                </a>
                 {/* <a href="#section-four">
                   FAQ
                 </a> */}
@@ -37,7 +37,6 @@ function Header({scrollToSection}) {
         </div>
       </div>
     </>
-    
   )
 }
 

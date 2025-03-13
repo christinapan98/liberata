@@ -18,7 +18,7 @@ function MenuDrawer({scrollToSection}) {
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
       <List>
-        {[['Current problems', 'section-two'], ['Contact', 'section-five']].map((item, index) => (
+        {[['Overview', 'section-overview'], ['Current problems', 'section-two'], ['Contact', 'section-five']].map((item, index) => (
           <ListItem key={item[0]} onClick={() => scrollToSection(item[1])} disablePadding>
             <ListItemButton>
               <ListItemText primary={item[0]} />
