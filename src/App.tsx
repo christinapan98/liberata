@@ -19,24 +19,24 @@ function App() {
   const contactRef = useRef(null);
   let shouldAutoplay = true;
 
-  // Overview video observer
-  useEffect(() => {
-    let myVideoRef = videoRef.current || null;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && myVideoRef && shouldAutoplay) {
-            (myVideoRef as HTMLVideoElement).play();
-            shouldAutoplay = false;
-          } else if(!entry.isIntersecting && myVideoRef) {
-            (myVideoRef as HTMLVideoElement).pause();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    if(myVideoRef) observer.observe(myVideoRef);
-  }, []);
+  // Overview video observer that enables autoplay
+  // useEffect(() => {
+  //   let myVideoRef = videoRef.current || null;
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting && myVideoRef && shouldAutoplay) {
+  //           (myVideoRef as HTMLVideoElement).play();
+  //           shouldAutoplay = false;
+  //         } else if(!entry.isIntersecting && myVideoRef) {
+  //           (myVideoRef as HTMLVideoElement).pause();
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.5 }
+  //   );
+  //   if(myVideoRef) observer.observe(myVideoRef);
+  // }, []);
 
   // Section observer
   useEffect(() => {
