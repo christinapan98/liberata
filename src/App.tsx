@@ -196,9 +196,9 @@ function App() {
         </div>
       </div>
 
-      <div className="App-footer" id="App-footer" style={{height: '13vh'}}>
-        {/* <Footer/>
-        <div className="Footer-accent"></div> */}
+      <div className="App-footer" id="App-footer">
+        <Footer/>
+        <div className="Footer-accent"></div>
       </div>
       
     </div>

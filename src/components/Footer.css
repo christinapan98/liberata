@@ -1,26 +1,26 @@
-@media (min-width: 400px) {
+.Footer-text-mediaIconLine {
+  display: flex;
+  gap: 17px;
+  width: 15vw;
+  padding-top: 20vh;
+  padding-bottom: 5vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .Footer-text {
-    font-size: 2.5rem !important;
-    line-height: 3.7rem !important;
+.mediaIcon {
+  font-size: 50px;
+  color: rgb(120, 120, 120);
+}
+
+@media only screen and (min-width: 1000px) {
+  .Footer-text-mediaIconLine {
+    padding-top: 3vh;
   }
 }
 
-.Footer-body {
-  background-color: var(--duke-blue);
-  width: 100vw;
-  height: 50vh;
-  display: block;
-}
 
-.Footer-text {
-  display: block;
-  width: 80vw;
-  padding-top: 10vh;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  color: rgb(249, 244, 239);
-}

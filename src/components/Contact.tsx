@@ -13,8 +13,7 @@ function Contact() {
   const [isLoading, setLoading] = useState(false);
   const [isSuccessVisible, setSuccessVisible] = useState(false);
   const [isErrorVisible, setErrorVisible] = useState(false);
-
-  const googleSheetApiLink = 'https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec';
+  const googleSheetApiUrl = 'https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec';
 
   const handleContactFormSubmit = (e: any) => {
     e.preventDefault();
@@ -31,7 +30,7 @@ function Contact() {
     formData.append('Message', messageInputValue);
 
     // push the contact form data to a google sheet
-    fetch(googleSheetApiLink, {
+    fetch(googleSheetApiUrl, {
       method: 'POST',
       body: formData,
     })

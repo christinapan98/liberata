@@ -41,6 +41,7 @@
 .Contact-text-subline {
   font-size: 20px;
   color: var(--accent-blue);
+  margin-bottom: 13px;
 }
 
 #outlined-fname {
