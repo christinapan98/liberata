@@ -1,23 +1,39 @@
-# Getting Started with Create React App
+# Getting Started
 
+Welcome to the repository for Liberata's informational site!
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Running the website locally
 
-In the project directory, you can run:
+Once you navigate to the project directory with:
+
+### `cd liberata`
+
+execute:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+to run the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## Deploying changes to GitHub Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+New merges to the repository will automatically trigger a deployment job. If you need to force an update after getting code approved, you can also run:
+
+### `npm run deploy`
+
+to push the changes through.
+
+## Monitoring GitHub Pages deployments
+
+In the Actions tab of this repository, you can view the status and history of all deployment jobs that have been run on the site. If updates aren't being shown on the page as expected, you can check this tab for build errors.
+
+## Other Available Scripts
+
+In the project directory, you can run:
 
 ### `npm run build`
 
