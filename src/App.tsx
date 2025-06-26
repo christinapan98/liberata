@@ -1,25 +1,21 @@
 import React, {useEffect, useRef} from 'react';
 import './App.css';
 import Header from './components/Header';
-// import OverviewVideo from './videos/Liberata_Overview.mp4';
-import SectionOneVideo from './videos/Liberata_Section_One_White.mp4';
 import Hook from './components/Hook';
 import MeritProblemSection from './components/MeritProblemSection';
 import EconomicProblemSection from './components/EconomicProblemSection';
 import TrustProblemSection from './components/TrustProblemSection';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
-import ShareholderModel from './components/ShareholderModel';
 import FAQ from './components/FAQ';
-import HookDescription from './components/HookDescription';
 
 function App() {
   const videoRef = useRef(null);
   const problemRef = useRef(null);
   const contactRef = useRef(null);
-  let shouldAutoplay = true;
-
-  // Overview video observer that enables autoplay
+  
+  // Logic that enables video autoplay
+  //let shouldAutoplay = true;
   // useEffect(() => {
   //   let myVideoRef = videoRef.current || null;
   //   const observer = new IntersectionObserver(
@@ -65,7 +61,6 @@ function App() {
     const sectionOne = document.getElementById("section-one");
     const sectionTwo = document.getElementById("section-two");
     const sectionOverview = document.getElementById("section-overview");
-    // const sectionThree = document.getElementById("section-three");
     const sectionFive = document.getElementById("section-five");
     const sectionTwoHeader = document.getElementById("Header-problems");
     const sectionOverviewHeader = document.getElementById("Header-overview");
@@ -118,7 +113,6 @@ function App() {
     observer.observe(sectionOne);
     observer.observe(sectionTwo);
     observer.observe(sectionOverview);
-    // observer.observe(sectionThree);
     observer.observe(sectionFive);
   }, []);
 
@@ -146,6 +140,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* Page header */}
       <div className="Header-accent"></div>
       <Header scrollToSection={scrollToSection} />
 
@@ -155,11 +150,8 @@ function App() {
           <Hook/>
         </div>
 
-        {/* <div className="App-section" style={{marginBottom: '20vh', marginTop: '10vh'}}>
-          <HookDescription/>
-        </div> */}
-
         <div id="section-overview" className="App-section App-body-section">
+          {/* Since they are large files, our explainer videos must be stored in AWS buckets rather than locally. */}
           <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" 
           id="section-one-video"
           controls muted/>
@@ -180,11 +172,6 @@ function App() {
           </div>
         </div>
 
-        {/* How it works */}
-        {/* <div className="App-section App-body-section" id="section-three">
-          <ShareholderModel/>
-        </div> */}
-
         {/* Frequently asked questions */}
         {/* <div className="App-section App-body-section" id="section-four">
           <FAQ/>
@@ -196,6 +183,7 @@ function App() {
         </div>
       </div>
 
+      {/* Footer, including social media links */}
       <div className="App-footer" id="App-footer">
         <Footer/>
         <div className="Footer-accent"></div>

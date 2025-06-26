@@ -13,14 +13,18 @@ function Contact() {
   const [isLoading, setLoading] = useState(false);
   const [isSuccessVisible, setSuccessVisible] = useState(false);
   const [isErrorVisible, setErrorVisible] = useState(false);
+  const [isLNameErrorVisible, setLNameErrorVisible] = useState(true);
+  const [isFNameErrorVisible, setFNameErrorVisible] = useState(true);
   const googleSheetApiUrl = 'https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec';
 
   const handleContactFormSubmit = (e: any) => {
     e.preventDefault();
+    
     // perform regex checks
-    if(!validateFirstName(fNameInputValue) || !validateLastName(lNameInputValue) || !validateEmail(emailInputValue)) {
+    if(!validateFName(fNameInputValue) || !validateLName(lNameInputValue) || !validateEmail(emailInputValue)) {
       return;
     }
+
     setLoading(true);
     const formData = new FormData();
     formData.append('Email', emailInputValue);
@@ -29,7 +33,7 @@ function Contact() {
     formData.append('Institution', institutionInputValue);
     formData.append('Message', messageInputValue);
 
-    // push the contact form data to a google sheet
+    // Push the contact form data to a google sheet
     fetch(googleSheetApiUrl, {
       method: 'POST',
       body: formData,
@@ -57,17 +61,36 @@ function Contact() {
     setMessageInputValue("");
   }
 
+  /**
+   * Functions that validate first and last name fields.
+   * A name cannot contain whitespaces or non-unicode characters
+   * @param input First or last name being validated.
+   * @returns A boolean value
+   */
 
-  const validateFirstName = (input : string) => {
-    console.log("validating fname ", input);
-    return true;
+  const validateFName = (input : string) => {
+    console.log("validating name ", input);
+    const namePattern = /[\s\P{L}]/u;
+    const trimmedName = input.trim();
+    const shouldDisplayNameError = !namePattern.test(trimmedName);
+    setFNameErrorVisible(shouldDisplayNameError);
+    return shouldDisplayNameError && trimmedName.length !== 0;
+  }
+  const validateLName = (input : string) => {
+    console.log("validating name ", input);
+    const namePattern = /[\s\P{L}]/u;
+    const trimmedName = input.trim();
+    const shouldDisplayNameError = !namePattern.test(trimmedName);
+    setLNameErrorVisible(shouldDisplayNameError);
+    return shouldDisplayNameError && trimmedName.length !== 0;
   }
 
-  const validateLastName = (input : string) => {
-    console.log("validating lname ", input);
-    return true;
-  }
-
+  /**
+   * TODO: Implement the validate email function
+   * An email must follow the structure helloworld@abc.com
+   * @param input 
+   * @returns 
+   */
   const validateEmail = (input : string) => {
     console.log("validating email ", input);
     return true;
@@ -93,7 +116,7 @@ function Contact() {
           value={fNameInputValue} 
           onChange={(e) => setFNameInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
-          onBlur={() => validateFirstName(fNameInputValue)}/>
+          onBlur={() => validateFName(fNameInputValue)}/>
           <TextField 
           id="outlined-lname" 
           label="Last name" 
@@ -102,9 +125,11 @@ function Contact() {
           value={lNameInputValue} 
           onChange={(e) => setLNameInputValue(e.target.value)} 
           onFocus={() => setSubmitVisible(true)}
-          onBlur={() => validateLastName(lNameInputValue)}/>
+          onBlur={() => validateLName(lNameInputValue)}/>
         </div>
-        
+
+        <div style={{marginBottom: '10px', fontSize: '14px', color: 'red', display: !isLNameErrorVisible || !isFNameErrorVisible ? 'block' : 'none'}}>Your name cannot contain whitespaces or non-ABC characters.</div>
+
         <div style={{marginBottom: '13px'}}>
           <TextField 
           id="outlined-email" 
@@ -117,6 +142,9 @@ function Contact() {
           onBlur={() => validateEmail(emailInputValue)}/>
         </div>
        
+        {/* TODO: Add validate email error handling here */}
+        {/* <div style={{marginBottom: '10px', fontSize: '14px', color: 'red'}}>Your email must follow the format helloworld@abc.com. </div> */}
+
         <div style={{marginBottom: '13px'}}>
           <TextField 
           id="outlined-institution" 
