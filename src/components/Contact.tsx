@@ -79,9 +79,9 @@ function Contact() {
 
   /**
    * TODO: Implement the validate email function
-   * An email must follow the structure helloworld@abc.com
-   * @param input 
-   * @returns 
+   * An email must follow the structure helloworld@abc.xyz
+   * @param input Email being validated
+   * @returns A boolean value
    */
   const validateEmail = (input : string) => {
     console.log("validating email ", input);
