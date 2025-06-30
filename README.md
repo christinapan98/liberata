@@ -19,15 +19,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-## Deploying changes to GitHub Pages
+## Deploying and monitoring changes to GitHub Pages
 
 New merges to the repository will automatically trigger a deployment job. If you need to force an update after getting code approved, you can also run:
-
-### `npm run deploy`
-
-to push the changes through.
-
-## Monitoring GitHub Pages deployments
 
 In the Actions tab of this repository, you can view the status and history of all deployment jobs that have been run on the site. If updates aren't being shown on the page as expected, you can check this tab for build errors.
 
