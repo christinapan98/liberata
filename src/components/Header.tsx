@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ArrowOutward} from '@mui/icons-material';
 import MenuDrawer from './MenuDrawer';
 import './Header.css';
@@ -9,19 +9,19 @@ function Header({scrollToSection}) {
       <div className='Header-wrapper'>
         <div className="Header-body">
             <span className="Header-nav">
-                <a id="Header-logo" href="#section-one">
+                <a id="Header-logo" href="#section-hook">
                   Liberata
                 </a>
                 <a id="Header-overview" className="Header-navbar" href="#section-overview">
                   Overview
                 </a>
-                <a id="Header-problems" className="Header-navbar" href="#section-two">
+                <a id="Header-problems" className="Header-navbar" href="#section-problems">
                   Current publishing problems
                 </a>
                 {/* <a href="#section-four">
                   FAQ
                 </a> */}
-                <a id="Header-contact" className="Header-navbar" href="#section-five">
+                <a id="Header-contact" className="Header-navbar" href="#section-contact">
                   Contact
                 </a>
               </span>

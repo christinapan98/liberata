@@ -1,6 +1,5 @@
 @import 'global.css';
 
-
 .App {
   display: flex;
   flex-direction: column;
@@ -14,9 +13,10 @@
   width: 100vw;
 }
 
-.App-body {
-  width: 78vw;
-  display: block;
+.App-body-container {
+  display: grid;
+  grid-template-columns: 78vw;
+  row-gap: 12vh;
   margin-left: auto;
   margin-right: auto;  
 }
@@ -32,26 +32,18 @@
 	transition: opacity .8s, transform .8s;
 }
 
-.App-body-section {
-  height: 100vh;
-  margin-bottom: 15vh;
-}
 #section-overview {
   height: auto;
-  margin-bottom: 25vh;
+  margin-bottom: 10vh;
 }
 
 /* ------------------ 3 problems section styling------------------ */
 @media (min-width: 700px) {
-  .App-body {
-    width: 86vw;
-  }
-  #section-one {
-    margin-bottom: 15vh;
+  .App-body-container {
+    grid-template-columns: 86vw;
   }
   #section-overview {
     height: 100vh;
-    margin-bottom: 15vh;
   }
 }
 @media (min-width: 1050px) {
@@ -87,7 +79,8 @@
 App-problem has a large height compared to its child elements, causing
 App-header to overflow unnecessarily */
 .App-problem {
-  margin-bottom: 20vh;
+  height: 100vh;
+  /* margin-bottom: 15vh; */
 }
 
 .App-problem-header {
@@ -132,8 +125,9 @@ App-header to overflow unnecessarily */
   /* height: auto; */
 }
 
-#section-one {
-  width: 75vw;
+/* ------------------------ END ------------------------------- */
+
+#section-hook {
   padding-right: 5rem;
 }
 
