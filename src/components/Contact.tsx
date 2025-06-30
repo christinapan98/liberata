@@ -13,8 +13,8 @@ function Contact() {
   const [isLoading, setLoading] = useState(false);
   const [isSuccessVisible, setSuccessVisible] = useState(false);
   const [isErrorVisible, setErrorVisible] = useState(false);
-  const [isLNameErrorVisible, setLNameErrorVisible] = useState(true);
-  const [isFNameErrorVisible, setFNameErrorVisible] = useState(true);
+  // const [isLNameErrorVisible, setLNameErrorVisible] = useState(true);
+  // const [isFNameErrorVisible, setFNameErrorVisible] = useState(true);
   const googleSheetApiUrl = 'https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec';
 
   const handleContactFormSubmit = (e: any) => {
@@ -62,7 +62,7 @@ function Contact() {
   }
 
   /**
-   * Functions that validate first and last name fields.
+   * TODO: implement functions that validate first and last name fields.
    * A name cannot contain whitespaces or non-unicode characters
    * @param input First or last name being validated.
    * @returns A boolean value
@@ -70,19 +70,11 @@ function Contact() {
 
   const validateFName = (input : string) => {
     console.log("validating name ", input);
-    const namePattern = /[\s\P{L}]/u;
-    const trimmedName = input.trim();
-    const shouldDisplayNameError = !namePattern.test(trimmedName);
-    setFNameErrorVisible(shouldDisplayNameError);
-    return shouldDisplayNameError && trimmedName.length !== 0;
+    return true;
   }
   const validateLName = (input : string) => {
     console.log("validating name ", input);
-    const namePattern = /[\s\P{L}]/u;
-    const trimmedName = input.trim();
-    const shouldDisplayNameError = !namePattern.test(trimmedName);
-    setLNameErrorVisible(shouldDisplayNameError);
-    return shouldDisplayNameError && trimmedName.length !== 0;
+    return true;
   }
 
   /**
@@ -128,7 +120,8 @@ function Contact() {
           onBlur={() => validateLName(lNameInputValue)}/>
         </div>
 
-        <div style={{marginBottom: '10px', fontSize: '14px', color: 'red', display: !isLNameErrorVisible || !isFNameErrorVisible ? 'block' : 'none'}}>Your name cannot contain whitespaces or non-ABC characters.</div>
+        {/* TODO: Add validate name error handling here */}
+        {/* <div style={{marginBottom: '10px', fontSize: '14px', color: 'red', display: !isLNameErrorVisible || !isFNameErrorVisible ? 'block' : 'none'}}>Your name cannot contain whitespaces or non-ABC characters.</div> */}
 
         <div style={{marginBottom: '13px'}}>
           <TextField 
