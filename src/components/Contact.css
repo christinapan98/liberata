@@ -16,6 +16,11 @@
     width: 44.5%;
   }
 }
+
+.Contact-body {
+  padding-top: 10vh;
+}
+
 .Contact-form {
   margin-top: 17px;
   display: flex;

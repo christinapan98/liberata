@@ -58,13 +58,12 @@ function App() {
   // Also be mindful of when none of the sections should be highlighted
   // detect when section is scrolled out of as well
   useEffect(() => {
-    const sectionOne = document.getElementById("section-one");
-    const sectionTwo = document.getElementById("section-two");
+    const sectionOne = document.getElementById("section-hook");
+    const sectionTwo = document.getElementById("section-problems");
     const sectionOverview = document.getElementById("section-overview");
-    const sectionFive = document.getElementById("section-five");
+    const sectionFive = document.getElementById("section-contact");
     const sectionTwoHeader = document.getElementById("Header-problems");
     const sectionOverviewHeader = document.getElementById("Header-overview");
-    const sectionThreeHeader = document.getElementById("Header-how-it-works");
     const sectionFiveHeader = document.getElementById("Header-contact");
     let prev: any;
     const observerCallback = (entries: any[]) => {
@@ -80,19 +79,13 @@ function App() {
                 prev = sectionOverviewHeader;
               }
               break;
-            case "section-two":
+            case "section-problems":
               if(sectionTwoHeader) {
                 sectionTwoHeader.classList.add('section-active');
                 prev = sectionTwoHeader;
               }
               break;
-            case "section-three":
-              if(sectionThreeHeader) {
-                sectionThreeHeader.classList.add('section-active');
-                prev = sectionThreeHeader;
-              }
-              break;
-            case "section-five":
+            case "section-contact":
               if(sectionFiveHeader) {
                 sectionFiveHeader.classList.add('section-active');
                 prev = sectionFiveHeader;
@@ -123,12 +116,12 @@ function App() {
           videoRef.current.scrollIntoView({behavior: 'smooth'});
         }
         break;
-      case "section-two":
+      case "section-problems":
         if(problemRef.current) {
           problemRef.current.scrollIntoView({behavior: 'smooth'});
         }
         break;
-      case "section-five":
+      case "section-contact":
         if(contactRef.current) {
           contactRef.current.scrollIntoView({behavior: 'smooth'});
         }
@@ -144,33 +137,34 @@ function App() {
       <div className="Header-accent"></div>
       <Header scrollToSection={scrollToSection} />
 
-      <div className="App-body">
+      <div className="App-body-container">
         {/* Hook and overview */}
-        <div className="App-section" id="section-one">
+        <div className="App-section" id="section-hook">
           <Hook/>
         </div>
 
-        <div id="section-overview" className="App-section App-body-section">
-          {/* Since they are large files, our explainer videos must be stored in AWS buckets rather than locally. */}
+        <div className="App-section" id="section-overview">
+          {/* Since they are large files, our explainer videos must be stored in AWS. */}
           <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" 
           id="section-one-video"
           controls muted/>
         </div>
 
+        
         {/* Three problems */}
-        <div id="section-two" ref={problemRef}>
-          <div className="App-section App-body-section App-problem">
-            <MeritProblemSection/>
-          </div>
-
-          <div className="App-section App-body-section App-problem">
-            <EconomicProblemSection/>
-          </div>
-
-          <div className="App-section App-body-section App-problem">
-            <TrustProblemSection/>
-          </div>
+        <div id="section-problems" ref={problemRef}></div>
+        <div className="App-section App-problem">
+          <MeritProblemSection/>
         </div>
+
+        <div className="App-section App-problem">
+          <EconomicProblemSection/>
+        </div>
+
+        <div className="App-section App-problem">
+          <TrustProblemSection/>
+        </div>
+        
 
         {/* Frequently asked questions */}
         {/* <div className="App-section App-body-section" id="section-four">
@@ -178,7 +172,7 @@ function App() {
         </div> */}
 
         {/* Contact form */}
-        <div className="App-section" ref={contactRef} id="section-five">
+        <div className="App-section" ref={contactRef} id="section-contact">
           <Contact/>
         </div>
       </div>
