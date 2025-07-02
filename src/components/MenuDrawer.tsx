@@ -27,7 +27,7 @@ function MenuDrawer({scrollToSection}) {
         ))}
       </List>
       <Divider/>
-      <List>
+      {/* <List>
         <ListItem disablePadding>
           <ListItemButton>
             <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{fontSize: '15px', display: 'flex', alignItems: 'bottom'}}> 
@@ -36,7 +36,7 @@ function MenuDrawer({scrollToSection}) {
             </a>
           </ListItemButton>
         </ListItem>
-      </List>
+      </List> */}
     </Box>
   );
 

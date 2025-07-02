@@ -26,10 +26,11 @@ function Header({scrollToSection}) {
                 </a>
               </span>
               
-              <a className="Header-navbar" href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'bottom'}}> 
+              {/* Technical paper disabled while updates are being made */}
+              {/* <a className="Header-navbar" href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'bottom'}}> 
                 Technical paper
                 <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
-              </a>
+              </a> */}
             
           <div className="Header-hamburger">
             <MenuDrawer scrollToSection={scrollToSection}/>
