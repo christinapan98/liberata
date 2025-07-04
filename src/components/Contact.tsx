@@ -13,8 +13,9 @@ function Contact() {
   const [isLoading, setLoading] = useState(false);
   const [isSuccessVisible, setSuccessVisible] = useState(false);
   const [isErrorVisible, setErrorVisible] = useState(false);
-  // const [isLNameErrorVisible, setLNameErrorVisible] = useState(true);
-  // const [isFNameErrorVisible, setFNameErrorVisible] = useState(true);
+  const [isLNameErrorVisible, setLNameErrorVisible] = useState(true);
+  const [isFNameErrorVisible, setFNameErrorVisible] = useState(true);
+  const [isEmailErrorVisible, setEmailErrorVisible] = useState(true);
   const googleSheetApiUrl = 'https://script.google.com/macros/s/AKfycbxxxxcMbnh3e86tRLOqz57Fcw2LpLG14kVWVtuoqMClVNCLb8Ut0v1SpW4E3aetfzT9/exec';
 
   const handleContactFormSubmit = (e: any) => {
@@ -69,12 +70,21 @@ function Contact() {
    */
 
   const validateFName = (input : string) => {
-    console.log("validating name ", input);
-    return true;
+    const nameRegex = /^[A-Za-z]+$/;
+    const isValid = nameRegex.test(input);
+
+    console.log("validating name ", input, isValid ? "Valid first name. You may proceed." : "Input is not valid. Try again.");
+    
+    return isValid;
   }
+
   const validateLName = (input : string) => {
-    console.log("validating name ", input);
-    return true;
+    const nameRegex = /^[A-Za-z]+$/;
+    const isValid = nameRegex.test(input);
+
+    console.log("validating name ", input, isValid ? "Valid last name. You may proceed." : "Input is not valid. Try again.");
+    
+    return isValid;
   }
 
   /**
@@ -83,9 +93,15 @@ function Contact() {
    * @param input Email being validated
    * @returns A boolean value
    */
+
+
   const validateEmail = (input : string) => {
-    console.log("validating email ", input);
-    return true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailRegex.test(input);
+
+    console.log("validating email ", input, isValid ? "Valid email address. You may proceed." : "Input is not valid. Try again.");
+    
+    return isValid;
   }
 
   return (
@@ -122,6 +138,13 @@ function Contact() {
 
         {/* TODO: Add validate name error handling here */}
         {/* <div style={{marginBottom: '10px', fontSize: '14px', color: 'red', display: !isLNameErrorVisible || !isFNameErrorVisible ? 'block' : 'none'}}>Your name cannot contain whitespaces or non-ABC characters.</div> */}
+        <div>
+          {(!isFNameErrorVisible || !isLNameErrorVisible) && (
+            <div style={{marginBottom: '10px', fontSize: '14px', color: 'red'}}>
+              Your name cannot contain whitespaces or non-ABC characters.
+            </div>
+          )}
+        </div>
 
         <div style={{marginBottom: '13px'}}>
           <TextField 
@@ -137,6 +160,13 @@ function Contact() {
        
         {/* TODO: Add validate email error handling here */}
         {/* <div style={{marginBottom: '10px', fontSize: '14px', color: 'red'}}>Your email must follow the format helloworld@abc.com. </div> */}
+        <div>
+          {!isEmailErrorVisible && (
+            <div style={{marginBottom: '10px', fontSize: '14px', color: 'red'}}>
+              Your email must follow the format helloworld@abc.com.
+            </div>
+          )}
+        </div>
 
         <div style={{marginBottom: '13px'}}>
           <TextField 
