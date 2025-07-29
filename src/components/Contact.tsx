@@ -159,7 +159,6 @@ function Contact() {
           />
         </div>
 
-        {/* TODO: Add validate email error handling here */}
         {isEmailErrorVisible && (
           <div style={{ marginBottom: "10px", fontSize: "14px", color: "red" }}>
             Your email must follow the format helloworld@abc.com.{" "}
