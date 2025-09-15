@@ -133,16 +133,16 @@ function App() {
 
   return (
     <div className="App">
-      {/* Page header */}
-      <div className="Header-accent"></div>
-      <Header scrollToSection={scrollToSection} />
-
-      <div className="App-body-container">
-        {/* Hook and overview */}
+      <div className="App-intro">
+        {/* Page header */}
+        <Header scrollToSection={scrollToSection} />
         <div className="App-section" id="section-hook">
           <Hook/>
         </div>
+      </div>
 
+      <div className="App-body-container">
+        {/* Hook and overview */}
         <div className="App-section" id="section-overview">
           {/* Since they are large files, our explainer videos must be stored in AWS. */}
           <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" 

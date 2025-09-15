@@ -6,11 +6,11 @@
   align-items: center;
 }
 
-.Header-accent {
-  background-color: var(--duke-blue);
-  z-index: 1;
-  padding: 10px;
-  width: 100vw;
+.App-intro {
+  background-image: url(./images/BG_overlay.png), url(./images/BG.png);
+  background-size: cover;
+  height: 100vh;
+  margin-bottom: 10vh;
 }
 
 .App-body-container {
@@ -34,7 +34,6 @@
 
 #section-overview {
   height: auto;
-  margin-bottom: 10vh;
 }
 
 /* ------------------ 3 problems section styling------------------ */
@@ -128,7 +127,7 @@ App-header to overflow unnecessarily */
 /* ------------------------ END ------------------------------- */
 
 #section-hook {
-  padding-right: 5rem;
+  padding-right: 2rem;
 }
 
 #section-one-video:hover {
@@ -174,8 +173,10 @@ button:hover {
 /* -------------------------------------------------- */
 
 .Footer-accent {
-  background-color: black;
+  background-image: url(./images/BG.png);
+  background-size: cover;
   z-index: 1;
   padding: 10px;
+  height: 10vh;
   width: 100vw;
 }

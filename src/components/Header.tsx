@@ -1,6 +1,7 @@
 import React from 'react';
 import {ArrowOutward} from '@mui/icons-material';
 import MenuDrawer from './MenuDrawer';
+import logoWhite from '../images/Logo_White.png'
 import './Header.css';
 
 function Header({scrollToSection}) {
@@ -10,7 +11,7 @@ function Header({scrollToSection}) {
         <div className="Header-body">
             <span className="Header-nav">
                 <a id="Header-logo" href="#section-hook">
-                  Liberata
+                  <img src={logoWhite} alt="Liberata logo"/>
                 </a>
                 <a id="Header-overview" className="Header-navbar" href="#section-overview">
                   Overview
@@ -31,7 +32,7 @@ function Header({scrollToSection}) {
                 Technical paper
                 <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
               </a> */}
-            
+              
           <div className="Header-hamburger">
             <MenuDrawer scrollToSection={scrollToSection}/>
           </div> 

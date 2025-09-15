@@ -1,19 +1,19 @@
 import React from 'react';
-import OrigamiBird from '../images/OrigamiBird.png';
 import "./Hook.css";
 
 function Hook() {
   return (
     <div className="Hook-wrapper">
-      <div>
-        <div className="Hook-header" style={{fontWeight: '500'}}>
+      <div style={{width: '83vw'}}>
+        <div className="Hook-header">
           Introducing Liberata.
         </div>
-        <div className="Hook-subheader">
-          Open source academic publishing with incentivized peer review and replications
+        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '6vh'}}>
+          <div className="Hook-subheader">
+            An open-source academic literature and peer matching platform
+          </div>
         </div>
       </div>
-      <img src={OrigamiBird}/>
     </div>
   )
 }

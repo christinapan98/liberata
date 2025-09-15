@@ -5,28 +5,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
   position: sticky;
   top: 0;
   z-index: 9;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Header-body {
+  width: 82vw !important;
   padding-top: 25px;
   padding-bottom: 35px;
-  background-color: white;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   align-items: center;
-  width: 78vw !important;
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (min-width: 700px) {
   .Header-body {
-    width: 86vw !important;
+    width: 88vw !important;
   }
   .Header-navbar {
     visibility: visible !important;
@@ -40,29 +40,31 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 30vw;
+  min-width: 30vw
 }
 
 .Header-navbar {
   visibility: hidden;
+  color: white;
 }
 
 .Header-nav a {
   margin-right: 3vw;
+  color: white;
 }
 
 .Header-hamburger {
   display: block;
+  color: white;
 }
 
 .Header-hamburger:hover {
   cursor: pointer;
 }
 
-#Header-logo {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--duke-blue);
+#Header-logo img{
+  width: 20px;
+  height: auto;
 }
 /* figure out how to add this class to whatever header section is currently active*/
 .section-active {
