@@ -1,17 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {ArrowOutward} from '@mui/icons-material';
 import MenuDrawer from './MenuDrawer';
 import logoWhite from '../images/Logo_White.png'
+import logoBlue from '../images/Logo_Blue.png'
 import './Header.css';
 
 function Header({scrollToSection}) {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if(window.scrollY >= 580){
+        setScrolled(true);
+      } else{
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return() => window.removeEventListener('scroll', handleScroll)
+  }, []);
+
   return (
     <>
-      <div className='Header-wrapper'>
+      <div className={`Header-wrapper ${scrolled ? "scrolled" : ""}`}>
         <div className="Header-body">
             <span className="Header-nav">
                 <a id="Header-logo" href="#section-hook">
-                  <img src={logoWhite} alt="Liberata logo"/>
+                  <img src={scrolled ? logoBlue: logoWhite} alt="Liberata logo"/>
                 </a>
                 <a id="Header-overview" className="Header-navbar" href="#section-overview">
                   Overview
