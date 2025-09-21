@@ -10,7 +10,7 @@ function Hook() {
         </div>
         <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '6vh'}}>
           <div className="Hook-subheader">
-            An open-source academic literature and peer matching platform
+            An open-source academic literature and peer matching platform.
           </div>
         </div>
       </div>

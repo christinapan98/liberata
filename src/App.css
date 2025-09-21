@@ -7,29 +7,109 @@
 }
 
 .App-intro {
-  background-image: url(./images/BG_overlay.png), url(./images/BG.png);
-  background-size: cover;
+  position: relative;
+  top: 0;
   height: 100vh;
   margin-bottom: 10vh;
+}
+
+.App-background {
+  position: absolute;
+  inset: 0; 
+  z-index: -2;
+}
+
+.App-background-gradient {
+  position: absolute;
+  inset: 0;
+  background-image: url(./images/BG.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.App-background-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url(./images/BG_overlay.png);
+  background-size: cover;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 0.15s ease-out; /* smooths the updates */
 }
 
 .App-body-container {
   display: grid;
   grid-template-columns: 78vw;
-  row-gap: 12vh;
   margin-left: auto;
   margin-right: auto;  
 }
 
 .App-section {
-  height: 70vh;
-  padding-top: 40px;
-  width: inherit;
   margin-right: auto;
   text-align: left;
   opacity: 0;
 	transform: translateY(50px);
 	transition: opacity .8s, transform .8s;
+}
+
+.App-column-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 5vh;
+}
+
+.App-column-left {
+  width: 60%;
+}
+
+.App-col-left-section {
+  margin-bottom: 9vh;
+  padding-bottom: 9vh;
+  border-bottom: 1px solid lightgray;
+}
+
+.App-column-right {
+  position: sticky;
+  top: 9vh;
+  width: 20%;
+  margin-right: 6%;
+}
+
+.App-column-right div {
+  color: grey;
+  font-size: 1.2rem;
+  margin-bottom: 2.5vh;
+}
+
+#mission-heading {
+  font-size: 1.9rem;
+  line-height: 2.5rem;
+  margin-bottom: 10vh;
+  max-width: 55vw;
+  white-space: normal; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+
+#mission-body {
+  color: grey;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+#App-solutions {
+  margin-bottom: 0;
+}
+
+.section-heading {
+  color: var(--duke-blue);
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 #section-overview {
@@ -128,6 +208,11 @@ App-header to overflow unnecessarily */
 
 #section-hook {
   padding-right: 2rem;
+  padding-top: 40px;
+}
+
+#section-one-video {
+  border-radius: 10px;
 }
 
 #section-one-video:hover {
