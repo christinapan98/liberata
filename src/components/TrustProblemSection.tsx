@@ -29,9 +29,6 @@ function TrustProblemSection() {
               <p>
                 Currently, most scientific findings are supported by only one study, due to a lack of incentive for researchers to replicate them. Because of this, it can be difficult for later works to detect errors in preceding works. This can lead to serious issues where latent errors negatively affect public policy, healthcare, and infrastructure decisions until the error is spotted and the publication corrected or retracted. The ever increasing scale of academic research only exacerbates this issue and has noticeably affected public trust in science.
               </p>
-              <p>
-                Solving this problem entails having a mechanism for incentivizing replication studies that is robust to collusion.
-              </p>
             </>
             :
             <>
