@@ -1,0 +1,70 @@
+.open-close-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    cursor: pointer;   
+}
+.open-close-wrapper{
+    scroll-margin-top: 65px;
+}
+.open-close-title{
+    font-weight: 500;
+    font-size: 24px;
+    cursor: pointer;   
+    user-select: none;
+}
+.open-close-icon{
+    font-size: 27px;
+    font-weight: 50;
+    color: var(--grey-text);
+    cursor: pointer;   
+    user-select: none;
+    line-height: 1;   
+    align-items: center;
+    justify-content: center;
+    width: 1em;  
+    height: 1em;
+    transition: opacity 0.3s ease;
+}
+
+.open-close-description{
+    color: var(--grey-text);
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.cards-layout{
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 15px 0 50px 0;
+}
+
+.card{
+    flex: 1 0 0; 
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.card.old-system-card{
+    background-color: var(--grey-background);
+}
+.card.liberata-card{
+    /* background-color: var(--duke-blue); */
+    color: white;
+    background-image: url('../images/BG.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-title{
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.card-content{
+    font-weight: 300;
+    font-size: 14px;
+}
+

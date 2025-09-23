@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hook from './components/Hook';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import OurSolution from './components/OurSolution';
 
 function App() {
   const introRef = useRef(null);
@@ -174,7 +175,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-intro" ref={introRef}>
+      <div className="App-intro" ref={introRef} id="intro">
         {/* Page header */}
         <Header scrollToSection={scrollToSection} />
         <div className="App-section" id="section-hook">
@@ -209,9 +210,8 @@ function App() {
             </div>
             <div className="App-section App-col-left-section" id="App-solutions">
               <div className="section-heading">/Our Solution</div>
-              <div>
-                {/* TODO (@HaNguyen): Fill in this section according to the new liberata.info design */}
-              </div>
+              {/* TODO (@HaNguyen): Fill in this section according to the new liberata.info design */}
+              <OurSolution/>
             </div>
           </div>
 
