@@ -1,24 +1,41 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {ArrowOutward} from '@mui/icons-material';
 import MenuDrawer from './MenuDrawer';
 import logoWhite from '../images/Logo_White.png'
+import logoBlue from '../images/Logo_Blue.png'
 import './Header.css';
 
 function Header({scrollToSection}) {
+  //Control the animation of header when scrolled past Intro
+  const [scrolledPastIntro, setscrolledPastIntro] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const introBackground = document.getElementById("intro"); 
+      const introBackgroundHeight = introBackground?.offsetHeight || window.innerHeight;
+      
+      if(window.scrollY >=introBackgroundHeight*0.9){
+        setscrolledPastIntro(true);
+      } else{
+        setscrolledPastIntro(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return() => window.removeEventListener('scroll', handleScroll)
+  }, []);
   return (
     <>
-      <div className='Header-wrapper'>
+      <div className={`Header-wrapper ${scrolledPastIntro ? "scrolled" : ""}`}>
         <div className="Header-body">
             <span className="Header-nav">
                 <a id="Header-logo" href="#section-hook">
-                  <img src={logoWhite} alt="Liberata logo"/>
+                  <img src={scrolledPastIntro ? logoBlue: logoWhite} alt="Liberata logo"/>
                 </a>
                 <a id="Header-overview" className="Header-navbar" href="#section-overview">
                   Overview
                 </a>
-                <a id="Header-problems" className="Header-navbar" href="#section-problems">
+                {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
                   Current publishing problems
-                </a>
+                </a> */}
                 {/* <a href="#section-four">
                   FAQ
                 </a> */}
@@ -33,7 +50,7 @@ function Header({scrollToSection}) {
                 <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
               </a> */}
               
-          <div className="Header-hamburger">
+          <div className={`Header-hamburger ${scrolledPastIntro ? "scrolled" : ""}`}>
             <MenuDrawer scrollToSection={scrollToSection}/>
           </div> 
         </div>

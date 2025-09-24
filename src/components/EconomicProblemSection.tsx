@@ -25,17 +25,17 @@ function EconomicProblemSection() {
             isEconomicContextVisible ?
               <>
                 <p>
-                  The economic problem concerns how the proceeds from a work of research are split up among the involved parties. After funding is secured, typically via government grants, a key mismatch arises: while researchers do most of the work, private publishing companies collect most of the revenue from publications through subscription and publishing fees.
+                  The economic problem concerns how the proceeds from a work of research are distributed. While researchers do most of the work, private publishing companies collect most of the revenue from the work's publications through subscription and publishing fees.
                 </p>
                 <p>
-                  Though publishers’ fees are justified by their content curation, this service is still done by a volunteer-based peer review effort from academics. This system could be made more effective if fees were removed while preserving quality. Current open-source publishing platforms have removed fees but haven't developed strong quality control mechanisms yet.
+                  Though publishers’ fees are justified by their content curation, this service is still done by a volunteer-based effort from academics. This system could be made more effective if fees were removed while preserving quality. Current open-source publishing platforms have removed fees but haven't developed strong quality control mechanisms yet.
                 </p>
               </>
             :
               <>
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '43vh'}}>
                   <p>
-                    Liberata seeks to address these issues with an open-source publishing platform that eliminates fees while also providing quality control by incentivizing academics to review papers within the platform. This incentive comes within the form of shares given out for peer reviews, ensuring that reviewers of a work of research are recognized in addition to its authors.
+                    Liberata seeks to address these issues with an open-source publishing platform that eliminates fees while also providing quality control by incentivizing academics to review papers. This incentive comes within the form of shares given out for peer reviews, ensuring that reviewers of a work of research are recognized in addition to its authors.
                   </p>
                   <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'center', gap: '5px', alignSelf: 'flex-end', paddingRight: '3.5vw', textDecoration: 'underline', color: 'black'}}>
                     <span>Learn more</span>

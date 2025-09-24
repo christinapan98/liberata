@@ -1,15 +1,30 @@
-
-
 .Header-wrapper {
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: sticky;
   top: 0;
+  left:0;
   z-index: 9;
   margin-left: auto;
   margin-right: auto;
+  
+  height: 65px;
+  position: fixed;
+  background-color: transparent;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+.Header-wrapper.scrolled,
+.Header-wrapper.scrolled a,
+.Header-wrapper.scrolled span{
+  background-color: rgb(255, 255, 255);
+  color: var(--duke-blue) !important;
+}
+.Header-wrapper,
+.Header-wrapper a,
+.Header-wrapper span,
+.Header-wrapper img {
+  transition: inherit;
 }
 
 .Header-body {
@@ -40,7 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 30vw
+  min-width: 20vw;
 }
 
 .Header-navbar {
@@ -56,6 +71,10 @@
 .Header-hamburger {
   display: block;
   color: white;
+  transition: color 0.5s ease-in-out;
+}
+.Header-hamburger.scrolled{
+  color: var(--duke-blue) !important;
 }
 
 .Header-hamburger:hover {
@@ -65,6 +84,7 @@
 #Header-logo img{
   width: 20px;
   height: auto;
+  transition: opacity 0.5s ease-in-out;
 }
 /* figure out how to add this class to whatever header section is currently active*/
 .section-active {
