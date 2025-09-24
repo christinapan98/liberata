@@ -210,7 +210,6 @@ function App() {
             </div>
             <div className="App-section App-col-left-section" id="App-solutions">
               <div className="section-heading">/Our Solution</div>
-              {/* TODO (@HaNguyen): Fill in this section according to the new liberata.info design */}
               <OurSolution/>
             </div>
           </div>

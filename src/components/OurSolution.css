@@ -35,7 +35,7 @@
 
 .cards-layout{
     display: flex;
-    gap: 10px;
+    gap: 25px;
     align-items: flex-start;
     padding: 15px 0 50px 0;
 }
