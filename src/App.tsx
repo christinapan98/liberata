@@ -189,9 +189,9 @@ function App() {
         </div>
       </div>
       
-      <div className="App-body-container">
-        <div className="App-column-container">
-          <div className="App-column-left">
+      <div className="App-body-container" id="section-overview">
+        <div className="App-column-container" >
+          <div className="App-column-left" >
             <div className="App-section App-col-left-section" id="App-mission">
               <div className="section-heading">/Our Mission</div>
               <div id="mission-heading" ref={textRef}>

@@ -7,6 +7,7 @@
   position: relative;
   min-height: 100vh;
 }
+
 .App::after {
   content: "";
   position: absolute;
@@ -14,7 +15,8 @@
   bottom: 91.5vh;
   right: 32%;
   width: 1px;
-  background: lightgray;
+  /* uncomment this line to make the element visible */
+  /* background: lightgray; */
 }
 
 .App-intro {
@@ -70,26 +72,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 5vh;
-  border-bottom: 1px solid lightgray; /* add a long line at the end of contain */
-}
-
-.App-column-left {
-  width: 60%;
+  margin-top: 15vh;
+  /* border-bottom: 1px solid lightgray;  */
+  /* add a long line at the end of container */
 }
 
 .App-col-left-section {
   margin-bottom: 9vh;
   padding-bottom: 9vh;
-  border-bottom: 1px solid lightgray;
-}
-
-/* delete line of this to add a long line at the end of contain */
-.App-col-left-section:last-child {
-  border-bottom: none;
+  /* border-bottom: 1px solid lightgray; */
 }
 
 .App-column-right {
+  display: none;
   position: sticky;
   top: 9vh;
   width: 20%;
@@ -130,8 +125,13 @@
   margin-bottom: 10px;
 }
 
-#section-overview {
-  height: auto;
+@media (min-width: 700px) {
+  .App-column-left {
+    width: 60%;
+  }
+  .App-column-right {
+    display: block;
+  }
 }
 
 /* ------------------ 3 problems section styling------------------ */
@@ -139,10 +139,9 @@
   .App-body-container {
     grid-template-columns: 86vw;
   }
-  #section-overview {
-    height: 100vh;
-  }
+
 }
+
 @media (min-width: 1050px) {
   .sticky {
     position: sticky;

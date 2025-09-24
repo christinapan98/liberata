@@ -35,6 +35,7 @@
 
 .cards-layout{
     display: flex;
+    flex-direction: column;
     gap: 25px;
     align-items: flex-start;
     padding: 15px 0 50px 0;
@@ -66,5 +67,11 @@
 .card-content{
     font-weight: 300;
     font-size: 14px;
+}
+
+@media (min-width: 1050px) {
+  .cards-layout {
+    flex-direction: row;
+  }
 }
 

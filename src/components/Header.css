@@ -30,7 +30,6 @@
 .Header-body {
   width: 82vw !important;
   padding-top: 25px;
-  padding-bottom: 35px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -87,7 +86,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 /* figure out how to add this class to whatever header section is currently active*/
-.section-active {
+/* .section-active {
   text-decoration: solid underline var(--light-peach) 3px;
   text-underline-offset: 5.5px;
-}
+} */
