@@ -6,8 +6,8 @@ import logoBlue from '../images/Logo_Blue.png'
 import './Header.css';
 
 function Header({scrollToSection}) {
+  //Control the animation of header when scrolled past Intro
   const [scrolledPastIntro, setscrolledPastIntro] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const introBackground = document.getElementById("intro"); 
@@ -33,9 +33,9 @@ function Header({scrollToSection}) {
                 <a id="Header-overview" className="Header-navbar" href="#section-overview">
                   Overview
                 </a>
-                <a id="Header-problems" className="Header-navbar" href="#section-problems">
+                {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
                   Current publishing problems
-                </a>
+                </a> */}
                 {/* <a href="#section-four">
                   FAQ
                 </a> */}

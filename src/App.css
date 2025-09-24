@@ -4,6 +4,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  min-height: 100vh;
+}
+.App::after {
+  content: "";
+  position: absolute;
+  top: 70vh;
+  bottom: 91.5vh;
+  right: 32%;
+  width: 1px;
+  background: lightgray;
 }
 
 .App-intro {
@@ -60,6 +71,7 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 5vh;
+  border-bottom: 1px solid lightgray; /* add a long line at the end of contain */
 }
 
 .App-column-left {
@@ -70,6 +82,11 @@
   margin-bottom: 9vh;
   padding-bottom: 9vh;
   border-bottom: 1px solid lightgray;
+}
+
+/* delete line of this to add a long line at the end of contain */
+.App-col-left-section:last-child {
+  border-bottom: none;
 }
 
 .App-column-right {
