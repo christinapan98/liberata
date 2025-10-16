@@ -15,9 +15,14 @@
   bottom: 91.5vh;
   right: 32%;
   width: 1px;
-  /* uncomment this line to make the element visible */
-  /* background: lightgray; */
 }
+
+/* uncomment this block to make the element visible */
+/* @media (min-width: 800px) {
+  .App::after {
+    background: lightgray;
+  }
+} */
 
 .App-intro {
   position: relative;
@@ -73,8 +78,8 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 15vh;
-  /* border-bottom: 1px solid lightgray;  */
   /* add a long line at the end of container */
+  border-bottom: 1px solid lightgray; 
 }
 
 .App-col-left-section {
