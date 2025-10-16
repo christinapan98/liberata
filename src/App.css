@@ -72,21 +72,23 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 15vh;
+  margin-top: 11vh;
   /* border-bottom: 1px solid lightgray;  */
   /* add a long line at the end of container */
 }
 
 .App-col-left-section {
-  margin-bottom: 9vh;
+  padding-top: 11vh;
   padding-bottom: 9vh;
   /* border-bottom: 1px solid lightgray; */
+
 }
 
 .App-column-right {
   display: none;
   position: sticky;
-  top: 9vh;
+  padding-top: 11vh;
+  top: 0vh;
   width: 20%;
   margin-right: 6%;
 }
