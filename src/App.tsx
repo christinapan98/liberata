@@ -5,12 +5,11 @@ import Hook from './components/Hook';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import OurSolution from './components/OurSolution';
+import FAQCarousel from './components/FAQCarousel';
 
 function App() {
   const introRef = useRef(null);
   const overlayRef = useRef(null);
-  const videoRef = useRef(null);
-  const problemRef = useRef(null);
   const contactRef = useRef(null);
 
   const MISSION_TEXT = "To democratize an academic review system influenced by politics";
@@ -42,9 +41,11 @@ function App() {
     const missionSection = document.getElementById("App-mission");
     const overviewVideoSection = document.getElementById("App-overview-video");
     const solutionSection = document.getElementById("App-solutions");
+    const faqSection = document.getElementById("App-faq");
     const missionNav = document.getElementById("mission-nav");
     const overviewNav = document.getElementById("overview-nav");
     const solutionNav = document.getElementById("solution-nav");
+    const faqNav = document.getElementById("faq-nav");
 
     let prev: any;
     const observerOptions = {
@@ -76,6 +77,12 @@ function App() {
                 prev = solutionNav;
               }
               break; 
+            case "App-faq":
+              if(faqNav) {
+                faqNav.classList.add('section-active');
+                prev = faqNav;
+              }
+              break;
             default:
               if(prev) {
                 prev.classList.remove('section-active');
@@ -89,6 +96,7 @@ function App() {
     observer.observe(missionSection);
     observer.observe(overviewVideoSection);
     observer.observe(solutionSection);
+    observer.observe(faqSection);
     return () => observer.disconnect();
   }, []);
 
@@ -155,16 +163,6 @@ function App() {
 
   const scrollToSection = (sectionId: string) => {
     switch(sectionId) {
-      case "section-overview":
-        if(videoRef.current) {
-          videoRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
-      case "section-problems":
-        if(problemRef.current) {
-          problemRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
       case "section-contact":
         if(contactRef.current) {
           contactRef.current.scrollIntoView({behavior: 'smooth'});
@@ -209,12 +207,20 @@ function App() {
               <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh'}}>Watch a brief overview video explaining the logic behind Liberata.</div>
               
               {/* Since they are large files, our explainer videos must be stored in AWS. */}
-              <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted/>
+              <video src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted/>
             </div>
             
             <div className="App-section App-col-left-section" id="App-solutions">
               <div className="section-heading">/Our Solution</div>
               <OurSolution/>
+            </div>
+          
+            <div className="App-section App-col-left-section" id="App-faq">
+              <div className="section-heading">/Frequently Asked Questions</div>
+              <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh', lineHeight: '1.7rem'}}>
+                Watch some brief videos exploring frequently asked questions about the Liberata system.
+              </div>
+              <FAQCarousel/>
             </div>
           </div>
 
@@ -222,6 +228,7 @@ function App() {
             <a href="#App-mission" id="mission-nav">Our Mission</a>
             <a href="#App-overview-video" id="overview-nav">How It Works</a>
             <a href="#App-solutions" id="solution-nav">Our Solution</a>
+            <a href="#App-faq" id="faq-nav">FAQ</a>
           </div>
         </div>
 

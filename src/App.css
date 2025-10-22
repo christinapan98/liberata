@@ -73,14 +73,15 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-top: 8vh;
+  padding-bottom: 8vh;
   /* border-bottom: 1px solid lightgray;  */
   /* add a long line at the end of container */
 }
 
 .App-col-left-section {
   padding-top: 11vh;
-  padding-bottom: 9vh;
-  /* border-bottom: 1px solid lightgray; */
+  padding-bottom: 11vh;
+  border-bottom: 1px solid lightgray;
 }
 
 .App-column-right {
@@ -121,10 +122,6 @@
   color: grey;
   font-size: 1.2rem;
   line-height: 1.7rem;
-}
-
-#App-solutions {
-  padding-bottom: 0;
 }
 
 .section-heading {
@@ -228,6 +225,15 @@ App-header to overflow unnecessarily */
   margin-top: 4vh;
   border: 1px solid gray;
   /* height: auto; */
+}
+
+#App-faq {
+  padding-bottom: 0;
+  border-bottom: 0
+}
+
+.faq-video:hover {
+  cursor: pointer;
 }
 
 /* ------------------------ END ------------------------------- */
