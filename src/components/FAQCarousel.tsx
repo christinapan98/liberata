@@ -31,7 +31,7 @@ function FAQCarousel() {
         }} >
           {
             items.map((item, i) => 
-            <video key={i} src={item.url} style={{ height: '50vh', borderRadius: '10px'}} width="100%" controls muted/>)
+            <video key={i} src={item.url} className="faq-video" style={{ borderRadius: '10px'}} width="100%" controls muted/>)
           }
         </Carousel>
     </div>

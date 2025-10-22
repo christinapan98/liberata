@@ -232,6 +232,10 @@ App-header to overflow unnecessarily */
   border-bottom: 0
 }
 
+.faq-video:hover {
+  cursor: pointer;
+}
+
 /* ------------------------ END ------------------------------- */
 
 #section-hook {
