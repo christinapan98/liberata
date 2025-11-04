@@ -11,10 +11,9 @@ function Footer() {
   const linkedinUrl = "https://www.linkedin.com/company/liberata-academia/posts/?feedView=all";
   const youtubeUrl = "https://www.youtube.com/@liberata.academia";
   const instagramUrl = "https://www.instagram.com/liberata.official/";
-  const facebookUrl = "";
   const redditUrl = "https://www.reddit.com/user/Liberata_Official/";
-  const xUrl = "";
-  
+  const xUrl = "https://x.com/liberata2025?s=21";
+  const facebookUrl = "";
   return (
     <div className="Footer-body">
       <div className="Footer-text-mediaIconLine">
@@ -27,9 +26,9 @@ function Footer() {
         <a href={instagramUrl} target='_blank' rel='noreferrer'>
           <InstagramIcon className='mediaIcon' fontSize='large'/>
         </a>
-        <a href={facebookUrl} target='_blank' rel='noreferrer'>
+        {/* <a href={facebookUrl} target='_blank' rel='noreferrer'>
           <FacebookIcon className='mediaIcon' fontSize='large'/>
-        </a>
+        </a> */}
         <a href={redditUrl} target='_blank' rel='noreferrer'>
           <RedditIcon className='mediaIcon' fontSize='large'/>
         </a>
