@@ -8,7 +8,7 @@ function Hook() {
         <div className="Hook-header">
           Introducing Liberata.
         </div>
-        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '6vh'}}>
+        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '18vh'}}>
           <div className="Hook-subheader">
             An open-source academic literature and peer matching platform.
           </div>
