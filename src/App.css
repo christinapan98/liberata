@@ -7,7 +7,7 @@
   position: relative;
   min-height: 100vh;
 }
-.App::after {
+/* .App::after {
   content: "";
   position: absolute;
   top: 70vh;
@@ -15,7 +15,7 @@
   right: 32%;
   width: 1px;
   background: lightgray;
-}
+} */
 
 .App-intro {
   position: relative;
@@ -271,6 +271,12 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+/*Scroll right column*/
+#Team-leadership, #Team-product, #Team-business, 
+#App-mission, #App-overview-video, #App-solutions{
+  scroll-margin-top: 80px;
 }
 
 /* -------------------------------------------------- */

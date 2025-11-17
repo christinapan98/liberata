@@ -68,6 +68,11 @@
   color: white;
 }
 
+.Header-nav .active{
+  text-underline-offset: 5px;
+  text-decoration: underline;
+}
+
 .Header-hamburger {
   display: block;
   color: white;
@@ -88,6 +93,6 @@
 }
 /* figure out how to add this class to whatever header section is currently active*/
 .section-active {
-  text-decoration: solid underline var(--light-peach) 3px;
+  text-decoration: underline solid var(--light-peach) 3px;
   text-underline-offset: 5.5px;
 }

@@ -8,7 +8,7 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource/inter": "^5.1.1",
     "@fontsource/roboto": "^5.1.0",
-    "@mui/icons-material": "^6.1.6",
+    "@mui/icons-material": "^5.18.0",
     "@mui/joy": "^5.0.0-beta.51",
     "@mui/material": "5.11.15",
     "@testing-library/jest-dom": "^5.17.0",
@@ -20,7 +20,10 @@
     "@types/react-dom": "^18.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-router-dom": "^7.9.6",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.31.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -33,7 +36,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject", 
+    "eject": "react-scripts eject",
     "deploy": "cp CNAME build/ && gh-pages -d build"
   },
   "eslintConfig": {

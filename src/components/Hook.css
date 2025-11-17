@@ -1,13 +1,18 @@
 @media (min-width: 450px) {
   .Hook-header {
     margin-top: 7vh;
-    font-size: 3.8rem !important;
+    font-size: 3.4rem !important;
     line-height: 5rem !important;
     padding-left: 2vw;
   }
+  .Hook-subtext{
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    max-width: 50vw !important;
+  }
   .Hook-subheader {
     font-size: 1.2rem !important;
-    line-height: 2rem !important;
+    line-height: 1.5rem !important;
     max-width: 40vw;
   }
 }
@@ -15,9 +20,14 @@
 @media (min-width: 768px) {
   .Hook-header {
     margin-top: 7vh;
-    font-size: 5rem !important;
+    font-size: 4rem !important;
     line-height: 6rem !important;
     padding-left: 0vw !important;
+  }
+  .Hook-subtext {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    max-width: 45vw !important;
   }
   .Hook-subheader {
     font-size: 1.3rem !important;
@@ -29,7 +39,7 @@
 .Hook-header {
   font-size: 3rem;
   line-height: 4.5rem;
-  max-width: 30vw;
+  max-width: 50vw;
 }
 
 .Hook-subheader {
@@ -40,6 +50,15 @@
   color: white;
   margin-bottom: 2rem;
   text-align: left;
+}
+
+.Hook-subtext {
+  font-size: 1rem;
+  line-height: 2rem;
+  margin-top: 0.2rem;
+  font-weight: 200;
+  color: white;
+  max-width: 40vw;
 }
 
 .Hook-wrapper {
