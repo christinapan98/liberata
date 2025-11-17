@@ -17,12 +17,11 @@
   width: 1px;
 }
 
-/* uncomment this block to make the element visible */
-/* @media (min-width: 800px) {
+@media (min-width: 1050px) {
   .App::after {
     background: lightgray;
   }
-} */
+}
 
 .App-intro {
   position: relative;
@@ -85,7 +84,7 @@
 .App-col-left-section {
   margin-bottom: 9vh;
   padding-bottom: 9vh;
-  /* border-bottom: 1px solid lightgray; */
+  border-bottom: 1px solid lightgray;
 }
 
 .App-column-right {
