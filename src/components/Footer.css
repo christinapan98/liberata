@@ -17,7 +17,7 @@
   color: rgb(120, 120, 120);
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1050px) {
   .Footer-text-mediaIconLine {
     padding-top: 3vh;
   }

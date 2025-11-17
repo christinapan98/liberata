@@ -22,7 +22,8 @@
 .App-intro {
   position: relative;
   top: 0;
-  height: 920px;
+  height: 100vh;
+  max-height: 920px;
   margin-bottom: 8vh;
 }
 
