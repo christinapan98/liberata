@@ -27,8 +27,16 @@
 }
 
 @media (min-width: 1500px) {
+  .Hook-header {
+    font-size: 5.5rem !important;
+    line-height: 6.5rem !important;
+  }
   .Hook-subheader-wrapper {
-    margin-top: 18vh;
+    margin-top: 10vh !important;
+  }
+  .Hook-subheader {
+    font-size: 1.5rem !important;
+    line-height: 2.2rem !important;
   }
 }
 
@@ -52,7 +60,7 @@
   width: inherit;
   display: flex; 
   justify-content: end;
-  margin-top: 8vh;
+  margin-top: 6vh;
 }
 
 .Hook-wrapper {
