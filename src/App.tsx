@@ -5,12 +5,11 @@ import Hook from './components/Hook';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import OurSolution from './components/OurSolution';
+import FAQCarousel from './components/FAQCarousel';
 
 function App() {
   const introRef = useRef(null);
   const overlayRef = useRef(null);
-  const videoRef = useRef(null);
-  const problemRef = useRef(null);
   const contactRef = useRef(null);
 
   const MISSION_TEXT = "To democratize an academic review system influenced by politics";
@@ -37,18 +36,22 @@ function App() {
     });
   }, []);
 
-  // Set up another observer for the main body sections
-  // Whenever they are scrolled into, detect the corresponding entry id
-  // Then add active class to the header title that matches the entry id
-  // Also be mindful of when none of the sections should be highlighted
-  // detect when section is scrolled out of as well
+  // Set up another observer to highlight the current section in the right nav bar
   useEffect(() => {
-    const sectionOne = document.getElementById("section-hook");
-    const sectionContact = document.getElementById("section-contact");
-    const sectionTwoHeader = document.getElementById("Header-problems");
-    const sectionOverviewHeader = document.getElementById("Header-overview");
-    const sectionContactHeader = document.getElementById("Header-contact");
+    const missionSection = document.getElementById("App-mission");
+    const overviewVideoSection = document.getElementById("App-overview-video");
+    const solutionSection = document.getElementById("App-solutions");
+    const faqSection = document.getElementById("App-faq");
+    const missionNav = document.getElementById("mission-nav");
+    const overviewNav = document.getElementById("overview-nav");
+    const solutionNav = document.getElementById("solution-nav");
+    const faqNav = document.getElementById("faq-nav");
+
     let prev: any;
+    const observerOptions = {
+      root: null,
+      threshold: 0.6, // only trigger when 60% of section is visible
+    };
     const observerCallback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -56,22 +59,28 @@ function App() {
             prev.classList.remove('section-active');
           }
           switch(entry.target.id) {
-            case "section-overview":
-              if(sectionOverviewHeader) {
-                sectionOverviewHeader.classList.add('section-active');
-                prev = sectionOverviewHeader;
+            case "App-mission":
+              if(missionNav) {
+                missionNav.classList.add('section-active');
+                prev = missionNav;
               }
               break;
-            case "section-problems":
-              if(sectionTwoHeader) {
-                sectionTwoHeader.classList.add('section-active');
-                prev = sectionTwoHeader;
+            case "App-overview-video":
+              if(overviewNav) {
+                overviewNav.classList.add('section-active');
+                prev = overviewNav;
               }
               break;
-            case "section-contact":
-              if(sectionContactHeader) {
-                sectionContactHeader.classList.add('section-active');
-                prev = sectionContactHeader;
+            case "App-solutions":
+              if(solutionNav) {
+                solutionNav.classList.add('section-active');
+                prev = solutionNav;
+              }
+              break; 
+            case "App-faq":
+              if(faqNav) {
+                faqNav.classList.add('section-active');
+                prev = faqNav;
               }
               break;
             default:
@@ -80,14 +89,15 @@ function App() {
               }
               break;
           }
-        } else {
-          entry.target.classList.remove('section-active');
         }
       });
     };
-    const observer = new IntersectionObserver(observerCallback);
-    observer.observe(sectionOne);
-    observer.observe(sectionContact);
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(missionSection);
+    observer.observe(overviewVideoSection);
+    observer.observe(solutionSection);
+    observer.observe(faqSection);
+    return () => observer.disconnect();
   }, []);
 
   // Add slight overlay shift when user moves mouse inside landing page
@@ -153,16 +163,6 @@ function App() {
 
   const scrollToSection = (sectionId: string) => {
     switch(sectionId) {
-      case "section-overview":
-        if(videoRef.current) {
-          videoRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
-      case "section-problems":
-        if(problemRef.current) {
-          problemRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
       case "section-contact":
         if(contactRef.current) {
           contactRef.current.scrollIntoView({behavior: 'smooth'});
@@ -190,8 +190,8 @@ function App() {
       </div>
       
       <div className="App-body-container" id="section-overview">
-        <div className="App-column-container" >
-          <div className="App-column-left" >
+        <div className="App-column-container">
+          <div className="App-column-left">
             <div className="App-section App-col-left-section" id="App-mission">
               <div className="section-heading">/Our Mission</div>
               <div id="mission-heading" ref={textRef}>
@@ -201,23 +201,34 @@ function App() {
                 Our existing academic review system is influenced by politics in places where it should be impartial. With an open-source publishing platform that follows a shareholder model distribution of credit, Liberata seeks to reward all academic contributors fairly.
               </div>
             </div>
+            
             <div className="App-section App-col-left-section" id="App-overview-video">
               <div className="section-heading">/How It Works</div>
               <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh'}}>Watch a brief overview video explaining the logic behind Liberata.</div>
               
               {/* Since they are large files, our explainer videos must be stored in AWS. */}
-              <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted/>
+              <video src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted/>
             </div>
+            
             <div className="App-section App-col-left-section" id="App-solutions">
               <div className="section-heading">/Our Solution</div>
               <OurSolution/>
             </div>
+          
+            <div className="App-section App-col-left-section" id="App-faq">
+              <div className="section-heading">/Frequently Asked Questions</div>
+              <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh', lineHeight: '1.7rem'}}>
+                Watch some brief videos exploring frequently asked questions about the Liberata system.
+              </div>
+              <FAQCarousel/>
+            </div>
           </div>
 
           <div className="App-column-right">
-            <a href="#App-mission">Our Mission</a>
-            <a href="#App-overview-video">How It Works</a>
-            <a href="#App-solutions">Our Solution</a>
+            <a href="#App-mission" id="mission-nav">Our Mission</a>
+            <a href="#App-overview-video" id="overview-nav">How It Works</a>
+            <a href="#App-solutions" id="solution-nav">Our Solution</a>
+            <a href="#App-faq" id="faq-nav">FAQ</a>
           </div>
         </div>
 

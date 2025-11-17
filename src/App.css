@@ -76,23 +76,30 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 15vh;
+  margin-top: 8vh;
+  padding-bottom: 8vh;
+  /* border-bottom: 1px solid lightgray;  */
   /* add a long line at the end of container */
   border-bottom: 1px solid lightgray; 
 }
 
 .App-col-left-section {
-  margin-bottom: 9vh;
-  padding-bottom: 9vh;
+  padding-top: 11vh;
+  padding-bottom: 11vh;
   border-bottom: 1px solid lightgray;
 }
 
 .App-column-right {
   display: none;
   position: sticky;
-  top: 9vh;
+  padding-top: 11vh;
+  top: 0vh;
   width: 20%;
   margin-right: 6%;
+}
+
+.section-active {
+  color: black !important;
 }
 
 .App-column-right a {
@@ -100,6 +107,10 @@
   color: grey;
   font-size: 1.2rem;
   margin-bottom: 2.5vh;
+}
+
+.App-column-right a:hover {
+  opacity: 0.8;
 }
 
 #mission-heading {
@@ -116,10 +127,6 @@
   color: grey;
   font-size: 1.2rem;
   line-height: 1.7rem;
-}
-
-#App-solutions {
-  margin-bottom: 0;
 }
 
 .section-heading {
@@ -223,6 +230,15 @@ App-header to overflow unnecessarily */
   margin-top: 4vh;
   border: 1px solid gray;
   /* height: auto; */
+}
+
+#App-faq {
+  padding-bottom: 0;
+  border-bottom: 0
+}
+
+.faq-video:hover {
+  cursor: pointer;
 }
 
 /* ------------------------ END ------------------------------- */
