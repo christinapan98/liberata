@@ -22,6 +22,7 @@
 .App-intro {
   position: relative;
   top: 0;
+  left: 20px;
   height: 100vh;
   max-height: 920px;
   margin-bottom: 8vh;
@@ -138,6 +139,9 @@
   }
   .App-column-right {
     display: block;
+  }
+  .App-intro {
+    left: 0px !important;
   }
 }
 
