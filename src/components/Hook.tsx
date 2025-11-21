@@ -10,7 +10,7 @@ function Hook() {
         </div>
         <div className="Hook-subheader-wrapper">
           <div className="Hook-subheader">
-            An open-source academic literature and peer matching platform.
+            Open access academic publishing with incentivized quality controls
           </div>
         </div>
       </div>
