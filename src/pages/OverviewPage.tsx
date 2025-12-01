@@ -13,7 +13,7 @@ function OverviewPage() {
   const problemRef = useRef(null);
   const contactRef = useRef(null);
 
-  const MISSION_TEXT = "To democratize an academic review system influenced by politics";
+  const MISSION_TEXT = "Open access academic publishing with incentivized quality controls.";
   const TYPING_SPEED = 25;
   const [displayedText, setDisplayedText] = useState("");
   const textRef = useRef(null);
@@ -181,7 +181,8 @@ function OverviewPage() {
         <div className="App-section" id="section-hook">
           <Hook
             header = "Introducing Liberata."
-            subheader = "An open-source academic literature and peer matching platform."
+            subheader = "Learn about how Liberata uses game theory and graph theory to solve entrenched problems with academic publishing."
+            subtext = "Open access academic publishing with incentivized quality controls."
           />
         </div>
 
@@ -196,31 +197,37 @@ function OverviewPage() {
         <div className="App-column-container">
           <div className="App-column-left">
             <div className="App-section App-col-left-section" id="App-mission">
-              <div className="section-heading">/Our Mission</div>
+              <div className="section-heading">/Liberata's Mission</div>
               <div id="mission-heading" ref={textRef}>
                {displayedText}
               </div>
               <div id="mission-body">
-                Our existing academic review system is influenced by politics in places where it should be impartial. With an open-source publishing platform that follows a shareholder model distribution of credit, Liberata seeks to reward all academic contributors fairly.
+                Liberata leverages game theory to redesign the academic publishing for proper incentive alignment between stakeholders, and graph theory to measure and monitor impact, behavior, risk, and state of health of academic entities.
               </div>
             </div>
             <div className="App-section App-col-left-section" id="App-overview-video">
-              <div className="section-heading">/How It Works</div>
+              <div className="section-heading">/The Liberata System</div>
               <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh'}}>Watch a brief overview video explaining the logic behind Liberata.</div>
               
               {/* Since they are large files, our explainer videos must be stored in AWS. */}
               <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted/>
             </div>
             <div className="App-section App-col-left-section" id="App-solutions">
-              <div className="section-heading">/Our Solution</div>
+              <div className="section-heading">/Key Concepts</div>
               <OurSolution/>
+            </div>
+            <div className="App-section App-col-left-section" id="App-FAQ">
+              <div className="section-heading">/Frequently Asked Questions</div>
+              <FAQ/>
             </div>
           </div>
 
           <div className="App-column-right">
-            <a href="#App-mission">Our Mission</a>
-            <a href="#App-overview-video">How It Works</a>
-            <a href="#App-solutions">Our Solution</a>
+            <a href="#App-mission">Liberata's Mission</a>
+            <a href="#App-overview-video">The Liberata System</a>
+            <a href="#App-solutions">Key Concepts</a>
+            <a href="#App-FAQ">FAQ</a>
+            <a href="#section-contact">Join Us</a>
           </div>
         </div>
 
