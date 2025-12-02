@@ -228,6 +228,7 @@ function OverviewPage() {
           </div>
 
           <div className="App-column-right">
+            <a href="#App-problems">Academic Problems</a>
             <a href="#App-mission">Liberata's Mission</a>
             <a href="#App-overview-video">The Liberata System</a>
             <a href="#App-solutions">Key Concepts</a>

@@ -275,7 +275,7 @@ button:hover {
 
 /*Scroll right column*/
 #Team-leadership, #Team-product, #Team-business, 
-#App-mission, #App-overview-video, #App-solutions{
+#App-mission, #App-overview-video, #App-solutions, #App-problems{
   scroll-margin-top: 80px;
 }
 
