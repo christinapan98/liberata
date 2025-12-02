@@ -4,6 +4,7 @@ import Hook from '../components/Hook';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import OurSolution from '../components/OurSolution';
+import AcademicPublishingProblems from '../components/AcademicPublishingProblems'
 import '../App.css';
 
 function OverviewPage() {
@@ -196,6 +197,11 @@ function OverviewPage() {
       <div className="App-body-container">
         <div className="App-column-container">
           <div className="App-column-left">
+            <div className="App-section App-col-left-section" id="App-problems">
+              <div className="section-heading">/Academic Publishing Problems</div>
+              <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing suffers from a merit, economic, and societal problems today arising from maligned legacy incentive structures.</div>
+                <AcademicPublishingProblems/>
+            </div>
             <div className="App-section App-col-left-section" id="App-mission">
               <div className="section-heading">/Liberata's Mission</div>
               <div id="mission-heading" ref={textRef}>
@@ -216,10 +222,9 @@ function OverviewPage() {
               <div className="section-heading">/Key Concepts</div>
               <OurSolution/>
             </div>
-            <div className="App-section App-col-left-section" id="App-FAQ">
+            {/* <div className="App-section App-col-left-section" id="App-FAQ">
               <div className="section-heading">/Frequently Asked Questions</div>
-              <FAQ/>
-            </div>
+            </div> */}
           </div>
 
           <div className="App-column-right">
@@ -238,10 +243,10 @@ function OverviewPage() {
       </div>
 
       {/* Footer, including social media links */}
-      <div className="App-footer" id="App-footer">
+      {/* <div className="App-footer" id="App-footer">
         <Footer/>
         <div className="Footer-accent"></div>
-      </div> 
+      </div>  */}
     </div>
   );
 }

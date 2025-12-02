@@ -35,6 +35,7 @@
 
 .cards-layout{
     display: flex;
+    flex-direction: column;
     gap: 25px;
     align-items: flex-start;
     padding: 15px 0 50px 0;
@@ -56,6 +57,12 @@
     background-image: url('../images/BG.png');
     background-size: cover;
     background-position: center;
+}
+.card-image{
+    width: 100%;
+    border-radius: 6px;
+    margin: 10px 0 15px 0;
+    object-fit: cover;
 }
 
 .card-title{

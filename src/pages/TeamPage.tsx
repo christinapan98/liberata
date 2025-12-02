@@ -253,10 +253,10 @@ function TeamPage() {
             </div>
 
             {/* Footer, including social media links */}
-            <div className="App-footer" id="App-footer">
+            {/* <div className="App-footer" id="App-footer">
                 <Footer/>
                 <div className="Footer-accent"></div>
-            </div> 
+            </div>  */}
         </div>
     );
 }
