@@ -1,28 +1,38 @@
+.problem-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Problem Image Styles */
+.problem-img {
+    width: 75%;
+    padding-left: 12vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
 /* Basic 3D Carousel Styles */
 .carousel-3d-container {
     width: 100%;
     padding: 20px;
 }
 
-.problem-img{
-    width: 100%;
-}
-
 .carousel-3d-viewport {
     width: 100%;
-    height: 280px;
+    height: 360px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     perspective: 1000px;
+    overflow: hidden;
 }
 
 .carousel-card {
     position: absolute;
-    width: 100%;
-    max-width: 330px;
-    height: 220px;
+    width: 330px;
+    height: 240px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -31,6 +41,7 @@
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     background: #EEEEEE;
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .carousel-card-active {
@@ -120,60 +131,121 @@
     border-radius: 4px;
 }
 
+/* Tablet Responsive */
 @media (max-width: 768px) {
+    .problem-img {
+        width: 85%;
+        padding-left: 5vw;
+        margin: 0 auto;
+    }
+
     .carousel-3d-container {
         padding: 15px;
+        width: 100%;
     }
 
     .carousel-3d-viewport {
-        height: 300px;
-    }
-
-    .carousel-card {
-        max-width: 90%;
         height: 260px;
-        padding: 1.25rem;
+        perspective: 700px;
+    }
+    .carousel-card-right .carousel-card-text,
+    .carousel-card-left .carousel-card-text{
+        font-size: 0.6rem;
+    }
+    .carousel-card-right .carousel-card-heading,
+    .carousel-card-left .carousel-card-heading{
+        font-size: 0.7rem;
+    }
+    .carousel-card-right, .carousel-card-left{
+        width: 200px;
+        height: 190px;
+    }
+    .carousel-card-active {
+        width: 240px;
+        height: 230px;
+        padding: 1rem;
+    }
+    .carousel-card-heading {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+    .carousel-card-active .carousel-card-text {
+        font-size: 0.75rem;
     }
 
     .carousel-card-right {
-        transform: translateX(70%) scale(0.8) rotateY(-20deg);
+        transform: translateX(60%) scale(0.65) rotateY(-20deg);
     }
 
     .carousel-card-left {
-        transform: translateX(-70%) scale(0.8) rotateY(20deg);
+        transform: translateX(-60%) scale(0.65) rotateY(20deg);
     }
 }
 
+/* Mobile Responsive */
 @media (max-width: 450px) {
+    .problem-img {
+        width: 95%;
+        padding-left: 2.5vw;
+        margin: 0 auto;
+    }
+
     .carousel-3d-container {
         padding: 10px;
-        min-height: 380px;
+        min-height: 300px;
+        width: 100%;
     }
 
     .carousel-3d-viewport {
-        height: 280px;
+        height: 180px;
+        perspective: 400px;
     }
 
-    .carousel-card {
-        height: 240px;
-        padding: 1rem;
+    .carousel-card-active {
+        width: 170px;
+        height: 150px;
+        padding: 0.6rem;
+    }
+    .carousel-card-right .carousel-card-text,
+    .carousel-card-left .carousel-card-text{
+        font-size: 0.3rem;
+    }
+    .carousel-card-right .carousel-card-heading,
+    .carousel-card-left .carousel-card-heading{
+        font-size: 0.4rem;
+    }
+    .carousel-card-right, .carousel-card-left{
+        width: 150px;
+        height: 130px;
     }
 
-    .carousel-card-heading {
-        font-size: 0.95rem;
-        margin-bottom: 6px;
+    .carousel-card-active .carousel-card-heading {
+        font-size: 0.5rem;
+        margin-bottom: 2px;
+        font-weight: 400;
     }
 
-    .carousel-card-text {
-        font-size: 0.85rem;
-        line-height: 1.4;
+     .carousel-card-active .carousel-card-text {
+        font-size: 0.42rem;
+        line-height: 1.25;
     }
 
     .carousel-nav-buttons {
-        gap: 10px;
+        gap: 8px;
+        margin-top: 10px;
     }
 
     .carousel-btn {
-        padding: 6px;
+        padding: 5px;
+    }
+
+    .carousel-card-right {
+        transform: translateX(60%) scale(0.45) rotateY(-10deg);
+        opacity: 0.2;
+    }
+
+    .carousel-card-left {
+        transform: translateX(-60%) scale(0.45) rotateY(10deg);
+        opacity: 0.2;
     }
 }

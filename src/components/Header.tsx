@@ -38,9 +38,9 @@ function Header({scrollToSection = () => {} }) {
                 <NavLink id="Header-overview" className="Header-navbar" to="/">
                   Overview
                 </NavLink>
-                <NavLink id="Header-team" className="Header-navbar" to="/team">
+                {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
                   Team
-                </NavLink>
+                </NavLink> */}
                 {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
                   Current publishing problems
                 </a> */}

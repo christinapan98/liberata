@@ -44,42 +44,44 @@ function AcademicPublishingProblems(){
     };
 
     return (
-        <div className="carousel-3d-container">
+        <div className="problem-container">
             <img src={require('../images/AcademicProblems.png')} className="problem-img"/>
-            <div className="carousel-3d-viewport">
-                {items.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`carousel-card ${getCardClass(index)}`}
-                        onClick={() => {
-                            if (index !== activeIndex) {
-                                setActiveIndex(index);
-                            }
-                        }}
-                    >
-                        <h3 className="carousel-card-heading">{item.heading}</h3>
-                        <p className="carousel-card-text">{item.text}</p>
-                    </div>
-                ))}
-            </div>
+            <div className="carousel-3d-container">
+                <div className="carousel-3d-viewport">
+                    {items.map((item, index) => (
+                        <div
+                            key={index}
+                            className={`carousel-card ${getCardClass(index)}`}
+                            onClick={() => {
+                                if (index !== activeIndex) {
+                                    setActiveIndex(index);
+                                }
+                            }}
+                        >
+                            <h3 className="carousel-card-heading">{item.heading}</h3>
+                            <p className="carousel-card-text">{item.text}</p>
+                        </div>
+                    ))}
+                </div>
 
-            <div className="carousel-nav-buttons">
-                <button onClick={prev} className="carousel-btn">
-                    ←
-                </button>
-                <button onClick={next} className="carousel-btn">
-                    →
-                </button>
-            </div>
+                <div className="carousel-nav-buttons">
+                    <button onClick={prev} className="carousel-btn">
+                        ←
+                    </button>
+                    <button onClick={next} className="carousel-btn">
+                        →
+                    </button>
+                </div>
 
-            <div className="carousel-dots">
-                {items.map((_, index) => (
-                    <div
-                        key={index}
-                        onClick={() => setActiveIndex(index)}
-                        className={`carousel-dot ${activeIndex === index ? 'active' : ''}`}
-                    />
-                ))}
+                <div className="carousel-dots">
+                    {items.map((_, index) => (
+                        <div
+                            key={index}
+                            onClick={() => setActiveIndex(index)}
+                            className={`carousel-dot ${activeIndex === index ? 'active' : ''}`}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

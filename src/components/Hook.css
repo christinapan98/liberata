@@ -3,11 +3,10 @@
     margin-top: 7vh;
     font-size: 3.4rem !important;
     line-height: 5rem !important;
-    padding-left: 2vw;
   }
   .Hook-subtext{
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.3rem !important;
     max-width: 50vw !important;
   }
   .Hook-subheader {
@@ -25,13 +24,13 @@
     padding-left: 0vw !important;
   }
   .Hook-subtext {
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
+    font-size: 0.7rem !important;
+    line-height: 1rem !important;
     max-width: 45vw !important;
   }
   .Hook-subheader {
-    font-size: 1.3rem !important;
-    line-height: 2rem !important;
+    font-size: 1.1rem !important;
+    line-height: 1.3rem !important;
     max-width: 20vw;
   }
 }
@@ -53,7 +52,7 @@
 }
 
 .Hook-subtext {
-  font-size: 1rem;
+  font-size: 1rem !important;
   line-height: 2rem;
   margin-top: 0.2rem;
   font-weight: 200;

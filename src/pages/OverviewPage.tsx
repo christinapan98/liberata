@@ -197,11 +197,6 @@ function OverviewPage() {
       <div className="App-body-container">
         <div className="App-column-container">
           <div className="App-column-left">
-            <div className="App-section App-col-left-section" id="App-problems">
-              <div className="section-heading">/Academic Publishing Problems</div>
-              <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing suffers from a merit, economic, and societal problems today arising from maligned legacy incentive structures.</div>
-                <AcademicPublishingProblems/>
-            </div>
             <div className="App-section App-col-left-section" id="App-mission">
               <div className="section-heading">/Liberata's Mission</div>
               <div id="mission-heading" ref={textRef}>
@@ -210,6 +205,11 @@ function OverviewPage() {
               <div id="mission-body">
                 Liberata leverages game theory to redesign the academic publishing for proper incentive alignment between stakeholders, and graph theory to measure and monitor impact, behavior, risk, and state of health of academic entities.
               </div>
+            </div>
+            <div className="App-section App-col-left-section" id="App-problems">
+              <div className="section-heading">/Academic Publishing Problems</div>
+              <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing suffers from a merit, economic, and societal problems today arising from maligned legacy incentive structures.</div>
+                <AcademicPublishingProblems/>
             </div>
             <div className="App-section App-col-left-section" id="App-overview-video">
               <div className="section-heading">/The Liberata System</div>
@@ -228,12 +228,12 @@ function OverviewPage() {
           </div>
 
           <div className="App-column-right">
-            <a href="#App-problems">Academic Problems</a>
-            <a href="#App-mission">Liberata's Mission</a>
+            <a href="#App-problems">Liberata's Mission</a>
+            <a href="#App-mission">Academic Publishing</a>
             <a href="#App-overview-video">The Liberata System</a>
             <a href="#App-solutions">Key Concepts</a>
             <a href="#App-FAQ">FAQ</a>
-            <a href="#section-contact">Join Us</a>
+            <a href="#section-contact">Contact Us</a>
           </div>
         </div>
 

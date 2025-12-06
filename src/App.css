@@ -135,6 +135,17 @@
 }
 
 /* ------------------ 3 problems section styling------------------ */
+@media (max-width: 699px) {
+  .App-column-right {
+  display: none;
+  }
+  .App-column-left {
+  width: 100%;
+  }
+  #mission-heading {
+  max-width: 100%;
+  }
+}
 @media (min-width: 700px) {
   .App-body-container {
     grid-template-columns: 86vw;

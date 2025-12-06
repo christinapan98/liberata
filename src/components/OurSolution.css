@@ -59,9 +59,9 @@
     background-position: center;
 }
 .card-image{
-    width: 100%;
+    width: 75%;
     border-radius: 6px;
-    margin: 10px 0 15px 0;
+    margin: 10px auto 15px auto;
     object-fit: cover;
 }
 
