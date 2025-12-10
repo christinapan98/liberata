@@ -208,8 +208,7 @@ function OverviewPage() {
             </div>
             <div className="App-section App-col-left-section" id="App-problems">
               <div className="section-heading">/Academic Publishing Problems</div>
-              <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing suffers from a merit, economic, and societal problems today arising from maligned legacy incentive structures.</div>
-                <AcademicPublishingProblems/>
+              <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing today suffers from merit, economic, and societal problems arising from maligned legacy incentive structures</div>
             </div>
             <div className="App-section App-col-left-section" id="App-overview-video">
               <div className="section-heading">/The Liberata System</div>
@@ -233,7 +232,6 @@ function OverviewPage() {
             <a href="#App-overview-video">The Liberata System</a>
             <a href="#App-solutions">Key Concepts</a>
             <a href="#App-FAQ">FAQ</a>
-            <a href="#section-contact">Contact Us</a>
           </div>
         </div>
 
