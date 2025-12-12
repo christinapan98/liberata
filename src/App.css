@@ -7,21 +7,23 @@
   position: relative;
   min-height: 100vh;
 }
-/* .App::after {
+.App::after {
   content: "";
   position: absolute;
   top: 70vh;
   bottom: 91.5vh;
   right: 32%;
   width: 1px;
-  background: lightgray;
-} */
-
+  /* uncomment this line to make the element visible */
+  /* background: lightgray; */
+}
 .App-intro {
   position: relative;
   top: 0;
+  left: 20px;
   height: 100vh;
-  margin-bottom: 10vh;
+  max-height: 920px;
+  margin-bottom: 8vh;
 }
 
 .App-background {
@@ -70,30 +72,29 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: 5vh;
-  border-bottom: 1px solid lightgray; /* add a long line at the end of contain */
-}
-
-.App-column-left {
-  width: 60%;
+  margin-top: 8vh;
+  padding-bottom: 8vh;
+  border-bottom: 1px solid lightgray; 
+  /* add a long line at the end of container */
 }
 
 .App-col-left-section {
-  margin-bottom: 9vh;
-  padding-bottom: 9vh;
+  padding-top: 11vh;
+  padding-bottom: 11vh;
   border-bottom: 1px solid lightgray;
 }
 
-/* delete line of this to add a long line at the end of contain */
-.App-col-left-section:last-child {
-  border-bottom: none;
-}
-
 .App-column-right {
+  display: none;
   position: sticky;
-  top: 9vh;
+  padding-top: 11vh;
+  top: 0vh;
   width: 20%;
   margin-right: 6%;
+}
+
+.section-active {
+  color: black !important;
 }
 
 .App-column-right a {
@@ -101,6 +102,10 @@
   color: grey;
   font-size: 1.2rem;
   margin-bottom: 2.5vh;
+}
+
+.App-column-right a:hover {
+  opacity: 0.8;
 }
 
 #mission-heading {
@@ -119,10 +124,6 @@
   line-height: 1.7rem;
 }
 
-#App-solutions {
-  margin-bottom: 0;
-}
-
 .section-heading {
   color: var(--duke-blue);
   font-weight: 500;
@@ -130,8 +131,16 @@
   margin-bottom: 10px;
 }
 
-#section-overview {
-  height: auto;
+@media (min-width: 700px) {
+  .App-column-left {
+    width: 60%;
+  }
+  .App-column-right {
+    display: block;
+  }
+  .App-intro {
+    left: 0px !important;
+  }
 }
 
 /* ------------------ 3 problems section styling------------------ */
@@ -150,10 +159,9 @@
   .App-body-container {
     grid-template-columns: 86vw;
   }
-  #section-overview {
-    height: 100vh;
-  }
+
 }
+
 @media (min-width: 1050px) {
   .sticky {
     position: sticky;
@@ -231,6 +239,20 @@ App-header to overflow unnecessarily */
   margin-top: 4vh;
   border: 1px solid gray;
   /* height: auto; */
+}
+
+#App-faq {
+  padding-bottom: 0;
+  border-bottom: 0
+}
+
+.faq-video-wrapper {
+  width: 100%;
+  min-height: 60vh;
+}
+
+.faq-video:hover {
+  cursor: pointer;
 }
 
 /* ------------------------ END ------------------------------- */

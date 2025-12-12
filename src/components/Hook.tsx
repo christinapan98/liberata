@@ -14,7 +14,6 @@ function Hook({header, subheader, subtext}:HookProps) {
         <div className="Hook-header">
           {header}
         </div>
-
         {/* subtext below header */}
         {subtext && <div className="Hook-subtext">{subtext}</div>}
 

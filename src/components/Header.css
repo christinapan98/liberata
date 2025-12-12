@@ -8,18 +8,19 @@
   z-index: 9;
   margin-left: auto;
   margin-right: auto;
-  
   height: 65px;
   position: fixed;
   background-color: transparent;
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
+
 .Header-wrapper.scrolled,
 .Header-wrapper.scrolled a,
 .Header-wrapper.scrolled span{
   background-color: rgb(255, 255, 255);
   color: var(--duke-blue) !important;
 }
+
 .Header-wrapper,
 .Header-wrapper a,
 .Header-wrapper span,
@@ -30,7 +31,6 @@
 .Header-body {
   width: 82vw !important;
   padding-top: 25px;
-  padding-bottom: 35px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -51,11 +51,18 @@
   }
 }
 
+@media (min-width: 1500px) {
+  .Header-nav {
+    font-size: 1.2rem;
+  }
+}
+
 .Header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 20vw;
+  min-width: 15vw;
+  /* fix min-width back to 20vw when have more page */
 }
 
 .Header-navbar {

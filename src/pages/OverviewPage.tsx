@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Contact from '../components/Contact';
 import OurSolution from '../components/OurSolution';
 import AcademicPublishingProblems from '../components/AcademicPublishingProblems'
+import FAQCarousel from '../components/FAQCarousel';
 import '../App.css';
 
 function OverviewPage() {
@@ -38,18 +39,24 @@ function OverviewPage() {
     });
   }, []);
 
-  // Set up another observer for the main body sections
-  // Whenever they are scrolled into, detect the corresponding entry id
-  // Then add active class to the header title that matches the entry id
-  // Also be mindful of when none of the sections should be highlighted
-  // detect when section is scrolled out of as well
+// Set up another observer to highlight the current section in the right nav bar
   useEffect(() => {
-    const sectionOne = document.getElementById("section-hook");
-    const sectionContact = document.getElementById("section-contact");
-    const sectionTwoHeader = document.getElementById("Header-problems");
-    const sectionOverviewHeader = document.getElementById("Header-overview");
-    const sectionContactHeader = document.getElementById("Header-contact");
+    const missionSection = document.getElementById("App-mission");
+    const academicProblemsSection = document.getElementById("App-publishing-problems");
+    const overviewVideoSection = document.getElementById("App-overview-video");
+    const solutionSection = document.getElementById("App-solutions");
+    const faqSection = document.getElementById("App-faq");
+    const missionNav = document.getElementById("mission-nav");
+    const acaPublishNav = document.getElementById("acaPublish-nav")
+    const overviewNav = document.getElementById("overview-nav");
+    const solutionNav = document.getElementById("solution-nav");
+    const faqNav = document.getElementById("faq-nav");
+
     let prev: any;
+    const observerOptions = {
+      root: null,
+      threshold: 0.6, // only trigger when 60% of section is visible
+    };
     const observerCallback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -57,22 +64,34 @@ function OverviewPage() {
             prev.classList.remove('section-active');
           }
           switch(entry.target.id) {
-            case "section-overview":
-              if(sectionOverviewHeader) {
-                sectionOverviewHeader.classList.add('section-active');
-                prev = sectionOverviewHeader;
+            case "App-mission":
+              if(missionNav) {
+                missionNav.classList.add('section-active');
+                prev = missionNav;
               }
               break;
-            case "section-problems":
-              if(sectionTwoHeader) {
-                sectionTwoHeader.classList.add('section-active');
-                prev = sectionTwoHeader;
+            case "App-publishing-problems":
+              if(acaPublishNav){
+                acaPublishNav.classList.add('section-active');
+                prev = acaPublishNav;
               }
               break;
-            case "section-contact":
-              if(sectionContactHeader) {
-                sectionContactHeader.classList.add('section-active');
-                prev = sectionContactHeader;
+            case "App-overview-video":
+              if(overviewNav) {
+                overviewNav.classList.add('section-active');
+                prev = overviewNav;
+              }
+              break;
+            case "App-solutions":
+              if(solutionNav) {
+                solutionNav.classList.add('section-active');
+                prev = solutionNav;
+              }
+              break; 
+            case "App-faq":
+              if(faqNav) {
+                faqNav.classList.add('section-active');
+                prev = faqNav;
               }
               break;
             default:
@@ -81,14 +100,16 @@ function OverviewPage() {
               }
               break;
           }
-        } else {
-          entry.target.classList.remove('section-active');
         }
       });
     };
-    const observer = new IntersectionObserver(observerCallback);
-    observer.observe(sectionOne);
-    observer.observe(sectionContact);
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    missionSection && observer.observe(missionSection);
+    academicProblemsSection && observer.observe(academicProblemsSection);
+    overviewVideoSection && observer.observe(overviewVideoSection);
+    solutionSection && observer.observe(solutionSection);
+    faqSection && observer.observe(faqSection);
+    return () => observer.disconnect();
   }, []);
 
   // Add slight overlay shift when user moves mouse inside landing page
@@ -206,7 +227,7 @@ function OverviewPage() {
                 Liberata leverages game theory to redesign the academic publishing for proper incentive alignment between stakeholders, and graph theory to measure and monitor impact, behavior, risk, and state of health of academic entities.
               </div>
             </div>
-            <div className="App-section App-col-left-section" id="App-problems">
+            <div className="App-section App-col-left-section" id="App-publishing-problems">
               <div className="section-heading">/Academic Publishing Problems</div>
               <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing today suffers from merit, economic, and societal problems arising from maligned legacy incentive structures</div>
               <AcademicPublishingProblems/>
@@ -222,17 +243,21 @@ function OverviewPage() {
               <div className="section-heading">/Key Concepts</div>
               <OurSolution/>
             </div>
-            {/* <div className="App-section App-col-left-section" id="App-FAQ">
+            <div className="App-section App-col-left-section" id="App-faq">
               <div className="section-heading">/Frequently Asked Questions</div>
-            </div> */}
+              <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh', lineHeight: '1.7rem'}}>
+                Watch some brief videos exploring frequently asked questions about the Liberata system.
+              </div>
+              <FAQCarousel/>
+            </div>
           </div>
 
           <div className="App-column-right">
-            <a href="#App-mission">Liberata's Mission</a>
-            <a href="#App-problems">Academic Publishing</a>
-            <a href="#App-overview-video">The Liberata System</a>
-            <a href="#App-solutions">Key Concepts</a>
-            <a href="#App-FAQ">FAQ</a>
+            <a href="#App-mission" id="mission-nav">Liberata's Mission</a>
+            <a href="#App-publishing-problems" id="acaPublish-nav">Academic Publishing</a>
+            <a href="#App-overview-video" id="overview-nav">The Liberata System</a>
+            <a href="#App-solutions" id="solution-nav">Key Concepts</a>
+            <a href="#App-FAQ" id="faq-nav">FAQ</a>
           </div>
         </div>
 

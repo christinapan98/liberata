@@ -35,6 +35,20 @@
   }
 }
 
+@media (min-width: 1500px) {
+  .Hook-header {
+    font-size: 5.5rem !important;
+    line-height: 6.5rem !important;
+  }
+  .Hook-subheader-wrapper {
+    margin-top: 10vh !important;
+  }
+  .Hook-subheader {
+    font-size: 1.5rem !important;
+    line-height: 2.2rem !important;
+  }
+}
+
 .Hook-header {
   font-size: 3rem;
   line-height: 4.5rem;
@@ -58,6 +72,12 @@
   font-weight: 200;
   color: white;
   max-width: 40vw;
+}
+  .Hook-subheader-wrapper {
+  width: inherit;
+  display: flex; 
+  justify-content: end;
+  margin-top: 6vh;
 }
 
 .Hook-wrapper {
