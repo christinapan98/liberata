@@ -108,6 +108,10 @@
   opacity: 0.8;
 }
 
+.App-column-right a.section-active {
+  text-decoration: none !important;
+}
+
 #mission-heading {
   font-size: 1.9rem;
   line-height: 2.5rem;
