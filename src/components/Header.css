@@ -61,7 +61,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 20vw;
+  min-width: 15vw;
+  /* fix min-width back to 20vw when have more page */
 }
 
 .Header-navbar {
@@ -72,6 +73,11 @@
 .Header-nav a {
   margin-right: 3vw;
   color: white;
+}
+
+.Header-nav .active{
+  text-underline-offset: 5px;
+  text-decoration: underline;
 }
 
 .Header-hamburger {
@@ -91,4 +97,9 @@
   width: 20px;
   height: auto;
   transition: opacity 0.5s ease-in-out;
+}
+/* figure out how to add this class to whatever header section is currently active*/
+.section-active {
+  text-decoration: underline solid var(--light-peach) 3px;
+  text-underline-offset: 5.5px;
 }

@@ -1,16 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import {ArrowOutward} from '@mui/icons-material';
+import {NavLink} from 'react-router-dom'
 import MenuDrawer from './MenuDrawer';
 import logoWhite from '../images/Logo_White.png'
 import logoBlue from '../images/Logo_Blue.png'
 import './Header.css';
 
-function Header({scrollToSection}) {
+function Header({scrollToSection = () => {} }) {
   //Control the animation of header when scrolled past Intro
   const [scrolledPastIntro, setscrolledPastIntro] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const introBackground = document.getElementById("intro"); 
+      if (!introBackground) {
+        setscrolledPastIntro(true);
+        return;
+      }
       const introBackgroundHeight = introBackground?.offsetHeight || window.innerHeight;
       
       if(window.scrollY >=introBackgroundHeight*0.9){
@@ -30,18 +35,21 @@ function Header({scrollToSection}) {
                 <a id="Header-logo" href="#section-hook">
                   <img src={scrolledPastIntro ? logoBlue: logoWhite} alt="Liberata logo"/>
                 </a>
-                <a id="Header-overview" className="Header-navbar" href="#section-overview">
+                <NavLink id="Header-overview" className="Header-navbar" to="/">
                   Overview
-                </a>
+                </NavLink>
+                {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
+                  Team
+                </NavLink> */}
                 {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
                   Current publishing problems
                 </a> */}
                 {/* <a href="#section-four">
                   FAQ
                 </a> */}
-                <a id="Header-contact" className="Header-navbar" href="#section-contact">
+                {/* <a id="Header-contact" className="Header-navbar" href="#section-contact">
                   Contact
-                </a>
+                </a> */}
               </span>
               
               {/* Technical paper disabled while updates are being made */}

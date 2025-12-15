@@ -7,7 +7,6 @@
   position: relative;
   min-height: 100vh;
 }
-
 .App::after {
   content: "";
   position: absolute;
@@ -18,7 +17,6 @@
   /* uncomment this line to make the element visible */
   /* background: lightgray; */
 }
-
 .App-intro {
   position: relative;
   top: 0;
@@ -76,7 +74,7 @@
   justify-content: space-between;
   margin-top: 8vh;
   padding-bottom: 8vh;
-  /* border-bottom: 1px solid lightgray;  */
+  border-bottom: 1px solid lightgray; 
   /* add a long line at the end of container */
 }
 
@@ -108,6 +106,10 @@
 
 .App-column-right a:hover {
   opacity: 0.8;
+}
+
+.App-column-right a.section-active {
+  text-decoration: none !important;
 }
 
 #mission-heading {
@@ -146,6 +148,17 @@
 }
 
 /* ------------------ 3 problems section styling------------------ */
+@media (max-width: 699px) {
+  .App-column-right {
+  display: none;
+  }
+  .App-column-left {
+  width: 100%;
+  }
+  #mission-heading {
+  max-width: 100%;
+  }
+}
 @media (min-width: 700px) {
   .App-body-container {
     grid-template-columns: 86vw;
@@ -237,6 +250,11 @@ App-header to overflow unnecessarily */
   border-bottom: 0
 }
 
+.faq-video-wrapper {
+  width: 100%;
+  min-height: 60vh;
+}
+
 .faq-video:hover {
   cursor: pointer;
 }
@@ -290,6 +308,12 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+/*Scroll right column*/
+#Team-leadership, #Team-product, #Team-business, 
+#App-mission, #App-overview-video, #App-solutions, #App-problems{
+  scroll-margin-top: 80px;
 }
 
 /* -------------------------------------------------- */

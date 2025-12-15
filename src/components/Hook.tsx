@@ -1,16 +1,25 @@
 import React from 'react';
 import "./Hook.css";
 
-function Hook() {
+type HookProps = {
+  header: string;
+  subheader: string;
+  subtext? :string
+}
+
+function Hook({header, subheader, subtext}:HookProps) {
   return (
     <div className="Hook-wrapper">
       <div style={{width: '83vw', marginTop: '13vh'}}>
         <div className="Hook-header">
-          Introducing Liberata.
+          {header}
         </div>
-        <div className="Hook-subheader-wrapper">
+        {/* subtext below header */}
+        {subtext && <div className="Hook-subtext">{subtext}</div>}
+
+        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '6vh'}}>
           <div className="Hook-subheader">
-            Open access academic publishing with incentivized quality controls
+            {subheader}
           </div>
         </div>
       </div>

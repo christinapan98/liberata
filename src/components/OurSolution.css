@@ -58,6 +58,12 @@
     background-size: cover;
     background-position: center;
 }
+.card-image{
+    width: 75%;
+    border-radius: 6px;
+    margin: 10px auto 15px auto;
+    object-fit: cover;
+}
 
 .card-title{
     font-weight: 400;
@@ -69,9 +75,4 @@
     font-size: 14px;
 }
 
-@media (min-width: 1050px) {
-  .cards-layout {
-    flex-direction: row;
-  }
-}
 
