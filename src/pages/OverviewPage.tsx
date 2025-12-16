@@ -1,9 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
 import Header from '../components/Header';
 import Hook from '../components/Hook';
-import Footer from '../components/Footer';
 import Contact from '../components/Contact';
-import OurSolution from '../components/OurSolution';
+import KeyConcepts from '../components/KeyConcepts';
 import AcademicPublishingProblems from '../components/AcademicPublishingProblems'
 import FAQCarousel from '../components/FAQCarousel';
 import '../App.css';
@@ -173,28 +172,6 @@ function OverviewPage() {
     return () => clearInterval(interval);
   }, [hasTypingStarted, MISSION_TEXT, TYPING_SPEED]);
 
-  const scrollToSection = (sectionId: string) => {
-    switch(sectionId) {
-      case "section-overview":
-        if(videoRef.current) {
-          videoRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
-      case "section-problems":
-        if(problemRef.current) {
-          problemRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
-      case "section-contact":
-        if(contactRef.current) {
-          contactRef.current.scrollIntoView({behavior: 'smooth'});
-        }
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
     <div className="App">
       <div className="App-intro" ref={introRef} id="intro">
@@ -241,7 +218,7 @@ function OverviewPage() {
             </div>
             <div className="App-section App-col-left-section" id="App-solutions">
               <div className="section-heading">/Key Concepts</div>
-              <OurSolution/>
+              <KeyConcepts/>
             </div>
             <div className="App-section App-col-left-section" id="App-faq">
               <div className="section-heading">/Frequently Asked Questions</div>
@@ -257,7 +234,7 @@ function OverviewPage() {
             <a href="#App-publishing-problems" id="acaPublish-nav">Academic Publishing</a>
             <a href="#App-overview-video" id="overview-nav">The Liberata System</a>
             <a href="#App-solutions" id="solution-nav">Key Concepts</a>
-            <a href="#App-FAQ" id="faq-nav">FAQ</a>
+            <a href="#App-faq" id="faq-nav">FAQ</a>
           </div>
         </div>
 
@@ -266,12 +243,6 @@ function OverviewPage() {
           <Contact/>
         </div>
       </div>
-
-      {/* Footer, including social media links */}
-      {/* <div className="App-footer" id="App-footer">
-        <Footer/>
-        <div className="Footer-accent"></div>
-      </div>  */}
     </div>
   );
 }

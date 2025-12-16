@@ -1,12 +1,11 @@
 @media (min-width: 450px) {
   .Hook-header {
-    margin-top: 7vh;
-    font-size: 3.4rem !important;
+    margin-top: 9vh;
     line-height: 5rem !important;
   }
   .Hook-subtext{
     font-size: 0.9rem !important;
-    line-height: 1.3rem !important;
+    line-height: 1.5rem !important;
     max-width: 50vw !important;
   }
   .Hook-subheader {
@@ -18,41 +17,50 @@
 
 @media (min-width: 768px) {
   .Hook-header {
-    margin-top: 7vh;
     font-size: 4rem !important;
-    line-height: 6rem !important;
+    line-height: 5.2rem !important;
     padding-left: 0vw !important;
+    margin-bottom: 0.8rem !important;
   }
   .Hook-subtext {
     font-size: 0.7rem !important;
-    line-height: 1rem !important;
+    line-height: 1.5rem !important;
     max-width: 45vw !important;
   }
   .Hook-subheader {
     font-size: 1.1rem !important;
-    line-height: 1.3rem !important;
     max-width: 20vw;
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1200px) {
   .Hook-header {
-    font-size: 5.5rem !important;
-    line-height: 6.5rem !important;
-  }
-  .Hook-subheader-wrapper {
-    margin-top: 10vh !important;
+    margin-top: 10vh;
+    font-size: 4.5rem !important;
   }
   .Hook-subheader {
-    font-size: 1.5rem !important;
-    line-height: 2.2rem !important;
+    margin-top: 14vh !important;
+    font-size: 1.2rem !important;
   }
 }
 
+/* Media queries for large screens like monitors */
+@media (min-width: 1500px) {
+  .Hook-header {
+    font-size: 6.5rem !important;
+    line-height: 6.5rem !important;
+  }
+  .Hook-subheader {
+    font-size: 1.5rem !important;
+    line-height: 2.8rem !important;
+  }
+}
+
+
 .Hook-header {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 4.5rem;
-  max-width: 45vw;
+  max-width: 50vw;
 }
 
 .Hook-subheader {
@@ -72,12 +80,6 @@
   font-weight: 200;
   color: white;
   max-width: 40vw;
-}
-  .Hook-subheader-wrapper {
-  width: inherit;
-  display: flex; 
-  justify-content: end;
-  margin-top: 6vh;
 }
 
 .Hook-wrapper {
