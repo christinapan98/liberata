@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.e17b485f.css",
-    "main.js": "/static/js/main.225025e2.js",
-    "static/js/453.ee954adb.chunk.js": "/static/js/453.ee954adb.chunk.js",
+    "main.css": "/static/css/main.459fd1fc.css",
+    "main.js": "/static/js/main.7fff1716.js",
+    "static/js/453.3b9a33fd.chunk.js": "/static/js/453.3b9a33fd.chunk.js",
     "static/media/BG.png": "/static/media/BG.6a943bc2f990b78b1e4e.png",
     "static/media/BG_overlay.png": "/static/media/BG_overlay.5e8eb93efec437e602b2.png",
+    "static/media/marketplaces_liberata.png": "/static/media/marketplaces_liberata.960088841bb325722453.png",
+    "static/media/shares_liberata.png": "/static/media/shares_liberata.903f1c3123c7e23855be.png",
+    "static/media/AcademicProblems.png": "/static/media/AcademicProblems.3350e3805f520a233abc.png",
+    "static/media/portfolio_metrics.png": "/static/media/portfolio_metrics.a365cef41ad7ba7f3199.png",
     "static/media/Logo_White.png": "/static/media/Logo_White.8373d9acd5f2eaf8a104.png",
     "static/media/Logo_Blue.png": "/static/media/Logo_Blue.912211943a1f959d1fcc.png",
     "index.html": "/index.html",
-    "main.e17b485f.css.map": "/static/css/main.e17b485f.css.map",
-    "main.225025e2.js.map": "/static/js/main.225025e2.js.map",
-    "453.ee954adb.chunk.js.map": "/static/js/453.ee954adb.chunk.js.map"
+    "main.459fd1fc.css.map": "/static/css/main.459fd1fc.css.map",
+    "main.7fff1716.js.map": "/static/js/main.7fff1716.js.map",
+    "453.3b9a33fd.chunk.js.map": "/static/js/453.3b9a33fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e17b485f.css",
-    "static/js/main.225025e2.js"
+    "static/css/main.459fd1fc.css",
+    "static/js/main.7fff1716.js"
   ]
 }
