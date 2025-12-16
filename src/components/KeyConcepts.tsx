@@ -92,7 +92,7 @@ function KeyConcepts(){
                 onToggle={toggleSolution}
             >
                 <OpenCloseChildren
-                    description="Ending politics of maneuvering for authorship roles."
+                    description="An overview of how academic credit gets distributed in Liberata."
                     oldSystemContent= {creditTraditional}
                     liberataContent={creditLiberata}
                     liberataImage={imgShare}
@@ -106,7 +106,7 @@ function KeyConcepts(){
                 onToggle={toggleSolution}
             >
                 <OpenCloseChildren
-                    description="Eliminating reward mismatch among the academic publishing community."
+                    description="An overview of how Liberata incentivizes quality control among the academic community."
                     oldSystemContent={qualityControlTraditional}
                     liberataContent={qualityControlLiberata}
                     liberataImage={imgMarket}
@@ -120,7 +120,7 @@ function KeyConcepts(){
                 onToggle={toggleSolution}
             >
                 <OpenCloseChildren
-                    description="Paving the way for more reliable research by incentivizing the replication of scientific studies."
+                    description="An overview of how Liberata measures academic impact."
                     oldSystemContent={metricsTraditional}
                     liberataContent={metricsLiberata}
                     liberataImage={imgMetrics}
