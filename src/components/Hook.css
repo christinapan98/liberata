@@ -29,18 +29,20 @@
   }
   .Hook-subheader {
     font-size: 1.1rem !important;
-    max-width: 20vw;
+    max-width: 30vw;
   }
 }
 
 @media (min-width: 1200px) {
   .Hook-header {
-    margin-top: 10vh;
-    font-size: 4.5rem !important;
+    margin-top: 6vh;
+    font-size: 5rem !important;
+    line-height: 6.2rem !important;
   }
   .Hook-subheader {
-    margin-top: 14vh !important;
-    font-size: 1.2rem !important;
+    margin-top: 10vh !important;
+    font-size: 1.3rem !important;
+    line-height: 1.8rem !important;
   }
 }
 
@@ -56,21 +58,20 @@
   }
 }
 
-
 .Hook-header {
-  font-size: 3.5rem;
-  line-height: 4.5rem;
+  font-size: 8rem;
+  line-height: 7rem;
   max-width: 50vw;
 }
 
 .Hook-subheader {
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 2.5rem;
   margin-top: 3.5rem;
   font-weight: 200;
   color: white;
   margin-bottom: 2rem;
-  text-align: left;
+  text-align: right;
 }
 
 .Hook-subtext {
