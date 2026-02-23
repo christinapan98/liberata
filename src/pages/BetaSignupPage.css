@@ -14,16 +14,18 @@
 }
 
 .BetaSignup-form {
-  /* background-color: thistle; */
   width: 100%;
   margin-top: 40px;
+}
+
+.BetaSignup-form input:hover {
+  cursor: pointer;
 }
 
 .BetaSignup-message {
   width: 100%;
   position: static;
   top: 100px;
-  /* background-color: thistle; */
 }
 
 .BetaSignup-input {
@@ -49,4 +51,7 @@
   background-color: transparent;
   z-index: -1;
   margin-bottom: 140px;
+  opacity: 0;
+	transform: translateY(50px);
+	transition: opacity .8s, transform .8s;
 }

@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from '../components/Header';
 import TextField from "@mui/material/TextField";
+import { CircularProgress } from "@mui/material";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import "./BetaSignupPage.css";
-import { time } from 'console';
 
 function BetaSignupPage() {
   const [fNameInputValue, setFNameInputValue] = useState("");
@@ -22,6 +22,24 @@ function BetaSignupPage() {
   const [isErrorVisible, setErrorVisible] = useState(false);
 
   const googleSheetApiUrl = "https://script.google.com/macros/s/AKfycbwuRnh_I88YjrfUZek7Yw3Pb-5EtJPcDtq_cG7IJA9Yu5wVgl18KqmDdW0x95pVeRM8/exec";
+
+  // Section observer
+  useEffect(() => {
+    const sectionItems = document.getElementsByClassName("BetaSignup-body");
+    const observerCallback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0px)";
+          observer.unobserve(entry.target);
+        }
+        });
+    };
+    const observer = new IntersectionObserver(observerCallback);
+    Array.from(sectionItems).forEach((e) => {
+      observer.observe(e);
+    });
+  }, []);
 
   const handleBetaSignupFormSubmit = (e: any) => {
     e.preventDefault();
@@ -107,22 +125,21 @@ function BetaSignupPage() {
             />
 
             <TextField
-              label="Institutional Email"
-              required
-              className="BetaSignup-input"
-             
-              value={emailInputValue}
-              onChange={(e) => setEmailInputValue(e.target.value)}
-              // onBlur={() => validateEmail(emailInputValue)}
-              // error={isEmailErrorVisible}
-            />
-
-            <TextField
               label="Institution"
               required
               className="BetaSignup-input"
               value={institutionInputValue}
               onChange={(e) => setInstitutionInputValue(e.target.value)}
+              // onBlur={() => validateEmail(emailInputValue)}
+              // error={isEmailErrorVisible}
+            />
+
+            <TextField
+              label="Institutional Email"
+              required
+              className="BetaSignup-input"
+              value={emailInputValue}
+              onChange={(e) => setEmailInputValue(e.target.value)}
               // onBlur={() => validateEmail(emailInputValue)}
               // error={isEmailErrorVisible}
             />
@@ -137,16 +154,14 @@ function BetaSignupPage() {
             />
             <TextField
               label="ORCID"
-              required
               className="BetaSignup-input"
-              
               value={orcidInputValue}
               onChange={(e) => setOrcidInputValue(e.target.value)}
               // onBlur={() => validateLName(lNameInputValue)}
             />
           </div>
           
-          <h3>More About You</h3>
+          <h3>More about you</h3>
           <div style={{marginBottom: '8px'}}> When do you anticipate you would next publish research?</div>
           <input
             type="number"
@@ -157,20 +172,34 @@ function BetaSignupPage() {
           />
           {/* <div>Primary Research Area</div> */}
           <div style={{marginBottom: '8px'}}>What challenges have you faced with open-access publishing?</div>
-          <TextField
-            multiline
-            rows={4}
-            style={{width: "90%"}}
-            value={openAccessChallengesInputValue}
-            onChange={(e) => setOpenAccessChallengesInputValue(e.target.value)}
-          />
+          {/* wrapping multiline field in a div in order to trigger a line break for loading spinner */}
+          <div> 
+            <TextField
+              multiline
+              rows={4}
+              style={{width: "90%", marginBottom: '24px'}}
+              value={openAccessChallengesInputValue}
+              onChange={(e) => setOpenAccessChallengesInputValue(e.target.value)}
+            />
+          </div>
 
-          <input
+          {isLoading && <CircularProgress/>}
+          {!isLoading && !isSuccessVisible && <input
             type="submit"
             value="Request Beta Access"
             className="outlined-submit is-visible"
-            style={{width: 'fit-content', padding: '10px 20px', fontSize: '16px', marginTop: '24px', fontWeight: 'bold'}}
-          />
+            style={{width: 'fit-content', padding: '10px 20px', fontSize: '16px', fontWeight: 'bold'}}
+          />}
+          
+          {isSuccessVisible && (
+            <div>Thank you! We'll be in touch regarding future updates.</div>
+          )}
+
+          {isErrorVisible && (
+            <div>
+              There was an error submitting your information, please try again.
+            </div>
+          )}
         </form>
       </div>
     </>

@@ -34,18 +34,18 @@ function Footer() {
           <a href={linkedinUrl} target="_blank" rel="noreferrer">
             <LinkedInIcon className="mediaIcon" fontSize="large"/>
           </a>
-          <a href={xUrl} target='_blank' rel='noreferrer'>
+          {/* <a href={xUrl} target='_blank' rel='noreferrer'>
             <XIcon className='mediaIcon' fontSize='large'/>
-          </a>
+          </a> */}
           <a href={redditUrl} target='_blank' rel='noreferrer'>
             <RedditIcon className='mediaIcon' fontSize='large'/>
           </a>
           <a href={instagramUrl} target='_blank' rel='noreferrer'>
             <InstagramIcon className='mediaIcon' fontSize='large'/>
           </a>
-          <a href={facebookUrl} target='_blank' rel='noreferrer'>
+          {/* <a href={facebookUrl} target='_blank' rel='noreferrer'>
             <FacebookIcon className='mediaIcon' fontSize='large'/>
-          </a>
+          </a> */}
           <a href={youtubeUrl} target="_blank" rel="noreferrer">
             <YouTubeIcon className="mediaIcon" fontSize="large"/>
           </a>
