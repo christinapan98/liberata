@@ -25,10 +25,10 @@ function Footer() {
       <div className='footer-right'>
         <div className='footer-quick-links'>
           <Link to="/" className="footer-link">Overview</Link>
-          <span className="footer-dot">•</span>
+          {/* <span className="footer-dot">•</span> */}
           {/* <Link to="/team" className="footer-link">Team</Link>
           <span className="footer-dot">•</span> */}
-          <a href="#contact" className="footer-link">Contact</a>
+          {/* <a href="#contact" className="footer-link">Contact</a> */}
         </div>
         <div className="Footer-text-mediaIconLine">
           <a href={linkedinUrl} target="_blank" rel="noreferrer">
