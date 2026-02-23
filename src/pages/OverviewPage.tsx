@@ -180,7 +180,7 @@ function OverviewPage() {
         <div className="App-section" id="section-hook">
           <Hook
             header = "Introducing Liberata."
-            subheader = "Learn about how Liberata uses game theory and graph theory to solve entrenched problems with academic publishing."
+            subheader = "Using game theory & graph theory to solve entrenched problems with academic publishing."
             subtext = "Open access academic publishing with incentivized quality controls."
           />
         </div>

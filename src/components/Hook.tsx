@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Hook.css";
 
 type HookProps = {
@@ -16,8 +17,11 @@ function Hook({header, subheader, subtext}:HookProps) {
         </div>
 
         {/* {subtext && <div className="Hook-subtext">{subtext}</div>} */}
+        <div className="Hook-cta-row">
+          <Link to="/beta-signup" style={{backgroundColor: 'transparent', color: 'white', border: '2px solid white', opacity: .8, padding: '10px 15px', borderRadius: '999px'}}>Sign up for beta</Link>
+        </div>
 
-        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '8vh'}}>
+        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '2vh', opacity: .8}}>
           <div className="Hook-subheader">
             {subheader}
           </div>

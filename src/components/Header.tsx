@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {ArrowOutward} from '@mui/icons-material';
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MenuDrawer from './MenuDrawer';
 import logoWhite from '../images/Logo_White.png'
 import logoBlue from '../images/Logo_Blue.png'
@@ -32,12 +33,13 @@ function Header({scrollToSection = () => {} }) {
       <div className={`Header-wrapper ${scrolledPastIntro ? "scrolled" : ""}`}>
         <div className="Header-body">
             <span className="Header-nav">
-                <a id="Header-logo" href="#section-hook">
+                <Link to="/" id="Header-logo">
                   <img src={scrolledPastIntro ? logoBlue: logoWhite} alt="Liberata logo"/>
-                </a>
+                </Link>
                 <NavLink id="Header-overview" className="Header-navbar" to="/">
                   Overview
                 </NavLink>
+                <Link to="/beta-signup" className="Header-navbar" style={{backgroundColor: 'transparent', color: 'white'}}>Sign up for beta</Link>
                 {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
                   Team
                 </NavLink> */}
@@ -57,6 +59,7 @@ function Header({scrollToSection = () => {} }) {
                 Technical paper
                 <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
               </a> */}
+              
               
           <div className={`Header-hamburger ${scrolledPastIntro ? "scrolled" : ""}`}>
             <MenuDrawer scrollToSection={scrollToSection}/>
