@@ -21,14 +21,14 @@ function BetaSignupPage() {
   const [isSuccessVisible, setSuccessVisible] = useState(false);
   const [isErrorVisible, setErrorVisible] = useState(false);
 
-  const googleSheetApiUrl = "https://script.google.com/macros/s/AKfycbxchrd6z0S5m9iTjppPeIlwyGuiSoH4UqqoUe6c0uwkBU09BaHbOVOs82Qc1TWVC0QL/exec";
+  const googleSheetApiUrl = "https://script.google.com/macros/s/AKfycbwuRnh_I88YjrfUZek7Yw3Pb-5EtJPcDtq_cG7IJA9Yu5wVgl18KqmDdW0x95pVeRM8/exec";
 
   const handleBetaSignupFormSubmit = (e: any) => {
     e.preventDefault();
     
     setLoading(true);
     const formData = new FormData();
-    formData.append("Email", emailInputValue);
+    formData.append("Institutional Email", emailInputValue);
     formData.append("First name", fNameInputValue);
     formData.append("Last name", lNameInputValue);
     formData.append("Institution", institutionInputValue);
@@ -118,7 +118,7 @@ function BetaSignupPage() {
             />
 
             <TextField
-              label="Institutional Affiliation"
+              label="Institution"
               required
               className="BetaSignup-input"
               value={institutionInputValue}
@@ -128,7 +128,7 @@ function BetaSignupPage() {
             />
 
             <TextField
-              label="Academic Discipline"
+              label="Academic discipline"
               required
               className="BetaSignup-input"
               value={disciplineInputValue}
@@ -136,7 +136,7 @@ function BetaSignupPage() {
               // onBlur={() => validateFName(fNameInputValue)}
             />
             <TextField
-              label="ORCID ID"
+              label="ORCID"
               required
               className="BetaSignup-input"
               

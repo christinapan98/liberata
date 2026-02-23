@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useLocation } from "react-router-dom";
 import {ArrowOutward} from '@mui/icons-material';
 import {NavLink} from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -9,10 +10,17 @@ import './Header.css';
 
 function Header({scrollToSection = () => {} }) {
   //Control the animation of header when scrolled past Intro
+  const location = useLocation();
   const [scrolledPastIntro, setscrolledPastIntro] = useState(false);
   useEffect(() => {
+    if (location.pathname === "/beta-signup") {
+      setscrolledPastIntro(true);
+      return;
+    }
+
     const handleScroll = () => {
       const introBackground = document.getElementById("intro"); 
+      // If we're on /beta-signup → force scrolled state
       if (!introBackground) {
         setscrolledPastIntro(true);
         return;

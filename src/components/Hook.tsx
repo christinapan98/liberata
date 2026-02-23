@@ -21,7 +21,7 @@ function Hook({header, subheader, subtext}:HookProps) {
           <Link to="/beta-signup" style={{backgroundColor: 'transparent', color: 'white', border: '2px solid white', opacity: .8, padding: '10px 15px', borderRadius: '999px'}}>Sign up for beta</Link>
         </div>
 
-        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '2vh', opacity: .8}}>
+        <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '0vh', opacity: .8}}>
           <div className="Hook-subheader">
             {subheader}
           </div>
