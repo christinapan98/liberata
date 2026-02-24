@@ -1,6 +1,7 @@
 @media (min-width: 450px) {
   .Hook-header {
     margin-top: 9vh;
+    font-size: 4.5rem !important;
     line-height: 5rem !important;
   }
   .Hook-subtext{
@@ -57,7 +58,7 @@
 }
 
 .Hook-header {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   line-height: 4.5rem;
   max-width: 45vw;
 }
