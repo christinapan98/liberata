@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Hook from '../components/Hook';
 import Contact from '../components/Contact';
@@ -30,7 +30,7 @@ function OverviewPage() {
           entry.target.style.transform = "translateY(0px)";
           observer.unobserve(entry.target);
         }
-        });
+      });
     };
     const observer = new IntersectionObserver(observerCallback);
     Array.from(sectionItems).forEach((e) => {
@@ -38,7 +38,7 @@ function OverviewPage() {
     });
   }, []);
 
-// Set up another observer to highlight the current section in the right nav bar
+  // Set up another observer to highlight the current section in the right nav bar
   useEffect(() => {
     const missionSection = document.getElementById("App-mission");
     const academicProblemsSection = document.getElementById("App-publishing-problems");
@@ -59,42 +59,42 @@ function OverviewPage() {
     const observerCallback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          if(prev) {
+          if (prev) {
             prev.classList.remove('section-active');
           }
-          switch(entry.target.id) {
+          switch (entry.target.id) {
             case "App-mission":
-              if(missionNav) {
+              if (missionNav) {
                 missionNav.classList.add('section-active');
                 prev = missionNav;
               }
               break;
             case "App-publishing-problems":
-              if(acaPublishNav){
+              if (acaPublishNav) {
                 acaPublishNav.classList.add('section-active');
                 prev = acaPublishNav;
               }
               break;
             case "App-overview-video":
-              if(overviewNav) {
+              if (overviewNav) {
                 overviewNav.classList.add('section-active');
                 prev = overviewNav;
               }
               break;
             case "App-solutions":
-              if(solutionNav) {
+              if (solutionNav) {
                 solutionNav.classList.add('section-active');
                 prev = solutionNav;
               }
-              break; 
+              break;
             case "App-faq":
-              if(faqNav) {
+              if (faqNav) {
                 faqNav.classList.add('section-active');
                 prev = faqNav;
               }
               break;
             default:
-              if(prev) {
+              if (prev) {
                 prev.classList.remove('section-active');
               }
               break;
@@ -113,8 +113,8 @@ function OverviewPage() {
 
   // Add slight overlay shift when user moves mouse inside landing page
   useEffect(() => {
-    const intro:HTMLElement | null = introRef.current;
-    const overlay:HTMLElement | null = overlayRef.current;
+    const intro: HTMLElement | null = introRef.current;
+    const overlay: HTMLElement | null = overlayRef.current;
     if (!intro || !overlay) return;
 
     function handleMouseMove(e) {
@@ -123,7 +123,7 @@ function OverviewPage() {
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
       const moveX = (x * 50) + (y * 50);
-      const moveY = x * 20; 
+      const moveY = x * 20;
       overlay.style.transform = `translate(${moveX}px,  ${moveY}px)`;
     }
 
@@ -168,7 +168,7 @@ function OverviewPage() {
       i++;
       if (i >= MISSION_TEXT.length) clearInterval(interval);
     }, TYPING_SPEED);
-    
+
     return () => clearInterval(interval);
   }, [hasTypingStarted, MISSION_TEXT, TYPING_SPEED]);
 
@@ -176,12 +176,12 @@ function OverviewPage() {
     <div className="App">
       <div className="App-intro" ref={introRef} id="intro">
         {/* Page header */}
-        <Header/>
+        <Header />
         <div className="App-section" id="section-hook">
           <Hook
-            header = "Introducing Liberata."
-            subheader = "Using game theory & graph theory to solve entrenched problems with academic publishing."
-            subtext = "Open access academic publishing with incentivized quality controls."
+            header="Introducing Liberata."
+            subheader="Using game theory & graph theory to solve entrenched problems with academic publishing."
+            subtext="Open access academic publishing with incentivized quality controls."
           />
         </div>
 
@@ -191,14 +191,14 @@ function OverviewPage() {
           <div className="App-background-gradient"></div>
         </div>
       </div>
-      
+
       <div className="App-body-container">
         <div className="App-column-container">
           <div className="App-column-left">
             <div className="App-section App-col-left-section" id="App-mission">
               <div className="section-heading">/Liberata's Mission</div>
               <div id="mission-heading" ref={textRef}>
-               {displayedText}
+                {displayedText}
               </div>
               <div id="mission-body">
                 Liberata leverages game theory to redesign the academic publishing for proper incentive alignment between stakeholders, and graph theory to measure and monitor impact, behavior, risk, and state of health of academic entities.
@@ -206,26 +206,27 @@ function OverviewPage() {
             </div>
             <div className="App-section App-col-left-section" id="App-publishing-problems">
               <div className="section-heading">/Academic Publishing Problems</div>
-              <div style={{color: 'grey', fontSize: '1.2rem', marginTop: '5vh'}}>Academic publishing today suffers from merit, economic, and societal problems arising from maligned legacy incentive structures</div>
-              <AcademicPublishingProblems/>
+              <div style={{ color: 'grey', fontSize: '1.2rem', marginTop: '5vh', marginBottom: "24px" }}>Academic publishing today suffers from merit, economic, and societal problems arising from maligned legacy incentive structures
+              </div>
+              <AcademicPublishingProblems />
             </div>
             <div className="App-section App-col-left-section" id="App-overview-video">
               <div className="section-heading">/The Liberata System</div>
-              <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh'}}>Watch a brief overview video explaining the logic behind Liberata.</div>
-              
+              <div style={{ color: 'grey', fontSize: '1.2rem', marginBottom: '10vh' }}>Watch a brief overview video explaining the logic behind Liberata.</div>
+
               {/* Since they are large files, our explainer videos must be stored in AWS. */}
-              <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted/>
+              <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted />
             </div>
             <div className="App-section App-col-left-section" id="App-solutions">
               <div className="section-heading">/Key Concepts</div>
-              <KeyConcepts/>
+              <KeyConcepts />
             </div>
             <div className="App-section App-col-left-section" id="App-faq">
               <div className="section-heading">/Frequently Asked Questions</div>
-              <div style={{color: 'grey', fontSize: '1.2rem', marginBottom: '10vh', lineHeight: '1.7rem'}}>
+              <div style={{ color: 'grey', fontSize: '1.2rem', marginBottom: '10vh', lineHeight: '1.7rem' }}>
                 Watch some brief videos exploring frequently asked questions about the Liberata system.
               </div>
-              <FAQCarousel/>
+              <FAQCarousel />
             </div>
           </div>
 
@@ -240,7 +241,7 @@ function OverviewPage() {
 
         {/* Contact form */}
         <div className="App-section" ref={contactRef} id="section-contact">
-          <Contact/>
+          <Contact />
         </div>
       </div>
     </div>
