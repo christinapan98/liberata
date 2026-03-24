@@ -1,3 +1,10 @@
+/* Ensure that padding gets included in width calculations, instead of added on top */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* Basic 3D Carousel Styles */
 .ap-shell {
     display: flex;
@@ -84,6 +91,10 @@
     min-width: 0;
 }
 
+.ap-panel > * {
+    min-width: 0;
+}
+
 .ap-top {
     display: flex;
     align-items: flex-start;
@@ -150,7 +161,6 @@
 }
 
 .ap-body {
-    max-width: 520px;
     line-height: 1.6;
     opacity: 0.95;
     color: #FFF;
@@ -162,6 +172,9 @@
     font-weight: 300;
     line-height: normal;
     letter-spacing: 0.085px;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .ap-nav {
@@ -203,7 +216,7 @@
 }
 
 /* Tablet Styles */
-@media (max-width: 860px) {
+@media (max-width: 1150px) {
     .ap-shell {
         flex-direction: column;
         height: auto;
