@@ -154,6 +154,7 @@ function BetaSignupPage() {
             />
             <TextField
               label="ORCID"
+              required
               className="BetaSignup-input"
               value={orcidInputValue}
               onChange={(e) => setOrcidInputValue(e.target.value)}
