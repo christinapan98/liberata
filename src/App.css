@@ -14,7 +14,6 @@
   bottom: 91.5vh;
   right: 32%;
   width: 1px;
-  /* uncomment this line to make the element visible */
   /* background: lightgray; */
 }
 .App-intro {
@@ -50,7 +49,7 @@
   transform-origin: center;
   will-change: transform;
   transform: rotateX(0deg) rotateY(0deg);
-  transition: transform 0.15s ease-out; /* smooths the updates */
+  transition: transform 0.15s ease-out;
 }
 
 .App-body-container {
@@ -75,7 +74,6 @@
   margin-top: 8vh;
   padding-bottom: 8vh;
   border-bottom: 1px solid lightgray; 
-  /* add a long line at the end of container */
 }
 
 .App-col-left-section {
@@ -147,7 +145,66 @@
   }
 }
 
-/* ------------------ 3 problems section styling------------------ */
+.PlatformsGradientBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 76px;
+  z-index: 9998;
+
+  background: linear-gradient(135deg, #2b56ff 0%, #1a37b6 55%, #0b1a5a 100%);
+}
+
+.PlatformsHeaderLayer {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.PlatformsHeaderLayer a,
+.PlatformsHeaderLayer button,
+.PlatformsHeaderLayer span,
+.PlatformsHeaderLayer p,
+.PlatformsHeaderLayer h1,
+.PlatformsHeaderLayer h2,
+.PlatformsHeaderLayer h3,
+.PlatformsHeaderLayer li,
+.PlatformsHeaderLayer svg {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+.PlatformsHeaderLayer header,
+.PlatformsHeaderLayer nav,
+.PlatformsHeaderLayer > div {
+  background: transparent !important;
+}
+
+.PlatformsHeaderLayer,
+.PlatformsHeaderLayer * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.PlatformsHeaderLayer *::before,
+.PlatformsHeaderLayer *::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.PlatformsHeaderLayer * {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.PlatformsPageBody {
+  padding-top: 76px;
+}
+
 @media (max-width: 699px) {
   .App-column-right {
   display: none;
@@ -195,12 +252,9 @@
   }
 }
 
-/* The problem with sticky positioning lies here: on smaller screens
-App-problem has a large height compared to its child elements, causing
-App-header to overflow unnecessarily */
+
 .App-problem {
   height: 100vh;
-  /* margin-bottom: 15vh; */
 }
 
 .App-problem-header {
@@ -259,7 +313,6 @@ App-header to overflow unnecessarily */
   cursor: pointer;
 }
 
-/* ------------------------ END ------------------------------- */
 
 #section-hook {
   padding-right: 2rem;
@@ -310,7 +363,6 @@ button:hover {
   cursor: pointer;
 }
 
-/*Scroll right column*/
 #Team-leadership, #Team-product, #Team-business, 
 #App-mission, #App-overview-video, #App-solutions, #App-problems{
   scroll-margin-top: 80px;

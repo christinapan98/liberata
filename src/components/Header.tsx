@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import {ArrowOutward} from '@mui/icons-material';
-import {NavLink} from 'react-router-dom';
+import { ArrowOutward } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import MenuDrawer from './MenuDrawer';
 import logoWhite from '../images/Logo_White.png'
 import logoBlue from '../images/Logo_Blue.png'
 import './Header.css';
 
-function Header({scrollToSection = () => {} }) {
+function Header({ scrollToSection = () => { }, forceLight = false }) {
   //Control the animation of header when scrolled past Intro
   const location = useLocation();
   const [scrolledPastIntro, setscrolledPastIntro] = useState(false);
@@ -19,59 +19,62 @@ function Header({scrollToSection = () => {} }) {
     }
 
     const handleScroll = () => {
-      const introBackground = document.getElementById("intro"); 
+      const introBackground = document.getElementById("intro");
       // If we're on /beta-signup → force scrolled state
       if (!introBackground) {
         setscrolledPastIntro(true);
         return;
       }
       const introBackgroundHeight = introBackground?.offsetHeight || window.innerHeight;
-      
-      if(window.scrollY >=introBackgroundHeight*0.9){
+
+      if (window.scrollY >= introBackgroundHeight * 0.9) {
         setscrolledPastIntro(true);
-      } else{
+      } else {
         setscrolledPastIntro(false);
       }
     };
     window.addEventListener('scroll', handleScroll);
-    return() => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, []);
   return (
     <>
-      <div className={`Header-wrapper ${scrolledPastIntro ? "scrolled" : ""}`}>
+      <div className={`Header-wrapper ${(scrolledPastIntro && !forceLight) ? "scrolled" : ""}`}>
         <div className="Header-body">
-            <span className="Header-nav">
-                <Link to="/" id="Header-logo">
-                  <img src={scrolledPastIntro ? logoBlue: logoWhite} alt="Liberata logo"/>
-                </Link>
-                <NavLink id="Header-overview" className="Header-navbar" to="/">
-                  Overview
-                </NavLink>
-                <Link to="/beta-signup" className="Header-navbar" style={{backgroundColor: 'transparent', color: 'white'}}>Sign up for beta</Link>
-                {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
+          <span className="Header-nav">
+            <Link to="/" id="Header-logo">
+              <img src={(scrolledPastIntro && !forceLight) ? logoBlue : logoWhite} alt="Liberata logo" />
+            </Link>
+            <NavLink id="Header-overview" className="Header-navbar" to="/">
+              Overview
+            </NavLink>
+            <NavLink to="/platforms" className="Header-navbar">
+              Platforms
+            </NavLink>
+            <Link to="/beta-signup" className="Header-navbar" style={{ backgroundColor: 'transparent', color: 'white' }}>Sign up for beta</Link>
+            {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
                   Team
                 </NavLink> */}
-                {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
+            {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
                   Current publishing problems
                 </a> */}
-                {/* <a href="#section-four">
+            {/* <a href="#section-four">
                   FAQ
                 </a> */}
-                {/* <a id="Header-contact" className="Header-navbar" href="#section-contact">
+            {/* <a id="Header-contact" className="Header-navbar" href="#section-contact">
                   Contact
                 </a> */}
-              </span>
-              
-              {/* Technical paper disabled while updates are being made */}
-              {/* <a className="Header-navbar" href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'bottom'}}> 
+          </span>
+
+          {/* Technical paper disabled while updates are being made */}
+          {/* <a className="Header-navbar" href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'bottom'}}> 
                 Technical paper
                 <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
               </a> */}
-              
-              
+
+
           <div className={`Header-hamburger ${scrolledPastIntro ? "scrolled" : ""}`}>
-            <MenuDrawer scrollToSection={scrollToSection}/>
-          </div> 
+            <MenuDrawer scrollToSection={scrollToSection} />
+          </div>
         </div>
       </div>
     </>
