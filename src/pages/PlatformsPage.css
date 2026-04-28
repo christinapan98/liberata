@@ -13,6 +13,10 @@
   max-width: 520px;
 }
 
+#Platforms-metrics-section {
+  border-bottom: none;
+}
+
 .Platforms-paragraph {
   color: #8a8a8a;
   font-size: 12.5px;

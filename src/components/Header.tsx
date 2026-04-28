@@ -13,7 +13,7 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
   const location = useLocation();
   const [scrolledPastIntro, setscrolledPastIntro] = useState(false);
   useEffect(() => {
-    if (location.pathname === "/beta-signup") {
+    if (location.pathname === "/beta-signup" || location.pathname === "/platforms") {
       setscrolledPastIntro(true);
       return;
     }

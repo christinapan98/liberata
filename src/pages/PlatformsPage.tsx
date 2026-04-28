@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Contact from "../components/Contact";
 import "../App.css";
+import "./PlatformsPage.css";
 import ImageCarousel from "../components/ImageCarousel";
 import literature_browse from "../images/literature_browse.png";
 import peer_review from "../images/peer_review.png";
@@ -33,7 +34,7 @@ function PlatformsPage() {
     // Right nav highlight
     useEffect(() => {
         const mainSection = document.getElementById("App-main-platform");
-        const metricsSection = document.getElementById("App-metrics-platform");
+        const metricsSection = document.getElementById("Platforms-metrics-section");
         const mainNav = document.getElementById("mainPlatform-nav");
         const metricsNav = document.getElementById("metricsPlatform-nav");
 
@@ -48,7 +49,7 @@ function PlatformsPage() {
                     if (entry.target.id === "App-main-platform" && mainNav) {
                         mainNav.classList.add("section-active");
                         prev = mainNav;
-                    } else if (entry.target.id === "App-metrics-platform" && metricsNav) {
+                    } else if (entry.target.id === "Platforms-metrics-section" && metricsNav) {
                         metricsNav.classList.add("section-active");
                         prev = metricsNav;
                     }
@@ -192,7 +193,7 @@ function PlatformsPage() {
                         </div>
 
                         {/* /Metrics Platform */}
-                        <div className="App-section App-col-left-section" id="App-metrics-platform">
+                        <div className="App-section App-col-left-section" id="Platforms-metrics-section">
                             <div className="section-heading" style={{ color: "#2F6BFF" }}>
                                 /Metrics Platform
                             </div>
@@ -275,7 +276,7 @@ function PlatformsPage() {
                         <a href="#App-main-platform" id="mainPlatform-nav">
                             Main Platform
                         </a>
-                        <a href="#App-metrics-platform" id="metricsPlatform-nav">
+                        <a href="#Platforms-metrics-section" id="metricsPlatform-nav">
                             Metrics Platform
                         </a>
                     </div>
