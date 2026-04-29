@@ -47,22 +47,11 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
             <NavLink id="Header-overview" className="Header-navbar" to="/">
               Overview
             </NavLink>
-            <NavLink to="/platforms" className="Header-navbar">
+            {/* Temporarily commented out until mobile styling is in place */}
+            {/* <NavLink to="/platforms" className="Header-navbar">
               Platforms
-            </NavLink>
+            </NavLink> */}
             <Link to="/beta-signup" className="Header-navbar" style={{ backgroundColor: 'transparent', color: 'white' }}>Sign up for beta</Link>
-            {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
-                  Team
-                </NavLink> */}
-            {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
-                  Current publishing problems
-                </a> */}
-            {/* <a href="#section-four">
-                  FAQ
-                </a> */}
-            {/* <a id="Header-contact" className="Header-navbar" href="#section-contact">
-                  Contact
-                </a> */}
           </span>
 
           {/* Technical paper disabled while updates are being made */}
