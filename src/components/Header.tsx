@@ -51,18 +51,6 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
               Platforms
             </NavLink>
             <Link to="/beta-signup" className="Header-navbar" style={{ backgroundColor: 'transparent', color: 'white' }}>Sign up for beta</Link>
-            {/* <NavLink id="Header-team" className="Header-navbar" to="/team">
-                  Team
-                </NavLink> */}
-            {/* <a id="Header-problems" className="Header-navbar" href="#section-problems">
-                  Current publishing problems
-                </a> */}
-            {/* <a href="#section-four">
-                  FAQ
-                </a> */}
-            {/* <a id="Header-contact" className="Header-navbar" href="#section-contact">
-                  Contact
-                </a> */}
           </span>
 
           {/* Technical paper disabled while updates are being made */}
@@ -73,7 +61,7 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
 
 
           <div className={`Header-hamburger ${scrolledPastIntro ? "scrolled" : ""}`}>
-            <MenuDrawer scrollToSection={scrollToSection} />
+            <MenuDrawer scrollToSection={scrollToSection}/>
           </div>
         </div>
       </div>

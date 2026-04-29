@@ -10,21 +10,26 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import {ArrowOutward} from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
 
 function MenuDrawer({scrollToSection}) {
   const [isDrawerOpen, toggleDrawer] = useState(false);
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
+     
       <List>
-        {/* {[['Overview', 'section-overview'], ['Current problems', 'section-problems'], ['Contact', 'section-contact']].map((item, index) => ( */}
-        {[['Overview', 'section-overview'], ['Contact', 'section-contact']].map((item, index) => (
-          <ListItem key={item[0]} onClick={() => scrollToSection(item[1])} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={item[0]} />
+
+        {/* <NavLink to="/">Overview</NavLink>
+        <NavLink to="/platforms">Platforms</NavLink>
+        <NavLink to="/beta-signup">Beta</NavLink> */}
+        {[['Overview', ''], ['Platforms', 'platforms'], ['Sign up for beta', 'beta-signup']].map((item, index) => (
+          <ListItem key={item[0]} disablePadding>
+            <ListItemButton component={NavLink} to={`/${item[1]}`}>
+              {item[0]}
             </ListItemButton>
           </ListItem>
+          
         ))}
       </List>
       <Divider/>
@@ -47,7 +52,7 @@ function MenuDrawer({scrollToSection}) {
         <MenuIcon/>
       </div>
           
-      <Drawer sx={{zIndex: '100'}} anchor="right" open={isDrawerOpen} onClick={() => toggleDrawer(false)}>
+      <Drawer sx={{zIndex: '9999'}} anchor="right" open={isDrawerOpen} onClick={() => toggleDrawer(false)}>
         {DrawerList}
        
         
