@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<OverviewPage/>}/>
         <Route path="/beta-signup" element={<BetaSignupPage/>}/>
+        <Route path="/team" element={<TeamPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -18,34 +18,129 @@ function TeamPage() {
     const [hasTypingStarted, setHasTypingStarted] = useState(false);
 
     const leadershipTeam = [
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
+         {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+                   {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be  ",},
     ]
     const productTeam = [
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Han Zhang", role: "Founder"},
+         {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be  ",},
+                   {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be  ",},
 
     ]
     const businessTeam = [
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
+         {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+                   {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
+         {name: "Patrick Prochazka", 
+          role: "Co-Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",},
+          {name: "Han Zhang", 
+          role: "Founder",
+          bio: "It is a long established fact that a reader will be distracted by the readable content ",
+          },
     ]
 
 
@@ -67,58 +162,58 @@ function TeamPage() {
     });
   }, []);
 
-  // Set up another observer for the main body sections
-  // Whenever they are scrolled into, detect the corresponding entry id
-  // Then add active class to the header title that matches the entry id
-  // Also be mindful of when none of the sections should be highlighted
-  // detect when section is scrolled out of as well
-  useEffect(() => {
-    const sectionOne = document.getElementById("section-hook");
-    const sectionContact = document.getElementById("section-contact");
-    const sectionTwoHeader = document.getElementById("Header-problems");
-    const sectionOverviewHeader = document.getElementById("Header-overview");
-    const sectionContactHeader = document.getElementById("Header-contact");
-    let prev: any;
-    const observerCallback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if(prev) {
-            prev.classList.remove('section-active');
-          }
-          switch(entry.target.id) {
-            case "section-overview":
-              if(sectionOverviewHeader) {
-                sectionOverviewHeader.classList.add('section-active');
-                prev = sectionOverviewHeader;
-              }
-              break;
-            case "section-problems":
-              if(sectionTwoHeader) {
-                sectionTwoHeader.classList.add('section-active');
-                prev = sectionTwoHeader;
-              }
-              break;
-            case "section-contact":
-              if(sectionContactHeader) {
-                sectionContactHeader.classList.add('section-active');
-                prev = sectionContactHeader;
-              }
-              break;
-            default:
-              if(prev) {
-                prev.classList.remove('section-active');
-              }
-              break;
-          }
-        } else {
-          entry.target.classList.remove('section-active');
-        }
-      });
-    };
-    const observer = new IntersectionObserver(observerCallback);
-    observer.observe(sectionOne);
-    observer.observe(sectionContact);
-  }, []);
+// // Set up another observer to highlight the current section in the right nav bar
+//   useEffect(() => {
+//     const leadershipSection = document.getElementById("Team-leadership");
+//     const productSection = document.getElementById("Team-product");
+//     const businessSection = document.getElementById("Team-business");
+
+//     let prev: any;
+//     const observerOptions = {
+//       root: null,
+//       threshold: 0.6, // only trigger when 60% of section is visible
+//     };
+//     const observerCallback = (entries: any[]) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           if (prev) {
+//             prev.classList.remove('section-active');
+//           }
+//           switch (entry.target.id) {
+//             case "Team-leadership":
+//               if (leadershipSection) {
+//                 leadershipSection.classList.add('section-active');
+//                 prev = leadershipSection;
+//               }
+//               break;
+//             case "Team-product":
+//               if (productSection) {
+//                 productSection.classList.add('section-active');
+//                 prev = productSection;
+//               }
+//               break;
+//             case "Team-business":
+//               if (businessSection) {
+//                 businessSection.classList.add('section-active');
+//                 prev = businessSection;
+//               }
+//               break;
+//             default:
+//               if (prev) {
+//                 prev.classList.remove('section-active');
+//               }
+//               break;
+//           }
+//         }
+//       });
+//     };
+//     const observer = new IntersectionObserver(observerCallback, observerOptions);
+//     leadershipSection && observer.observe(leadershipSection);
+//     productSection && observer.observe(productSection);
+//     businessSection && observer.observe(businessSection);
+//     return () => observer.disconnect();
+//   }, []);
+
 
   // Add slight overlay shift when user moves mouse inside landing page
   useEffect(() => {
@@ -212,7 +307,6 @@ function TeamPage() {
                                 members={leadershipTeam}
                                 useCarousel = {true}
                                 itemsPerSlide={3}
-                                rowPerSlide={1}
                             />
                         </div>
                         <div className="App-section App-col-left-section">
@@ -222,8 +316,7 @@ function TeamPage() {
                                 tagline='Tagline introducing the product team, which also includes engineers and designers.'
                                 members={productTeam}
                                 useCarousel = {true}
-                                itemsPerSlide={6}
-                                rowPerSlide={1}
+                                itemsPerSlide={3}
                             />
                         </div>
                         <div className="App-section App-col-left-section">
@@ -234,15 +327,14 @@ function TeamPage() {
                                 members={businessTeam}
                                 useCarousel = {true}
                                 itemsPerSlide={3}
-                                rowPerSlide={1}
                             />
                         </div>
                     </div>
 
                 <div className="App-column-right">
-                    <a href="#Team-leadership">Leadership</a>
-                    <a href="#Team-product">Product</a>
-                    <a href="#Team-business">Business</a>
+                    <a href="#Team-leadership" id="Team-leadership">Leadership</a>
+                    <a href="#Team-product" id="Team-product">Product</a>
+                    <a href="#Team-business" id="Team-business">Business</a>
                 </div>
             </div>
 
