@@ -1,4 +1,4 @@
-── Wrapper & header ──
+/* ── Wrapper & header ── */
 .team-wrapper {
   width: 100%;
   padding: 20px;
@@ -129,9 +129,38 @@
   margin-bottom: 3px;
 }
 
+.member-role-wrap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 .member-role {
   font-size: 0.9rem;
   color: #666;
+}
+
+.linkedIcon {
+  opacity: 0.35;
+  cursor: pointer;
+  color: inherit;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.linkedIcon:hover {
+  color: var(--duke-blue);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.linkedIcon:active {
+  color: var(--duke-blue);
+  transform: scale(0.95);
 }
 
 /* ── Arrow buttons ── */
@@ -195,15 +224,6 @@
 }
 
 /* ── Responsive ── */
-@media (min-width: 800px) {
-  .team-wrapper { padding: 15px; }
-
-  .grid-wrapper,
-  .team-row {
-    grid-template-columns: repeat(2, 1fr)
-  }
-  .card-bio{font-size: 0.8rem;}
-}
 
 @media (max-width: 450px) {
   .team-wrapper  { padding: 10px; }
@@ -215,7 +235,7 @@
   .team-row {
     grid-template-rows: 1fr !important;
   }
-  .card-bio{font-size: 0.4rem;}
+  .card-bio{font-size: 0.4rem !important;}
   .carousel-wrapper { gap: 6px; }
   .carousel-btn     { padding: 6px; }
 }

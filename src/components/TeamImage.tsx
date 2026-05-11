@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './TeamImage.css';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 type Member = {
     name: string;
     role: string;
     bio?: string | null;
     image?: string | null;
+    linkedin?: string;
 };
 
 type TeamImageProps = {
@@ -81,7 +83,16 @@ function TeamImage({
             </div>
             <div className="card-info">
                 <div className="member-name">{m.name}</div>
-                <div className="member-role">{m.role}</div>
+                {/* <div className="member-role">{m.role}</div> */}
+                <div className="member-role-wrap">
+                    <div className="member-role">{m.role}</div>
+
+                    {m.linkedin ? (
+                        <LinkedInIcon className="linkedIcon" fontSize="small"/>
+                    ):(
+                        <LinkedInIcon className="linkedIcon" fontSize="small"/>
+                    )}
+                </div>
             </div>
         </div>
     );
