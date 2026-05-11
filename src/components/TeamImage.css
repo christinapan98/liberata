@@ -1,4 +1,4 @@
-/* ── Wrapper & header ── */
+── Wrapper & header ──
 .team-wrapper {
   width: 100%;
   padding: 20px;
@@ -195,12 +195,12 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 768px) {
+@media (min-width: 800px) {
   .team-wrapper { padding: 15px; }
 
   .grid-wrapper,
   .team-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr)
   }
   .card-bio{font-size: 0.8rem;}
 }
