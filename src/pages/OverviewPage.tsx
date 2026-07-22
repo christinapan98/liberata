@@ -8,8 +8,8 @@ import FAQCarousel from '../components/FAQCarousel';
 import '../App.css';
 
 function OverviewPage() {
-  const introRef = useRef(null);
-  const overlayRef = useRef(null);
+  const introRef = useRef<HTMLDivElement | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef(null);
   const problemRef = useRef(null);
   const contactRef = useRef(null);
@@ -117,7 +117,7 @@ function OverviewPage() {
     const overlay: HTMLElement | null = overlayRef.current;
     if (!intro || !overlay) return;
 
-    function handleMouseMove(e) {
+    function handleMouseMove(e: MouseEvent) {
       if (!intro || !overlay) return;
       const rect = intro.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;

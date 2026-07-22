@@ -68,12 +68,14 @@ function PlatformsPage() {
         if (!bg) return;
 
         function onMove(e: MouseEvent) {
+            if (!bg) return;
             const rect = bg.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
             bg.style.transform = `translate(${x * 18}px, ${y * 10}px)`;
         }
         function onLeave() {
+            if (!bg) return;
             bg.style.transform = "translate(0px, 0px)";
         }
 
