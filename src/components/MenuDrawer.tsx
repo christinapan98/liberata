@@ -12,7 +12,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import {ArrowOutward} from '@mui/icons-material';
 
-function MenuDrawer({scrollToSection}) {
+function MenuDrawer({scrollToSection}: {scrollToSection: (sectionId: string) => void}) {
   const [isDrawerOpen, toggleDrawer] = useState(false);
 
   const DrawerList = (

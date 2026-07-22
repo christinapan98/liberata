@@ -7,8 +7,8 @@ import Contact from '../components/Contact';
 import '../App.css';
 
 function TeamPage() {
-    const introRef = useRef(null);
-    const overlayRef = useRef(null);
+    const introRef = useRef<HTMLDivElement | null>(null);
+    const overlayRef = useRef<HTMLDivElement | null>(null);
     const contactRef = useRef(null);
 
     const MISSION_TEXT = "To democratize an academic review system influenced by politics";
@@ -116,8 +116,8 @@ function TeamPage() {
       });
     };
     const observer = new IntersectionObserver(observerCallback);
-    observer.observe(sectionOne);
-    observer.observe(sectionContact);
+    sectionOne && observer.observe(sectionOne);
+    sectionContact && observer.observe(sectionContact);
   }, []);
 
   // Add slight overlay shift when user moves mouse inside landing page
@@ -126,7 +126,7 @@ function TeamPage() {
     const overlay:HTMLElement | null = overlayRef.current;
     if (!intro || !overlay) return;
 
-    function handleMouseMove(e) {
+    function handleMouseMove(e: MouseEvent) {
       if (!intro || !overlay) return;
       const rect = intro.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
