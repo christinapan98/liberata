@@ -2,34 +2,39 @@ import {useState} from "react";
 import imgShare from "../images/shares_liberata.png";
 import imgMarket from "../images/marketplaces_liberata.png";
 import imgMetrics from "../images/portfolio_metrics.png";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 import "./KeyConcepts.css"
 
-type OpenCloseItemProps = {id:string; 
-                        title: string; 
-                        children:JSX.Element|string; 
-                        activeId:string|null; 
+type OpenCloseItemProps = {id:string;
+                        num: string;
+                        title: string;
+                        children:JSX.Element|string;
+                        activeId:string|null;
                         onToggle:(id:string)=> void;}
 
-function OpenCloseItem({id, title, children, activeId, onToggle}:OpenCloseItemProps){
+function OpenCloseItem({id, num, title, children, activeId, onToggle}:OpenCloseItemProps){
     const isOpen = (id ===activeId);
 
     return(
         <div className="open-close-wrapper" id={id}>
             <a  href={`#${id}`}
-                className="open-close-header" 
+                className="open-close-header"
                 onClick={(e)=>{
                     e.preventDefault();
                     onToggle(id);
                     setTimeout(() => {
-                        document.getElementById(id)?.scrollIntoView({ 
-                            behavior: "smooth", 
+                        document.getElementById(id)?.scrollIntoView({
+                            behavior: "smooth",
                             block: "start",
                         });
                     },0);
                 }}
             >
-                <span className="open-close-title">{title}</span>
-                <span className={`open-close-icon ${isOpen ? "minus" : "plus"}`}>{isOpen ? "-" : "+"}</span>
+                <span className="open-close-title">
+                    <span className="open-close-num">{num}</span> {title}
+                </span>
+                {isOpen ? <RemoveIcon className="open-close-icon" /> : <AddIcon className="open-close-icon" />}
             </a>
             {isOpen && <div className="open-close-content">{children}</div>}
         </div>
@@ -48,7 +53,7 @@ function OpenCloseChildren({description, oldSystemContent, liberataContent, oldS
             <p className="open-close-description">{description}</p>
             <div className="cards-layout">
                 <div className="card old-system-card">
-                    <p className="card-title">Traditional</p>
+                    <p className="card-title">Tradition</p>
                     <p className="card-content" style={{ whiteSpace: "pre-line" }}>{oldSystemContent}</p>
                     {oldSystemImage && (
                         <img src={oldSystemImage} alt="Old system" className="card-image" />
@@ -57,10 +62,10 @@ function OpenCloseChildren({description, oldSystemContent, liberataContent, oldS
                 <div className="card liberata-card">
                     <p className="card-title">Liberata</p>
                     <p className="card-content">{liberataContent}</p>
+                    {liberataImage && (
+                        <img src={liberataImage} alt="Liberata" className="card-image" />
+                    )}
                 </div>
-                {liberataImage && (
-                    <img src={liberataImage} alt="Liberata" className="card-image" />
-                )}
             </div>
         </>
 
@@ -87,12 +92,13 @@ function KeyConcepts(){
         <>
             <OpenCloseItem
                 id="merit-problem"
-                title="1  Academic Credit"
+                num="1"
+                title="Academic Credit"
                 activeId={activeSection}
                 onToggle={toggleSolution}
             >
                 <OpenCloseChildren
-                    description="An overview of how academic credit gets distributed in Liberata."
+                    description="Ending politics of maneuvering for authorship roles."
                     oldSystemContent= {creditTraditional}
                     liberataContent={creditLiberata}
                     liberataImage={imgShare}
@@ -101,7 +107,8 @@ function KeyConcepts(){
             
             <OpenCloseItem
                 id="economic-problem"
-                title="2  Academic Marketplaces"
+                num="2"
+                title="Academic Marketplaces"
                 activeId={activeSection}
                 onToggle={toggleSolution}
             >
@@ -115,7 +122,8 @@ function KeyConcepts(){
 
             <OpenCloseItem
                 id="trust-problem"
-                title="3  Academic Metrics"
+                num="3"
+                title="Academic Metrics"
                 activeId={activeSection}
                 onToggle={toggleSolution}
             >

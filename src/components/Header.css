@@ -29,8 +29,8 @@
 }
 
 .Header-body {
-  width: 82vw !important;
-  padding-top: 25px;
+  width: 92vw !important;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -40,44 +40,87 @@
 }
 
 @media (min-width: 700px) {
-  .Header-body {
-    width: 88vw !important;
-  }
   .Header-navbar {
     visibility: visible !important;
+  }
+  .Header-ctas {
+    display: flex !important;
   }
   .Header-hamburger {
     display: none !important;
   }
 }
 
-@media (min-width: 1500px) {
-  .Header-nav {
-    font-size: 1.2rem;
-  }
-}
-
 .Header-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-width: 15vw;
-  /* fix min-width back to 20vw when have more page */
+  gap: 1.6vw;
 }
 
 .Header-navbar {
   visibility: hidden;
   color: white;
+  font-weight: 500;
+  font-size: 17.5px;
+  white-space: nowrap;
 }
 
 .Header-nav a {
-  margin-right: 3vw;
   color: white;
 }
 
-.Header-nav .active{
-  text-underline-offset: 5px;
-  text-decoration: underline;
+/* Inactive/upcoming items are dimmed per the design */
+.Header-nav a:not(.active),
+.Header-navbar-upcoming {
+  color: rgba(255, 255, 255, 0.6);
+}
+.Header-wrapper.scrolled .Header-nav a:not(.active),
+.Header-wrapper.scrolled .Header-navbar-upcoming {
+  color: rgba(5, 5, 153, 0.55) !important;
+}
+
+.Header-navbar-upcoming {
+  cursor: default;
+}
+
+.Header-ctas {
+  display: none;
+  align-items: center;
+  gap: 22px;
+}
+
+.Header-cta {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17.5px;
+  padding: 5px 15px;
+  border-radius: 13px;
+  border: 1.25px solid white;
+  height: auto;
+  white-space: nowrap;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.Header-cta-outline {
+  background-color: transparent;
+  color: white;
+}
+
+.Header-cta-solid {
+  background-color: white;
+  color: var(--duke-blue) !important;
+}
+
+.Header-wrapper.scrolled .Header-cta {
+  border-color: var(--duke-blue);
+}
+.Header-wrapper.scrolled .Header-cta-outline {
+  background-color: transparent !important;
+  color: var(--duke-blue) !important;
+}
+.Header-wrapper.scrolled .Header-cta-solid {
+  background-color: var(--duke-blue) !important;
+  color: white !important;
 }
 
 .Header-hamburger {
@@ -94,7 +137,7 @@
 }
 
 #Header-logo img{
-  width: 20px;
+  width: 25px;
   height: auto;
   transition: opacity 0.5s ease-in-out;
 }
