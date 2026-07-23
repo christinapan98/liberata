@@ -8,6 +8,7 @@ import PlatformsPage from './pages/PlatformsPage';
 import ProductsPage from './pages/ProductsPage';
 import ScripturaPage from './pages/ScripturaPage';
 import MensuraPage from './pages/MensuraPage';
+import TexturaPage from './pages/TexturaPage';
 import BetaSignupPage from './pages/BetaSignupPage';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/scriptura" element={<ScripturaPage />} />
         <Route path="/products/mensura" element={<MensuraPage />} />
+        <Route path="/products/textura" element={<TexturaPage />} />
         <Route path="/platforms" element={<PlatformsPage />} />
         <Route path="/beta-signup" element={<BetaSignupPage/>}/>
       </Routes>

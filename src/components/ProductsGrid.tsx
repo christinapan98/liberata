@@ -53,6 +53,7 @@ const PRODUCTS: Product[] = [
     icon: iconUsers,
     shortDesc: "Discover research and form elite interdisciplinary teams.",
     longDesc: "Discover research and form elite interdisciplinary teams.",
+    exploreTo: "/products/textura",
     features: [
       "Elite researcher discovery",
       "Interdisciplinary team matching",
