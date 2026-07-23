@@ -26,6 +26,7 @@ function App() {
         <Route path="/products/textura" element={<TexturaPage />} />
         <Route path="/products/norma" element={<NormaPage />} />
         <Route path="/research" element={<ResearchPage />} />
+        <Route path="/team" element={<TeamPage />} />
         <Route path="/platforms" element={<PlatformsPage />} />
         <Route path="/beta-signup" element={<BetaSignupPage/>}/>
       </Routes>

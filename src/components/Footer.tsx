@@ -27,9 +27,8 @@ function Footer() {
         <img src={fullLogo} alt="Liberata" className="Footer-logo" />
         <div className="Footer-quick-links">
           <Link to="/" className="footer-link">Overview</Link>
-          {/* TODO: enable once the Team page is routed */}
-          {/* <span className="footer-dot">•</span>
-          <Link to="/team" className="footer-link">Team</Link> */}
+          <span className="footer-dot">•</span>
+          <Link to="/team" className="footer-link">Team</Link>
           <span className="footer-dot">•</span>
           <button type="button" className="footer-link footer-link-button" onClick={scrollToContact}>Contact</button>
         </div>
