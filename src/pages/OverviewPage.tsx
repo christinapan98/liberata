@@ -111,10 +111,13 @@ function OverviewPage() {
   }, []);
 
   // Add slight overlay shift when user moves mouse inside landing page
+  // (mouse-driven devices only — taps on touch screens fire synthetic
+  // mouse events that would make the overlay jump)
   useEffect(() => {
     const intro: HTMLElement | null = introRef.current;
     const overlay: HTMLElement | null = overlayRef.current;
     if (!intro || !overlay) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
     function handleMouseMove(e: MouseEvent) {
       if (!intro || !overlay) return;
