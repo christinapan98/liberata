@@ -25,7 +25,7 @@ function MenuDrawer() {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton component={Link} to="/platforms">
+          <ListItemButton component={Link} to="/products">
             <ListItemText primary="Products" />
           </ListItemButton>
         </ListItem>
