@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import ProductCta from "../components/ProductCta";
+import KpiStrip from "../components/KpiStrip";
 import visualLayer from "../images/figma/textura/visual_layer.svg";
 import sparkCapital from "../images/figma/textura/spark_capital.svg";
 import sparkVolatility from "../images/figma/textura/spark_volatility.svg";
@@ -120,15 +121,7 @@ function TexturaPage() {
       </div>
 
       <div className="TexturaBody">
-        <div className="TexturaKpis">
-          {KPIS.map((kpi) => (
-            <div className="TexturaKpi" key={kpi.label}>
-              <p className="TexturaKpi-label">{kpi.label}</p>
-              <p className="TexturaKpi-value">{kpi.value}</p>
-              <img className="TexturaKpi-spark" src={kpi.spark} alt="" />
-            </div>
-          ))}
-        </div>
+        <KpiStrip kpis={KPIS} />
 
         <div className="TexturaSection">
           <div className="section-heading">/Features</div>
