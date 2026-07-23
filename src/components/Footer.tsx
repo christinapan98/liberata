@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ContactModal from './ContactModal';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -17,9 +18,7 @@ function Footer() {
   const instagramUrl = "https://www.instagram.com/liberata.official/";
   const redditUrl = "https://www.reddit.com/user/Liberata_Official/";
 
-  const scrollToContact = () => {
-    document.getElementById("section-contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <footer className="Footer-body">
@@ -30,7 +29,7 @@ function Footer() {
           <span className="footer-dot">•</span>
           <Link to="/team" className="footer-link">Team</Link>
           <span className="footer-dot">•</span>
-          <button type="button" className="footer-link footer-link-button" onClick={scrollToContact}>Contact</button>
+          <button type="button" className="footer-link footer-link-button" onClick={() => setContactOpen(true)}>Contact</button>
         </div>
       </div>
       <div className="Footer-row Footer-row-bottom">
@@ -51,6 +50,7 @@ function Footer() {
           </a>
         </div>
       </div>
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </footer>
   )
 }

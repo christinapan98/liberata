@@ -96,6 +96,69 @@
   cursor: default;
 }
 
+/* Products hover menu: transparent strip that expands below the bar (desktop only) */
+.Header-products {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .Header-products {
+    display: inline-block;
+  }
+}
+
+.Header-wrapper {
+  height: auto;
+  min-height: 65px;
+}
+
+.Header-products-strip {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 92vw;
+  margin: 0 auto;
+  padding: 6px 0 22px 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 700px) {
+  .Header-products-strip {
+    display: flex;
+  }
+}
+
+.Header-products-strip a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 500;
+  font-size: 17.5px;
+  width: fit-content;
+}
+
+.Header-products-strip a:hover {
+  color: white !important;
+}
+
+.Header-wrapper.scrolled .Header-products-strip a {
+  color: rgba(5, 5, 153, 0.55) !important;
+}
+
+.Header-wrapper.scrolled .Header-products-strip a:hover {
+  color: var(--duke-blue) !important;
+}
+
+/* Push the hero content down while the products menu is open */
+#intro::before {
+  content: "";
+  display: block;
+  height: 0;
+  transition: height 0.25s ease;
+}
+
+body.products-open #intro::before {
+  height: 160px;
+}
+
 .Header-ctas {
   display: flex;
   align-items: center;
