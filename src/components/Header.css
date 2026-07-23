@@ -41,13 +41,26 @@
 
 @media (min-width: 700px) {
   .Header-navbar {
-    visibility: visible !important;
+    display: inline !important;
   }
-  .Header-ctas {
-    display: flex !important;
+  .Header-cta-outline {
+    display: inline-block !important;
   }
   .Header-hamburger {
     display: none !important;
+  }
+}
+
+/* Mobile: logo + beta CTA + hamburger only */
+@media (max-width: 699px) {
+  .Header-ctas {
+    gap: 12px;
+    margin-left: auto;
+    margin-right: 16px;
+  }
+  .Header-cta {
+    font-size: 15px;
+    padding: 4px 12px;
   }
 }
 
@@ -58,7 +71,7 @@
 }
 
 .Header-navbar {
-  visibility: hidden;
+  display: none;
   color: white;
   font-weight: 500;
   font-size: 17.5px;
@@ -84,9 +97,13 @@
 }
 
 .Header-ctas {
-  display: none;
+  display: flex;
   align-items: center;
   gap: 22px;
+}
+
+.Header-cta-outline {
+  display: none;
 }
 
 .Header-cta {

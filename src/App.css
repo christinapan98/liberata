@@ -19,7 +19,7 @@
 .App-intro {
   position: relative;
   top: 0;
-  left: 20px;
+  left: 0;
   height: 100vh;
   max-height: 920px;
   margin-bottom: 8vh;
@@ -133,6 +133,12 @@
   font-size: 2.4rem;
   color: #111827;
   margin: 20px 0 24px 0;
+}
+
+@media (max-width: 450px) {
+  #faq-heading {
+    font-size: 1.8rem;
+  }
 }
 
 .section-heading {
@@ -324,8 +330,13 @@
 
 
 #section-hook {
-  padding-right: 2rem;
   padding-top: 40px;
+}
+
+@media (min-width: 700px) {
+  #section-hook {
+    padding-right: 2rem;
+  }
 }
 
 #section-one-video {

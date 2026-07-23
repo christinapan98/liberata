@@ -74,3 +74,22 @@
     font-weight: 300;
     font-size: 16px;
 }
+
+@media (max-width: 450px) {
+    .open-close-title{
+        font-size: 22px;
+    }
+    .open-close-icon{
+        font-size: 24px !important;
+    }
+    .open-close-description{
+        font-size: 16px;
+        padding-left: 0;
+    }
+    .card{
+        padding: 20px 18px;
+    }
+    .card-image{
+        width: 100%;
+    }
+}

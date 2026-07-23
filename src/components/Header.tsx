@@ -70,7 +70,7 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
           </span>
 
           <div className={`Header-hamburger ${scrolledPastIntro ? "scrolled" : ""}`}>
-            <MenuDrawer scrollToSection={scrollToSection} />
+            <MenuDrawer />
           </div>
         </div>
       </div>

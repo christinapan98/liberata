@@ -47,3 +47,15 @@
   line-height: 1.6;
   color: #374151;
 }
+
+@media (max-width: 450px) {
+  .faq-row {
+    padding: 24px 0;
+  }
+  .faq-question {
+    font-size: 18px;
+  }
+  .faq-answer {
+    font-size: 16px;
+  }
+}

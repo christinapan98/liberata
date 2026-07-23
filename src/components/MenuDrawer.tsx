@@ -1,56 +1,67 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import {ArrowOutward} from '@mui/icons-material';
 
-function MenuDrawer({scrollToSection}: {scrollToSection: (sectionId: string) => void}) {
+function MenuDrawer() {
   const [isDrawerOpen, toggleDrawer] = useState(false);
+
+  const scrollToContact = () => {
+    document.getElementById("section-contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
       <List>
-        {/* {[['Overview', 'section-overview'], ['Current problems', 'section-problems'], ['Contact', 'section-contact']].map((item, index) => ( */}
-        {[['Overview', 'section-overview'], ['Contact', 'section-contact']].map((item, index) => (
-          <ListItem key={item[0]} onClick={() => scrollToSection(item[1])} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={item[0]} />
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="/">
+            <ListItemText primary="Overview" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="/platforms">
+            <ListItemText primary="Products" />
+          </ListItemButton>
+        </ListItem>
+        {/* Pages coming soon — shown disabled to match the desktop nav */}
+        {['Research', 'Team', 'News'].map((name) => (
+          <ListItem key={name} disablePadding>
+            <ListItemButton disabled>
+              <ListItemText primary={name} secondary="Coming soon" />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider/>
-      {/* <List>
+      <List>
         <ListItem disablePadding>
-          <ListItemButton>
-            <a href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{fontSize: '15px', display: 'flex', alignItems: 'bottom'}}> 
-              Technical paper
-              <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
-            </a>
+          <ListItemButton onClick={scrollToContact}>
+            <ListItemText primary="Contact" />
           </ListItemButton>
         </ListItem>
-      </List> */}
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="/beta-signup">
+            <ListItemText primary="Sign up for beta" />
+          </ListItemButton>
+        </ListItem>
+      </List>
     </Box>
   );
 
   return (
     <div>
-      <div onClick={() => toggleDrawer(true)}>
+      <div onClick={() => toggleDrawer(true)} aria-label="Open menu">
         <MenuIcon/>
       </div>
-          
-      <Drawer sx={{zIndex: '100'}} anchor="right" open={isDrawerOpen} onClick={() => toggleDrawer(false)}>
+
+      <Drawer sx={{zIndex: 10000}} anchor="right" open={isDrawerOpen} onClose={() => toggleDrawer(false)} onClick={() => toggleDrawer(false)}>
         {DrawerList}
-       
-        
       </Drawer>
     </div>
   );
