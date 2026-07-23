@@ -54,8 +54,10 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
             <NavLink to="/products" className="Header-navbar">
               Products ▾
             </NavLink>
+            <NavLink to="/research" className="Header-navbar">
+              Research
+            </NavLink>
             {/* Pages coming soon — shown dimmed per the wireframe until they exist */}
-            <span className="Header-navbar Header-navbar-upcoming">Research</span>
             <span className="Header-navbar Header-navbar-upcoming">Team</span>
             <span className="Header-navbar Header-navbar-upcoming">News</span>
           </span>

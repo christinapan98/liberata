@@ -29,8 +29,13 @@ function MenuDrawer() {
             <ListItemText primary="Products" />
           </ListItemButton>
         </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="/research">
+            <ListItemText primary="Research" />
+          </ListItemButton>
+        </ListItem>
         {/* Pages coming soon — shown disabled to match the desktop nav */}
-        {['Research', 'Team', 'News'].map((name) => (
+        {['Team', 'News'].map((name) => (
           <ListItem key={name} disablePadding>
             <ListItemButton disabled>
               <ListItemText primary={name} secondary="Coming soon" />
