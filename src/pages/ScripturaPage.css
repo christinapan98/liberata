@@ -1,0 +1,349 @@
+.ScripturaHero {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 150px 100px 100px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+  background-image: url(../images/figma/hero_bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.ScripturaHero-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 4.7rem;
+  line-height: 1.15;
+  color: white;
+}
+
+.ScripturaHero-subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: white;
+  max-width: 800px;
+}
+
+.ScripturaHero-description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: white;
+  opacity: 0.9;
+  max-width: 900px;
+}
+
+.ScripturaBody {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 100px 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 125px;
+  align-items: flex-start;
+}
+
+.ScripturaSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.ScripturaSection-title {
+  margin: 0 0 35px 0;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.3;
+  color: #454545;
+}
+
+.ScripturaSection-subtitle {
+  margin: -20px 0 35px 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #666;
+  opacity: 0.9;
+}
+
+.ScripturaImpact-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 100%;
+}
+
+.ScripturaImpact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.ScripturaImpact-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background: #4f70d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ScripturaImpact-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.ScripturaImpact-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 1.3;
+  color: black;
+}
+
+.ScripturaImpact-body {
+  margin: 0;
+  font-weight: 300;
+  font-size: 17.5px;
+  line-height: 1.5;
+  color: var(--grey-text);
+}
+
+.ScripturaRoadmap {
+  display: flex;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.ScripturaRoadmap-step {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ScripturaRoadmap-date {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  color: black;
+}
+
+.ScripturaRoadmap-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ScripturaRoadmap-dot {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+.ScripturaRoadmap-rule {
+  flex: 1;
+  min-width: 0;
+  height: 3px;
+}
+
+.ScripturaRoadmap-milestone {
+  margin: 0;
+  font-weight: 300;
+  font-size: 20px;
+  color: black;
+  padding-right: 30px;
+}
+
+.ScripturaCta {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(120% 170% at 90% 115%, rgba(170, 180, 222, 0.8) 0%, rgba(58, 76, 174, 0.55) 30%, rgba(17, 46, 168, 0.25) 60%, rgba(10, 22, 74, 0) 100%),
+    linear-gradient(100deg, #0a164a 0%, #0e2279 55%, #112ea8 100%);
+}
+
+.ScripturaCta-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 1.2;
+  color: white;
+  max-width: 900px;
+}
+
+.ScripturaCta-subtitle {
+  margin: 0;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.6;
+  color: white;
+  opacity: 0.8;
+}
+
+.ScripturaCta-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ScripturaCta-primary {
+  background: white;
+  color: var(--duke-blue) !important;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 20px 40px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 12.5px 15px rgba(79, 112, 216, 0.25));
+}
+
+.ScripturaCta-secondary {
+  background: transparent;
+  border: 1.25px solid white;
+  color: white;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+  height: auto;
+  padding: 20px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 699px) {
+  .ScripturaHero {
+    padding: 120px 36px 80px 36px;
+    gap: 24px;
+  }
+
+  .ScripturaHero-title {
+    font-size: 3.1rem;
+  }
+
+  .ScripturaBody {
+    padding: 50px 36px;
+    gap: 60px;
+  }
+
+  .ScripturaSection-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .ScripturaSection-subtitle {
+    font-size: 16px;
+  }
+
+  .ScripturaImpact-columns {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .ScripturaImpact-title {
+    font-size: 22px;
+  }
+
+  .ScripturaImpact-body {
+    font-size: 16px;
+  }
+
+  /* Vertical timeline: dot rail on the left, entries stacked */
+  .ScripturaRoadmap {
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+  }
+
+  .ScripturaRoadmap-step {
+    display: grid;
+    grid-template-columns: 19px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 17px;
+    row-gap: 6px;
+  }
+
+  .ScripturaRoadmap-line {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100%;
+  }
+
+  .ScripturaRoadmap-rule {
+    display: none;
+  }
+
+  /* connector segment bridging the gap to the next dot */
+  .ScripturaRoadmap-line::after {
+    content: "";
+    width: 2.5px;
+    flex: 1;
+    background: #d9d9d9;
+    margin-top: 6px;
+    margin-bottom: -50px;
+  }
+
+  .ScripturaRoadmap-step:last-child .ScripturaRoadmap-line::after {
+    display: none;
+  }
+
+  .ScripturaRoadmap-date {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .ScripturaRoadmap-milestone {
+    grid-column: 2;
+    grid-row: 2;
+    padding-right: 0;
+  }
+
+  .ScripturaCta {
+    padding: 50px 24px;
+    gap: 30px;
+  }
+
+  .ScripturaCta-title {
+    font-size: 30px;
+  }
+
+  .ScripturaCta-subtitle {
+    font-size: 16px;
+  }
+
+  .ScripturaCta-actions {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .ScripturaCta-primary,
+  .ScripturaCta-secondary {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 10px;
+    font-size: 12.5px;
+    border-radius: 12px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

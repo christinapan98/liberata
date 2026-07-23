@@ -6,6 +6,7 @@ import TeamPage from './pages/TeamPage';
 import Footer from './components/Footer';
 import PlatformsPage from './pages/PlatformsPage';
 import ProductsPage from './pages/ProductsPage';
+import ScripturaPage from './pages/ScripturaPage';
 import BetaSignupPage from './pages/BetaSignupPage';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<OverviewPage/>}/>
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products/scriptura" element={<ScripturaPage />} />
         <Route path="/platforms" element={<PlatformsPage />} />
         <Route path="/beta-signup" element={<BetaSignupPage/>}/>
       </Routes>
