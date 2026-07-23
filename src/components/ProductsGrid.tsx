@@ -39,6 +39,7 @@ const PRODUCTS: Product[] = [
     icon: iconBarChart,
     shortDesc: "Precise contribution metrics and institutional impact analysis.",
     longDesc: "Precise contribution metrics and institutional impact analysis.",
+    exploreTo: "/products/mensura",
     features: [
       "Real-time contribution tracking",
       "Impact factor analytics",

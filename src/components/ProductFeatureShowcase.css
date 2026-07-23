@@ -81,6 +81,37 @@
   color: #454545;
 }
 
+.sf-large-titles .sf-small-name {
+  font-size: 20px;
+}
+
+/* Two-layer icon glyphs (e.g. Mensura's chart icon) */
+.sf-icon-stack {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.sf-icon-tile-small .sf-icon-stack {
+  width: 25px;
+  height: 25px;
+}
+
+.sf-icon-stack img {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  inset: 0;
+}
+
+.sf-icon-stack .sf-icon-stack-arrow {
+  width: 79% !important;
+  height: 54% !important;
+  left: 21%;
+  top: 16.5%;
+}
+
 .sf-small-desc {
   margin: 0;
   font-weight: 300;

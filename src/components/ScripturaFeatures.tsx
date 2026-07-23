@@ -1,31 +1,14 @@
-import { useState } from "react";
 import iconFileText from "../images/figma/products/icon_file_text.svg";
-import iconArrowRight from "../images/figma/products/icon_arrow_right.svg";
-import iconExpand from "../images/figma/products/icon_expand.svg";
-import iconMinimize from "../images/figma/products/icon_minimize.svg";
 import iconRefreshCw from "../images/figma/scriptura/icon_refresh_cw.svg";
 import iconShieldCheck from "../images/figma/scriptura/icon_shield_check.svg";
 import iconSearch from "../images/figma/scriptura/icon_search.svg";
-import checkMark from "../images/figma/scriptura/check_mark.svg";
-import "./ScripturaFeatures.css";
+import ProductFeatureShowcase, { ShowcaseFeature } from "./ProductFeatureShowcase";
 
-type Feature = {
-  key: string;
-  name: string;
-  icon: string;
-  gridDesc: string;
-  altDesc: string;
-  label: string;
-  headline: string;
-  longDesc: string;
-  points: { lead: string; text: string }[];
-};
-
-const FEATURES: Feature[] = [
+const FEATURES: ShowcaseFeature[] = [
   {
     key: "preprints",
     name: "Preprints & Papers",
-    icon: iconFileText,
+    icon: <img src={iconFileText} alt="" />,
     gridDesc: "Host, version, and cite your work with DOI-linked records. Open access by default, and you keep the copyright.",
     altDesc: "Host, version, and cite your work with DOI-linked records. Open access by default, and you keep the copyright.",
     label: "/Preprints & Papers",
@@ -42,7 +25,7 @@ const FEATURES: Feature[] = [
   {
     key: "peer-review",
     name: "Peer Review Marketplace",
-    icon: iconRefreshCw,
+    icon: <img src={iconRefreshCw} alt="" />,
     gridDesc: "Offer reviewers a share of credit, so review is rewarded for improving the work — with enforced deadlines.",
     altDesc: "Commission and trade structured peer review with transparent, verifiable credit.",
     label: "/Peer Review Marketplace",
@@ -59,7 +42,7 @@ const FEATURES: Feature[] = [
   {
     key: "replication",
     name: "Replication Marketplace",
-    icon: iconShieldCheck,
+    icon: <img src={iconShieldCheck} alt="" />,
     gridDesc: "Request or take on replications for a verified stake in the work. Reproducibility readers can trust.",
     altDesc: "Request or offer replications; build a verified record of reproducibility.",
     label: "/Replication Marketplace",
@@ -76,7 +59,7 @@ const FEATURES: Feature[] = [
   {
     key: "collections",
     name: "Collections",
-    icon: iconSearch,
+    icon: <img src={iconSearch} alt="" />,
     gridDesc: "Search 250M+ open works at fine-grained precision, then save them into project folders and live journals.",
     altDesc: "Editors and institutions organize research into canonical, citable collections.",
     label: "/Collections",
@@ -92,107 +75,8 @@ const FEATURES: Feature[] = [
   },
 ];
 
-// TODO: point at the real Scriptura app once it exists
-function ExploreCta() {
-  return (
-    <div className="sf-explore">
-      <span>Explore</span>
-      <img src={iconArrowRight} alt="" />
-    </div>
-  );
-}
-
-function SmallCard({ feature, onExpand }: { feature: Feature; onExpand: () => void }) {
-  return (
-    <div className="sf-card sf-card-small">
-      <button type="button" className="sf-toggle" onClick={onExpand} aria-label={`Expand ${feature.name}`}>
-        <img src={iconExpand} alt="" />
-      </button>
-      <div className="sf-icon-tile sf-icon-tile-small">
-        <img src={feature.icon} alt="" />
-      </div>
-      <p className="sf-small-name">{feature.name}</p>
-      <p className="sf-small-desc">{feature.gridDesc}</p>
-    </div>
-  );
-}
-
-function CompactCard({ feature, onExpand }: { feature: Feature; onExpand: () => void }) {
-  return (
-    <div className="sf-card sf-card-compact">
-      <button type="button" className="sf-toggle" onClick={onExpand} aria-label={`Expand ${feature.name}`}>
-        <img src={iconExpand} alt="" />
-      </button>
-      <div className="sf-icon-tile">
-        <img src={feature.icon} alt="" />
-      </div>
-      <p className="sf-compact-name">{feature.name}</p>
-      <p className="sf-compact-desc">{feature.altDesc}</p>
-      <ExploreCta />
-    </div>
-  );
-}
-
-function FeaturedCard({ feature, onMinimize }: { feature: Feature; onMinimize: () => void }) {
-  return (
-    <div className="sf-card sf-card-featured">
-      <button type="button" className="sf-toggle" onClick={onMinimize} aria-label={`Minimize ${feature.name}`}>
-        <img src={iconMinimize} alt="" />
-      </button>
-      <div className="sf-featured-left">
-        <div className="sf-featured-label-row">
-          <div className="sf-icon-tile">
-            <img src={feature.icon} alt="" />
-          </div>
-          <span className="sf-featured-label">{feature.label}</span>
-        </div>
-        <p className="sf-featured-headline">{feature.headline}</p>
-        <p className="sf-featured-desc">{feature.longDesc}</p>
-        <div className="sf-points">
-          {feature.points.map((point) => (
-            <div className="sf-point" key={point.lead}>
-              <span className="sf-point-check">
-                <img src={checkMark} alt="" />
-              </span>
-              <p>
-                <strong>{point.lead}</strong> {point.text}
-              </p>
-            </div>
-          ))}
-        </div>
-        <ExploreCta />
-      </div>
-      <div className="sf-demo-placeholder">Demo carousel</div>
-    </div>
-  );
-}
-
 function ScripturaFeatures() {
-  const [expandedKey, setExpandedKey] = useState<string | null>(null);
-
-  const expanded = FEATURES.find((f) => f.key === expandedKey);
-  const rest = FEATURES.filter((f) => f.key !== expandedKey);
-
-  if (!expanded) {
-    return (
-      <div className="sf-grid">
-        {FEATURES.map((feature) => (
-          <SmallCard key={feature.key} feature={feature} onExpand={() => setExpandedKey(feature.key)} />
-        ))}
-      </div>
-    );
-  }
-
-  return (
-    <div className="sf-expanded">
-      <FeaturedCard feature={expanded} onMinimize={() => setExpandedKey(null)} />
-      <div className="sf-bottom-row">
-        {rest.map((feature) => (
-          <CompactCard key={feature.key} feature={feature} onExpand={() => setExpandedKey(feature.key)} />
-        ))}
-      </div>
-    </div>
-  );
+  return <ProductFeatureShowcase features={FEATURES} />;
 }
 
 export default ScripturaFeatures;

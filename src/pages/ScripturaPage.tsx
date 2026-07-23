@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import ScripturaFeatures from "../components/ScripturaFeatures";
+import RoadmapTimeline from "../components/RoadmapTimeline";
+import ProductCta from "../components/ProductCta";
 import iconPencil from "../images/figma/scriptura/icon_pencil.svg";
 import iconCheck from "../images/figma/scriptura/icon_check.svg";
 import iconBookAlt from "../images/figma/scriptura/icon_book_alt.svg";
-import roadmapDot from "../images/figma/scriptura/roadmap_dot.svg";
-import roadmapLine from "../images/figma/scriptura/roadmap_line.svg";
 import "../App.css";
 import "./ScripturaPage.css";
 
@@ -25,13 +24,6 @@ const IMPACT_COLUMNS = [
     title: "For readers and industry",
     body: "Judge work by whether it holds up — replication counts, review status, and real usage — rather than the logo on the journal. Search 250M+ works at fine-grained precision and read any of them free, no account required.",
   },
-];
-
-const ROADMAP = [
-  { date: "June 2026", milestone: "Alpha version & testing with early users" },
-  { date: "Dec 2026", milestone: "Beta open trials" },
-  { date: "June 2027", milestone: "Full rollout" },
-  { date: "Dec 2027", milestone: "AI based premium features" },
 ];
 
 function ScripturaPage() {
@@ -77,29 +69,16 @@ function ScripturaPage() {
 
         <div className="ScripturaSection">
           <div className="section-heading">/Roadmap</div>
-          <div className="ScripturaRoadmap">
-            {ROADMAP.map((entry) => (
-              <div className="ScripturaRoadmap-step" key={entry.date}>
-                <p className="ScripturaRoadmap-date">{entry.date}</p>
-                <div className="ScripturaRoadmap-line">
-                  <img className="ScripturaRoadmap-dot" src={roadmapDot} alt="" />
-                  <img className="ScripturaRoadmap-rule" src={roadmapLine} alt="" />
-                </div>
-                <p className="ScripturaRoadmap-milestone">{entry.milestone}</p>
-              </div>
-            ))}
-          </div>
+          <RoadmapTimeline />
         </div>
 
-        <div className="ScripturaCta">
-          <h2 className="ScripturaCta-title">Ready to reshape academic publishing?</h2>
-          <p className="ScripturaCta-subtitle">Join researchers, labs, and institutions already building on Scriptura.</p>
-          <div className="ScripturaCta-actions">
-            <Link to="/beta-signup" className="ScripturaCta-primary">Start publishing →</Link>
-            {/* TODO: wire up a demo-request destination */}
-            <button type="button" className="ScripturaCta-secondary">Request a demo</button>
-          </div>
-        </div>
+        <ProductCta
+          title="Ready to reshape academic publishing?"
+          subtitle="Join researchers, labs, and institutions already building on Scriptura."
+          primaryLabel="Start publishing →"
+          primaryTo="/beta-signup"
+          secondaryLabel="Request a demo"
+        />
       </div>
     </div>
   );
