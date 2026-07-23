@@ -11,6 +11,7 @@ import MensuraPage from './pages/MensuraPage';
 import TexturaPage from './pages/TexturaPage';
 import NormaPage from './pages/NormaPage';
 import ResearchPage from './pages/ResearchPage';
+import NewsPage from './pages/NewsPage';
 import BetaSignupPage from './pages/BetaSignupPage';
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/products/norma" element={<NormaPage />} />
         <Route path="/research" element={<ResearchPage />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/news" element={<NewsPage />} />
         <Route path="/platforms" element={<PlatformsPage />} />
         <Route path="/beta-signup" element={<BetaSignupPage/>}/>
       </Routes>

@@ -9,12 +9,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 
-function MenuDrawer() {
+function MenuDrawer({ onContact = () => { } }: { onContact?: () => void }) {
   const [isDrawerOpen, toggleDrawer] = useState(false);
-
-  const scrollToContact = () => {
-    document.getElementById("section-contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
@@ -39,19 +35,16 @@ function MenuDrawer() {
             <ListItemText primary="Team" />
           </ListItemButton>
         </ListItem>
-        {/* Pages coming soon — shown disabled to match the desktop nav */}
-        {['News'].map((name) => (
-          <ListItem key={name} disablePadding>
-            <ListItemButton disabled>
-              <ListItemText primary={name} secondary="Coming soon" />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="/news">
+            <ListItemText primary="News" />
+          </ListItemButton>
+        </ListItem>
       </List>
       <Divider/>
       <List>
         <ListItem disablePadding>
-          <ListItemButton onClick={scrollToContact}>
+          <ListItemButton onClick={onContact}>
             <ListItemText primary="Contact" />
           </ListItemButton>
         </ListItem>
