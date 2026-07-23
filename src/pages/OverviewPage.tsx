@@ -4,17 +4,16 @@ import Hook from '../components/Hook';
 import Contact from '../components/Contact';
 import KeyConcepts from '../components/KeyConcepts';
 import AcademicPublishingProblems from '../components/AcademicPublishingProblems'
-import FAQCarousel from '../components/FAQCarousel';
+import FAQAccordion from '../components/FAQAccordion';
 import '../App.css';
 
 function OverviewPage() {
-  const introRef = useRef(null);
-  const overlayRef = useRef(null);
+  const introRef = useRef<HTMLDivElement | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef(null);
-  const problemRef = useRef(null);
   const contactRef = useRef(null);
 
-  const MISSION_TEXT = "Open access academic publishing with incentivized quality controls.";
+  const MISSION_TEXT = "To democratize an academic review system influenced by politics";
   const TYPING_SPEED = 25;
   const [displayedText, setDisplayedText] = useState("");
   const textRef = useRef(null);
@@ -112,12 +111,15 @@ function OverviewPage() {
   }, []);
 
   // Add slight overlay shift when user moves mouse inside landing page
+  // (mouse-driven devices only — taps on touch screens fire synthetic
+  // mouse events that would make the overlay jump)
   useEffect(() => {
     const intro: HTMLElement | null = introRef.current;
     const overlay: HTMLElement | null = overlayRef.current;
     if (!intro || !overlay) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-    function handleMouseMove(e) {
+    function handleMouseMove(e: MouseEvent) {
       if (!intro || !overlay) return;
       const rect = intro.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -195,24 +197,24 @@ function OverviewPage() {
       <div className="App-body-container">
         <div className="App-column-container">
           <div className="App-column-left">
+            <div className="App-section App-col-left-section" id="App-publishing-problems">
+              <div className="section-heading">/Academic Publishing Problems</div>
+              <div style={{ color: 'var(--grey-text)', fontSize: '1.2rem', marginTop: '5vh', marginBottom: "24px" }}>Academic publishing today suffers from merit, economic, and societal problems arising from maligned legacy incentive structures
+              </div>
+              <AcademicPublishingProblems />
+            </div>
             <div className="App-section App-col-left-section" id="App-mission">
               <div className="section-heading">/Liberata's Mission</div>
               <div id="mission-heading" ref={textRef}>
                 {displayedText}
               </div>
               <div id="mission-body">
-                Liberata leverages game theory to redesign the academic publishing for proper incentive alignment between stakeholders, and graph theory to measure and monitor impact, behavior, risk, and state of health of academic entities.
+                Our existing academic review system is influenced by politics in places where it should be impartial. With an open-source publishing platform that follows a shareholder model distribution of credit, Liberata seeks to reward all academic contributors fairly.
               </div>
-            </div>
-            <div className="App-section App-col-left-section" id="App-publishing-problems">
-              <div className="section-heading">/Academic Publishing Problems</div>
-              <div style={{ color: 'grey', fontSize: '1.2rem', marginTop: '5vh', marginBottom: "24px" }}>Academic publishing today suffers from merit, economic, and societal problems arising from maligned legacy incentive structures
-              </div>
-              <AcademicPublishingProblems />
             </div>
             <div className="App-section App-col-left-section" id="App-overview-video">
               <div className="section-heading">/The Liberata System</div>
-              <div style={{ color: 'grey', fontSize: '1.2rem', marginBottom: '10vh' }}>Watch a brief overview video explaining the logic behind Liberata.</div>
+              <div style={{ color: 'var(--grey-text)', fontSize: '1.2rem', marginBottom: '10vh' }}>Watch a brief overview video explaining the Liberata system.</div>
 
               {/* Since they are large files, our explainer videos must be stored in AWS. */}
               <video ref={videoRef} src="https://liberata-overview-videos.s3.us-east-1.amazonaws.com/Cover_Edited_Liberata+Overview.mp4" width="100%" id="section-one-video" controls muted />
@@ -222,17 +224,15 @@ function OverviewPage() {
               <KeyConcepts />
             </div>
             <div className="App-section App-col-left-section" id="App-faq">
-              <div className="section-heading">/Frequently Asked Questions</div>
-              <div style={{ color: 'grey', fontSize: '1.2rem', marginBottom: '10vh', lineHeight: '1.7rem' }}>
-                Watch some brief videos exploring frequently asked questions about the Liberata system.
-              </div>
-              <FAQCarousel />
+              <div className="section-heading">/FAQ</div>
+              <div id="faq-heading">Frequently Asked Questions</div>
+              <FAQAccordion />
             </div>
           </div>
 
           <div className="App-column-right">
+            <a href="#App-publishing-problems" id="acaPublish-nav">Academic Publishing Problems</a>
             <a href="#App-mission" id="mission-nav">Liberata's Mission</a>
-            <a href="#App-publishing-problems" id="acaPublish-nav">Academic Publishing</a>
             <a href="#App-overview-video" id="overview-nav">The Liberata System</a>
             <a href="#App-solutions" id="solution-nav">Key Concepts</a>
             <a href="#App-faq" id="faq-nav">FAQ</a>

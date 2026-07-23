@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import { ArrowOutward } from '@mui/icons-material';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import MenuDrawer from './MenuDrawer';
@@ -36,6 +35,11 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll)
   }, []);
+
+  const scrollToContact = () => {
+    document.getElementById("section-contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
       <div className={`Header-wrapper ${(scrolledPastIntro && !forceLight) ? "scrolled" : ""}`}>
@@ -47,22 +51,26 @@ function Header({ scrollToSection = () => { }, forceLight = false }) {
             <NavLink id="Header-overview" className="Header-navbar" to="/">
               Overview
             </NavLink>
-            {/* Temporarily commented out until mobile styling is in place */}
-            {/* <NavLink to="/platforms" className="Header-navbar">
-              Platforms
-            </NavLink> */}
-            <Link to="/beta-signup" className="Header-navbar" style={{ backgroundColor: 'transparent', color: 'white' }}>Sign up for beta</Link>
+            <NavLink to="/platforms" className="Header-navbar">
+              Products ▾
+            </NavLink>
+            {/* Pages coming soon — shown dimmed per the wireframe until they exist */}
+            <span className="Header-navbar Header-navbar-upcoming">Research</span>
+            <span className="Header-navbar Header-navbar-upcoming">Team</span>
+            <span className="Header-navbar Header-navbar-upcoming">News</span>
           </span>
 
-          {/* Technical paper disabled while updates are being made */}
-          {/* <a className="Header-navbar" href="https://docs.google.com/document/d/15CcvTbmist-dSgsto2hurLP8hjlUe7t6fq_C2MGNNJo/edit?usp=sharing" target="blank" style={{display: 'flex', alignItems: 'bottom'}}> 
-                Technical paper
-                <ArrowOutward style={{fontSize: '20px', marginLeft: '4px'}}/>
-              </a> */}
-
+          <span className="Header-ctas">
+            <button type="button" className="Header-cta Header-cta-outline" onClick={scrollToContact}>
+              Contact
+            </button>
+            <Link to="/beta-signup" className="Header-cta Header-cta-solid">
+              Sign up for beta
+            </Link>
+          </span>
 
           <div className={`Header-hamburger ${scrolledPastIntro ? "scrolled" : ""}`}>
-            <MenuDrawer scrollToSection={scrollToSection} />
+            <MenuDrawer />
           </div>
         </div>
       </div>

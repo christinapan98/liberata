@@ -18,7 +18,7 @@ function Hook({header, subheader, subtext}:HookProps) {
 
         {/* {subtext && <div className="Hook-subtext">{subtext}</div>} */}
         <div className="Hook-cta-row">
-          <Link to="/beta-signup" style={{backgroundColor: 'transparent', color: 'white', border: '2px solid white', opacity: .8, padding: '10px 15px', borderRadius: '999px'}}>Sign up for beta</Link>
+          <Link to="/beta-signup" className="Hook-cta">Sign up for beta</Link>
         </div>
 
         <div style={{width: 'inherit', display: 'flex', justifyContent: 'end', marginTop: '0vh', opacity: .8}}>

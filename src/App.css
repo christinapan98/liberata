@@ -19,7 +19,7 @@
 .App-intro {
   position: relative;
   top: 0;
-  left: 20px;
+  left: 0;
   height: 100vh;
   max-height: 920px;
   margin-bottom: 8vh;
@@ -34,7 +34,7 @@
 .App-background-gradient {
   position: absolute;
   inset: 0;
-  background-image: url(./images/BG.png);
+  background-image: url(./images/figma/hero_bg.jpg);
   background-size: cover;
   z-index: -1;
 }
@@ -92,12 +92,12 @@
 }
 
 .section-active {
-  color: black !important;
+  color: var(--duke-blue) !important;
 }
 
 .App-column-right a {
   display: block;
-  color: grey;
+  color: #aab3bd;
   font-size: 1.2rem;
   margin-bottom: 2.5vh;
 }
@@ -115,15 +115,30 @@
   line-height: 2.5rem;
   margin-bottom: 10vh;
   max-width: 55vw;
-  white-space: normal; 
-  word-wrap: break-word; 
+  color: #454545;
+  font-weight: 500;
+  white-space: normal;
+  word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 #mission-body {
-  color: grey;
+  color: var(--grey-text);
   font-size: 1.2rem;
   line-height: 1.7rem;
+}
+
+#faq-heading {
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #111827;
+  margin: 20px 0 24px 0;
+}
+
+@media (max-width: 450px) {
+  #faq-heading {
+    font-size: 1.8rem;
+  }
 }
 
 .section-heading {
@@ -315,8 +330,13 @@
 
 
 #section-hook {
-  padding-right: 2rem;
   padding-top: 40px;
+}
+
+@media (min-width: 700px) {
+  #section-hook {
+    padding-right: 2rem;
+  }
 }
 
 #section-one-video {
