@@ -1,263 +1,192 @@
-import React, {useState, useEffect, useRef} from 'react';
-import Header from '../components/Header';
-import Hook from '../components/Hook';
-import TeamImage from '../components/TeamImage';
-import Footer from '../components/Footer';
-import Contact from '../components/Contact';
-import '../App.css';
+import { useEffect, useState } from "react";
+import Header from "../components/Header";
+import iconEmail from "../images/figma/team/icon_email.svg";
+import iconLinkedin from "../images/figma/team/icon_linkedin.svg";
+import iconExpandClear from "../images/figma/team/icon_expand_clear.svg";
+import teamUiux from "../images/figma/team/team_uiux.png";
+import teamSoftware from "../images/figma/team/team_software.png";
+import teamAlgorithms from "../images/figma/team/team_algorithms.png";
+import teamAiml from "../images/figma/team/team_aiml.png";
+import teamProduct from "../images/figma/team/team_product.png";
+import imgAffiliations from "../images/figma/team/affiliations.png";
+import "../App.css";
+import "./TeamPage.css";
+
+type Member = { name: string; role: string };
+
+const LEADERSHIP: Member[] = [
+  { name: "Han Zhang", role: "Executive Director" },
+  { name: "Patrick Prochazka", role: "Operations Director" },
+  { name: "Anshuman Sabath", role: "Research Director" },
+  { name: "Haider Khan", role: "Technical Director" },
+  { name: "Anish Verma", role: "Product Director" },
+  { name: "Rishabh Malviya", role: "AI/ML Director" },
+];
+
+const ADVISORS: Member[] = [
+  { name: "Prof. L. Catherine Brinson", role: "Academic Processes Advisor" },
+  { name: "Hon. Dr. Tommy Sowers", role: "Technology Ethics Advisor" },
+  { name: "Michael Waitzkins, Esq.", role: "Law & Policy Advisor" },
+  { name: "Prof. Shana McAlexander", role: "Curricula & Practica Advisor" },
+  { name: "Haley Walton", role: "Open Scholarship Advisor" },
+  { name: "Prof. Udayan Vaidya", role: "Mechanism Design Advisor" },
+];
+
+const AMBASSADORS: Member[] = [
+  { name: "XXX", role: "[Title]" },
+  { name: "XXX", role: "[Title]" },
+  { name: "XXX", role: "[Title]" },
+];
+
+const TEAMS = [
+  { name: "UI/UX", image: teamUiux, points: ["Interface design", "Experience design", "Frontend implementation", "Digital graphics"] },
+  { name: "Software", image: teamSoftware, points: ["Data engineering", "Backend implementation", "Infrastructure development"] },
+  { name: "Algorithms", image: teamAlgorithms, points: ["Algorithm research", "API development", "Agent simulations"] },
+  { name: "AI/ML", image: teamAiml, points: ["Recommendation engines", "AI integrations", "Literature conversion"] },
+  { name: "Product", image: teamProduct, points: ["Market research", "Product roadmap", "Strategic partnerships", "Marketing content"] },
+];
+
+const SECTIONS = [
+  { id: "team-leadership", label: "Leadership" },
+  { id: "team-advisors", label: "Advisors" },
+  { id: "team-teams", label: "Teams" },
+  { id: "team-affiliations", label: "Affiliations" },
+  { id: "team-ambassadors", label: "Ambassadors" },
+];
+
+// TODO: photos, emails, and LinkedIn URLs pending — placeholders until the data exists
+function MemberCard({ member, contact = true }: { member: Member; contact?: boolean }) {
+  return (
+    <div className="Team-card">
+      <div className="Team-photo">
+        <span className="Team-photo-expand">
+          <img src={iconExpandClear} alt="" />
+        </span>
+      </div>
+      <div className="Team-card-text">
+        <p className="Team-card-name">{member.name}</p>
+        <p className="Team-card-role">{member.role}</p>
+      </div>
+      {contact && (
+        <div className="Team-card-contact">
+          <img src={iconEmail} alt="Email" />
+          <img src={iconLinkedin} alt="LinkedIn" />
+        </div>
+      )}
+    </div>
+  );
+}
 
 function TeamPage() {
-    const introRef = useRef<HTMLDivElement | null>(null);
-    const overlayRef = useRef<HTMLDivElement | null>(null);
-    const contactRef = useRef(null);
-
-    const MISSION_TEXT = "To democratize an academic review system influenced by politics";
-    const TYPING_SPEED = 25;
-    const [displayedText, setDisplayedText] = useState("");
-    const textRef = useRef(null);
-    const [hasTypingStarted, setHasTypingStarted] = useState(false);
-
-    const leadershipTeam = [
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-    ]
-    const productTeam = [
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Han Zhang", role: "Founder"},
-
-    ]
-    const businessTeam = [
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-         {name: "Han Zhang", role: "Founder"},
-         {name: "Patrick Prochazka", role: "Co-Founder"},
-    ]
-
-
-    // Section observer
-  useEffect(() => {
-    const sectionItems = document.getElementsByClassName("App-section");
-    const observerCallback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = "translateY(0px)";
-          observer.unobserve(entry.target);
-        }
-        });
-    };
-    const observer = new IntersectionObserver(observerCallback);
-    Array.from(sectionItems).forEach((e) => {
-      observer.observe(e);
-    });
-  }, []);
-
-  // Set up another observer for the main body sections
-  // Whenever they are scrolled into, detect the corresponding entry id
-  // Then add active class to the header title that matches the entry id
-  // Also be mindful of when none of the sections should be highlighted
-  // detect when section is scrolled out of as well
-  useEffect(() => {
-    const sectionOne = document.getElementById("section-hook");
-    const sectionContact = document.getElementById("section-contact");
-    const sectionTwoHeader = document.getElementById("Header-problems");
-    const sectionOverviewHeader = document.getElementById("Header-overview");
-    const sectionContactHeader = document.getElementById("Header-contact");
-    let prev: any;
-    const observerCallback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if(prev) {
-            prev.classList.remove('section-active');
-          }
-          switch(entry.target.id) {
-            case "section-overview":
-              if(sectionOverviewHeader) {
-                sectionOverviewHeader.classList.add('section-active');
-                prev = sectionOverviewHeader;
-              }
-              break;
-            case "section-problems":
-              if(sectionTwoHeader) {
-                sectionTwoHeader.classList.add('section-active');
-                prev = sectionTwoHeader;
-              }
-              break;
-            case "section-contact":
-              if(sectionContactHeader) {
-                sectionContactHeader.classList.add('section-active');
-                prev = sectionContactHeader;
-              }
-              break;
-            default:
-              if(prev) {
-                prev.classList.remove('section-active');
-              }
-              break;
-          }
-        } else {
-          entry.target.classList.remove('section-active');
-        }
-      });
-    };
-    const observer = new IntersectionObserver(observerCallback);
-    sectionOne && observer.observe(sectionOne);
-    sectionContact && observer.observe(sectionContact);
-  }, []);
-
-  // Add slight overlay shift when user moves mouse inside landing page
-  useEffect(() => {
-    const intro:HTMLElement | null = introRef.current;
-    const overlay:HTMLElement | null = overlayRef.current;
-    if (!intro || !overlay) return;
-
-    function handleMouseMove(e: MouseEvent) {
-      if (!intro || !overlay) return;
-      const rect = intro.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      const moveX = (x * 50) + (y * 50);
-      const moveY = x * 20; 
-      overlay.style.transform = `translate(${moveX}px,  ${moveY}px)`;
-    }
-
-    function handleMouseLeave() {
-      if (!intro || !overlay) return;
-      overlay.style.transform = `rotateX(0deg) rotateY(0deg)`; // reset
-    }
-
-    intro.addEventListener("mousemove", handleMouseMove);
-    intro.addEventListener("mouseleave", handleMouseLeave);
-    return () => {
-      intro.removeEventListener("mousemove", handleMouseMove);
-      intro.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
+  const [activeSection, setActiveSection] = useState(SECTIONS[0].id);
 
   useEffect(() => {
-    const el = textRef.current;
-    if (!el) return;
-
     const observer = new IntersectionObserver(
-      (entries, obs) => {
+      (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasTypingStarted) {
-            setHasTypingStarted(true);
-            obs.unobserve(el); // run only once
-          }
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
-
-    observer.observe(el);
+    SECTIONS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      el && observer.observe(el);
+    });
     return () => observer.disconnect();
-  }, [hasTypingStarted]);
+  }, []);
 
-    useEffect(() => {
-        if (!hasTypingStarted) return;
-        let i = 0;
-        const interval = setInterval(() => {
-        setDisplayedText(MISSION_TEXT.slice(0, i + 1));
-        i++;
-        if (i >= MISSION_TEXT.length) clearInterval(interval);
-        }, TYPING_SPEED);
-        
-        return () => clearInterval(interval);
-    }, [hasTypingStarted, MISSION_TEXT, TYPING_SPEED]);
+  return (
+    <div className="App">
+      {/* id="intro" drives the Header's transparent-over-hero scroll behavior */}
+      <div className="TeamHero" id="intro">
+        <Header />
+        <p className="TeamHero-eyebrow">The Liberata Team</p>
+        <h1 className="TeamHero-title">Meet our team.</h1>
+        <p className="TeamHero-subtitle">
+          An interdisciplinary team of innovators with experience at institutions such as Duke, Google, Autodesk and
+          Neuralink.
+        </p>
+      </div>
 
-    return(
-        <div className="App">
-            <div className="App-intro" ref={introRef} id="intro">
-                {/* Page header */}
-                <Header/>
-                <div className="App-section" id="section-hook">
-                <Hook
-                    header = "Meet our team"
-                    subheader = "[Tagline detailing affiliation with Duke University’s Bass Connections program]"
-                    subtext = "An interdisciplinary team of innovators with experience at institutions such as Duke, Google, Autodesk and Neuralink."
-                />
-                </div>
-
-                {/* Intro background */}
-                <div className="App-background">
-                <div className="App-background-overlay" ref={overlayRef}></div>
-                <div className="App-background-gradient"></div>
-                </div>
+      <div className="TeamBody">
+        <div className="TeamMain">
+          <div className="TeamSection" id="team-leadership">
+            <h2 className="TeamSection-title">Leadership</h2>
+            {/* TODO: placeholder tagline from the wireframe — needs real copy */}
+            <p className="TeamSection-tagline">Tagline introducing the leadership team, which also includes advisors.</p>
+            <div className="Team-grid">
+              {LEADERSHIP.map((member) => (
+                <MemberCard key={member.name} member={member} />
+              ))}
             </div>
+          </div>
 
-            <div className="App-body-container">
-                <div className="App-column-container">
-                    <div className="App-column-left">
-                        <div className="App-section App-col-left-section">
-                            <TeamImage
-                                id="Team-leadership"
-                                title="/Leadership"
-                                tagline='Tagline introducing the leadership team, which also includes advisors.'
-                                members={leadershipTeam}
-                                useCarousel = {true}
-                                itemsPerSlide={3}
-                                rowPerSlide={1}
-                            />
-                        </div>
-                        <div className="App-section App-col-left-section">
-                            <TeamImage
-                                id="Team-product"
-                                title="/Product"
-                                tagline='Tagline introducing the product team, which also includes engineers and designers.'
-                                members={productTeam}
-                                useCarousel = {true}
-                                itemsPerSlide={6}
-                                rowPerSlide={1}
-                            />
-                        </div>
-                        <div className="App-section App-col-left-section">
-                            <TeamImage
-                                id="Team-business"
-                                title="/Bussiness"
-                                tagline='Tagline introducing the business / marketing team.'
-                                members={businessTeam}
-                                useCarousel = {true}
-                                itemsPerSlide={3}
-                                rowPerSlide={1}
-                            />
-                        </div>
+          <div className="TeamSection" id="team-advisors">
+            <h2 className="TeamSection-title">Advisors</h2>
+            <p className="TeamSection-tagline">Tagline introducing the advisors team</p>
+            <div className="Team-grid">
+              {ADVISORS.map((member) => (
+                <MemberCard key={member.name} member={member} />
+              ))}
+            </div>
+          </div>
+
+          <div className="TeamSection" id="team-teams">
+            <h2 className="TeamSection-title Team-blue">Teams</h2>
+            <p className="TeamSection-tagline Team-blue">Tagline introducing the software team</p>
+            <div className="Team-columns">
+              {TEAMS.map((team) => (
+                <div className="Team-column" key={team.name}>
+                  <div className="Team-column-head">
+                    <div className="Team-column-image">
+                      <img src={team.image} alt="" />
                     </div>
-
-                <div className="App-column-right">
-                    <a href="#Team-leadership">Leadership</a>
-                    <a href="#Team-product">Product</a>
-                    <a href="#Team-business">Business</a>
+                    <p className="Team-column-name">{team.name}</p>
+                  </div>
+                  <div className="Team-column-points">
+                    {team.points.map((point) => (
+                      <p key={point}>• {point}</p>
+                    ))}
+                  </div>
                 </div>
+              ))}
             </div>
+          </div>
 
-            {/* Contact form */}
-                <div className="App-section" ref={contactRef} id="section-contact">
-                <Contact/>
+          <div className="TeamSection" id="team-affiliations">
+            <h2 className="TeamSection-title">Affiliations</h2>
+            <p className="TeamSection-tagline">Tagline introducing the product team</p>
+            <img className="Team-affiliations" src={imgAffiliations} alt="Affiliated institutions" />
+          </div>
+
+          <div className="TeamSection" id="team-ambassadors">
+            <h2 className="TeamSection-title">Ambassadors</h2>
+            <p className="TeamSection-tagline">Tagline introducing the algorithms team</p>
+            <div className="Team-grid">
+              {AMBASSADORS.map((member, i) => (
+                <div className="Team-card" key={i}>
+                  <div className="Team-photo Team-photo-inverted" />
+                  <div className="Team-card-text">
+                    <p className="Team-card-name">{member.name}</p>
+                    <p className="Team-card-role">{member.role}</p>
+                  </div>
                 </div>
+              ))}
             </div>
-
-            {/* Footer, including social media links */}
-            {/* <div className="App-footer" id="App-footer">
-                <Footer/>
-                <div className="Footer-accent"></div>
-            </div>  */}
+          </div>
         </div>
-    );
+
+        <div className="TeamSideNav">
+          {SECTIONS.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} className={activeSection === id ? "active" : ""}>
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
+
 export default TeamPage;
