@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import iconFileText from "../images/figma/products/icon_file_text.svg";
 import iconBarChart from "../images/figma/products/icon_bar_chart.svg";
 import iconUsers from "../images/figma/products/icon_users.svg";
@@ -14,6 +15,7 @@ type Product = {
   shortDesc: string;
   longDesc: string;
   features: string[];
+  exploreTo?: string;
 };
 
 const PRODUCTS: Product[] = [
@@ -23,6 +25,7 @@ const PRODUCTS: Product[] = [
     icon: iconFileText,
     shortDesc: "Open-access publishing with community-run peer review.",
     longDesc: "Open-access academic publishing & crowdsourced peer review.",
+    exploreTo: "/products/scriptura",
     features: [
       "Peer-reviewed submissions",
       "Open-access publishing",
@@ -71,8 +74,16 @@ const PRODUCTS: Product[] = [
   },
 ];
 
-// TODO: point at the real product sites once they exist
-function ExploreCta() {
+// TODO: point the remaining products at their real destinations once they exist
+function ExploreCta({ to }: { to?: string }) {
+  if (to) {
+    return (
+      <Link to={to} className="product-explore">
+        <span>Explore</span>
+        <img src={iconArrowRight} alt="" />
+      </Link>
+    );
+  }
   return (
     <div className="product-explore">
       <span>Explore</span>
@@ -100,7 +111,7 @@ function CompactCard({ product, onExpand }: { product: Product; onExpand: () => 
         <p className="product-name">{product.name}</p>
         <p className="product-desc">{product.shortDesc}</p>
       </div>
-      <ExploreCta />
+      <ExploreCta to={product.exploreTo} />
     </div>
   );
 }
@@ -125,7 +136,7 @@ function FeaturedCard({ product, onMinimize }: { product: Product; onMinimize?: 
             </div>
           ))}
         </div>
-        <ExploreCta />
+        <ExploreCta to={product.exploreTo} />
       </div>
       <div className="product-demo-placeholder">Demo carousel</div>
     </div>
