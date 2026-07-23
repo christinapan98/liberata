@@ -67,6 +67,7 @@ const PRODUCTS: Product[] = [
     icon: iconFileText,
     shortDesc: "Standardized compliance frameworks and regulatory alignment tools.",
     longDesc: "Standardized compliance frameworks and regulatory alignment tools.",
+    exploreTo: "/products/norma",
     features: [
       "Regulatory compliance mapping",
       "Automated framework alignment",
